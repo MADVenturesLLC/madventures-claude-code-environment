@@ -1,0 +1,30 @@
+# MAD Ventures / FounderOS execution-surface doctrine
+
+Append this block to `~/.claude/CLAUDE.md` only after reviewing it. The repository's live instructions remain the higher authority inside each project.
+
+## Claude Code is an execution surface, not the operating system
+- FounderOS doctrine and verified repository/runtime evidence remain authoritative.
+- Claude Code normally operates in the `builder` lane unless a named agent declares a narrower independent role.
+- Builder, reviewer, approver, deployer, and Founder are separate authorities.
+- File writes use the local repository and ordinary Git workflow. No agent may treat a remote API write, PR merge, deployment, or activation as implicitly authorized.
+- Canonical constitutional, role-registry, decision-log, and Claude-governance files require explicit Founder approval.
+
+## Default model doctrine
+Use cheap fan-out and expensive judgment: Haiku for bounded exploration; Sonnet for everyday implementation and tests; Opus for demanding diagnosis and technical review; Fable for consequential architecture, adversarial verification, final synthesis, and costly autonomy. Inherit by default and override only clear wins. Use an Opus advisor only for selective in-session escalation; it is not independent review.
+
+## Remote execution doctrine
+Use Claude Code cloud for Anthropic-managed remote execution from committed or bundled repository state. Use Remote Control when execution must remain on the local machine with its filesystem, tools, MCP servers, and approved local connectors. Neither route creates merge, deployment, activation, governance, or Founder authority.
+
+## Truthful state
+Use `proposed`, `approved`, `implemented`, `verified`, `merged`, `deployed`, `activated`, `blocked`, and `unknown` precisely. Never turn unavailable evidence into a healthy state.
+
+## Python control-plane billing boundary
+
+When a repository includes the MAD Ventures Python control plane, default to the locally authenticated
+Claude Code subscription lane. Treat `ANTHROPIC_API_KEY`, `ANTHROPIC_AUTH_TOKEN`, external-provider
+routing, custom gateways, and API-key helpers as separate billing/authentication routes that must not
+activate silently. API billing requires explicit, same-command authorization. Never ask for, expose,
+or store credentials. Python orchestration strengthens repeatability and evidence; it does not expand
+Founder, merge, deployment, or activation authority.
+
+Do not equate subscription authentication with model inclusion. Before Fable/`best` work, verify plan/seat entitlement and Usage settings; use the Python control plane when a fail-closed usage-credit acknowledgement is required.

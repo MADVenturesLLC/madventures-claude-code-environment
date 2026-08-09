@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "authority_boundary": {
+      "type": "string"
+    },
+    "base_sha": {
+      "pattern": "^[0-9a-f]{40}$",
+      "type": "string"
+    },
+    "confidence": {
+      "enum": [
+        "certain",
+        "high",
+        "moderate",
+        "low"
+      ],
+      "type": "string"
+    },
+    "disposition": {
+      "enum": [
+        "VALID",
+        "INVALID",
+        "BLOCKED"
+      ],
+      "type": "string"
+    },
+    "findings": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "evidence": {
+            "type": "string"
+          },
+          "file": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "line": {
+            "minimum": 1,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "recommended_fix": {
+            "type": "string"
+          },
+          "severity": {
+            "enum": [
+              "blocking",
+              "critical",
+              "high",
+              "medium",
+              "low",
+              "note"
+            ],
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "severity",
+          "title",
+          "rationale",
+          "evidence",
+          "recommended_fix"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "invariants": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "claim": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "string"
+          },
+          "source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "claim",
+          "evidence"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "residual_risks": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "reviewed_sha": {
+      "pattern": "^[0-9a-f]{40}$",
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "disposition",
+    "summary",
+    "base_sha",
+    "reviewed_sha",
+    "invariants",
+    "findings",
+    "residual_risks",
+    "authority_boundary",
+    "confidence"
+  ],
+  "type": "object"
+}

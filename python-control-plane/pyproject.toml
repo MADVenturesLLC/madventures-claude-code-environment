@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "madventures-claude-control-plane"
+version = "4.4.1"
+description = "Subscription-first Python control plane for governed MAD Ventures and FounderOS Claude engineering workflows."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Proprietary - MAD Ventures Holdings LLC"}
+authors = [{name = "MAD Ventures Holdings LLC"}]
+dependencies = []
+keywords = ["claude-code", "founderos", "governance", "orchestration", "subscription"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
+
+[project.optional-dependencies]
+sdk = ["claude-agent-sdk==0.2.131"]
+
+[project.scripts]
+madclaude = "madclaude.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/madclaude"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/src", "/tests", "/schemas", "/README.md", "/pyproject.toml", "/bin/madclaude.py"]

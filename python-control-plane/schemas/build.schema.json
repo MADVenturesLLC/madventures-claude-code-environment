@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "acceptance_results": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "claim": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "string"
+          },
+          "source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "claim",
+          "evidence"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "approval_reference": {
+      "type": "string"
+    },
+    "confidence": {
+      "enum": [
+        "certain",
+        "high",
+        "moderate",
+        "low"
+      ],
+      "type": "string"
+    },
+    "files_changed": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "next_action": {
+      "type": "string"
+    },
+    "residual_risks": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "status": {
+      "enum": [
+        "implemented",
+        "partial",
+        "blocked"
+      ],
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "verification_expected": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "status",
+    "summary",
+    "approval_reference",
+    "files_changed",
+    "acceptance_results",
+    "verification_expected",
+    "residual_risks",
+    "next_action",
+    "confidence"
+  ],
+  "type": "object"
+}

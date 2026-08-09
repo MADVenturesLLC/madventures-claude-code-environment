@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "commands": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "command": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "string"
+          },
+          "exit_code": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "status": {
+            "enum": [
+              "passed",
+              "failed",
+              "blocked",
+              "not_run"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "command",
+          "status",
+          "evidence"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "confidence": {
+      "enum": [
+        "certain",
+        "high",
+        "moderate",
+        "low"
+      ],
+      "type": "string"
+    },
+    "findings": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "evidence": {
+            "type": "string"
+          },
+          "file": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "line": {
+            "minimum": 1,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "recommended_fix": {
+            "type": "string"
+          },
+          "severity": {
+            "enum": [
+              "blocking",
+              "critical",
+              "high",
+              "medium",
+              "low",
+              "note"
+            ],
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "severity",
+          "title",
+          "rationale",
+          "evidence",
+          "recommended_fix"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "residual_risks": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "status": {
+      "enum": [
+        "passed",
+        "failed",
+        "blocked"
+      ],
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "status",
+    "summary",
+    "commands",
+    "findings",
+    "residual_risks",
+    "confidence"
+  ],
+  "type": "object"
+}

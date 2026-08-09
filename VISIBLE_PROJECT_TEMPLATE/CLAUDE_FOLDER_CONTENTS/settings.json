@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "model": "sonnet",
+  "fallbackModel": [
+    "opus",
+    "haiku"
+  ],
+  "effortLevel": "high",
+  "autoCompactEnabled": true,
+  "autoMemoryEnabled": true,
+  "fileCheckpointingEnabled": true,
+  "fastModePerSessionOptIn": true,
+  "workflowKeywordTriggerEnabled": true,
+  "workflowSizeGuideline": "small",
+  "showClearContextOnPlanAccept": true,
+  "skillListingBudgetFraction": 0.02,
+  "skillListingMaxDescChars": 1200,
+  "env": {
+    "CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH": "2",
+    "CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS": "8",
+    "CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION": "100",
+    "FOUNDEROS_LIVE_ACCESS_ENABLED": "false"
+  },
+  "permissions": {
+    "defaultMode": "default",
+    "disableBypassPermissionsMode": "disable",
+    "allow": [
+      "Read",
+      "Grep",
+      "Glob",
+      "Agent(founder-os-explorer)",
+      "Agent(dependency-mapper)",
+      "Agent(architecture-planner)",
+      "Agent(orchestration-coordinator)",
+      "Agent(feature-builder)",
+      "Agent(worktree-builder)",
+      "Agent(root-cause-investigator)",
+      "Agent(test-verifier)",
+      "Agent(code-reviewer)",
+      "Agent(security-reviewer)",
+      "Agent(independent-reviewer)",
+      "Agent(adversarial-verifier)",
+      "Agent(final-synthesizer)",
+      "Agent(governance-auditor)",
+      "Agent(decision-proposer)",
+      "Agent(doc-updater)",
+      "Agent(neon-reader)",
+      "Agent(performance-optimizer)",
+      "Agent(ui-reviewer)",
+      "Agent(release-verifier)",
+      "Bash(git status)",
+      "Bash(git status *)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git show *)",
+      "Bash(git branch *)",
+      "Bash(git rev-parse *)",
+      "Bash(git ls-files *)",
+      "Bash(git merge-base *)",
+      "Bash(gh pr view *)",
+      "Bash(gh pr diff *)",
+      "Bash(gh pr checks *)",
+      "WebFetch(domain:code.claude.com)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "WebFetch(domain:platform.claude.com)"
+    ],
+    "ask": [
+      "Bash(npm run *)",
+      "Bash(npm test *)",
+      "Bash(npx *)",
+      "Bash(pnpm *)",
+      "Bash(yarn *)",
+      "Bash(bun *)",
+      "Bash(gh pr create *)",
+      "Bash(gh pr edit *)",
+      "Bash(gh pr comment *)",
+      "Bash(git push *)"
+    ],
+    "deny": [
+      "Bash(git reset --hard *)",
+      "Bash(git clean -fd *)",
+      "Bash(git clean -fdx *)",
+      "Bash(git push --force *)",
+      "Bash(git push -f *)",
+      "Bash(gh pr merge *)",
+      "Bash(claude --dangerously-skip-permissions *)",
+      "Read(**/.env)",
+      "Read(**/.env.local)",
+      "Read(**/.env.*.local)",
+      "Read(**/*.pem)",
+      "Read(**/*.key)",
+      "Read(**/credentials.json)",
+      "Edit(**/.env)",
+      "Edit(**/.env.local)",
+      "Edit(**/.env.*.local)",
+      "Edit(**/*.pem)",
+      "Edit(**/*.key)",
+      "Edit(**/credentials.json)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PROJECT_DIR}/.claude/hooks/hook-adapter.mjs\" baseline",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "ConfigChange": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PROJECT_DIR}/.claude/hooks/hook-adapter.mjs\" baseline",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PROJECT_DIR}/.claude/hooks/hook-adapter.mjs\" completion",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "TaskCompleted": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"${CLAUDE_PROJECT_DIR}/.claude/hooks/hook-adapter.mjs\" completion",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

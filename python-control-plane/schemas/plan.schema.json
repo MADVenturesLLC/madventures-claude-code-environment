@@ -1,0 +1,202 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "acceptance_mapping": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "claim": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "string"
+          },
+          "source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "claim",
+          "evidence"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "base_sha": {
+      "pattern": "^[0-9a-f]{40}$",
+      "type": "string"
+    },
+    "builder_justification": {
+      "type": "string"
+    },
+    "confidence": {
+      "enum": [
+        "certain",
+        "high",
+        "moderate",
+        "low"
+      ],
+      "type": "string"
+    },
+    "eligible_fallbacks": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "founder_decisions_required": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "founder_gate_required": {
+      "type": "boolean"
+    },
+    "governance_references": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "plan_steps": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "acceptance": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "files": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "step": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "step",
+          "files",
+          "rationale",
+          "acceptance"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "recommended_builder": {
+      "type": "string"
+    },
+    "repository": {
+      "type": "string"
+    },
+    "repository_findings": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "claim": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "string"
+          },
+          "source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "claim",
+          "evidence"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "risk_class": {
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ],
+      "type": "string"
+    },
+    "risks": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "status": {
+      "enum": [
+        "ready",
+        "blocked"
+      ],
+      "type": "string"
+    },
+    "stop_conditions": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "unknowns": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "verification_plan": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "task_id",
+    "repository",
+    "base_sha",
+    "risk_class",
+    "recommended_builder",
+    "builder_justification",
+    "eligible_fallbacks",
+    "founder_gate_required",
+    "governance_references",
+    "unknowns",
+    "status",
+    "summary",
+    "repository_findings",
+    "plan_steps",
+    "acceptance_mapping",
+    "verification_plan",
+    "risks",
+    "stop_conditions",
+    "founder_decisions_required",
+    "confidence"
+  ],
+  "type": "object"
+}

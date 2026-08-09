@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "authoritativeEngine": "python-control-plane/src/madclaude/workflows.py",
+  "javascriptExecution": "retired",
+  "capabilities": {
+    "founder-plan": {"classification": "THIN_ADAPTER", "pythonRoute": "plan"},
+    "founder-build": {"classification": "THIN_ADAPTER", "pythonRoute": "build"},
+    "founder-verify": {"classification": "THIN_ADAPTER", "pythonRoute": "verify"},
+    "founder-tier2-evidence": {"classification": "THIN_ADAPTER", "pythonRoute": "tier2"},
+    "founder-release-readiness": {"classification": "THIN_ADAPTER", "pythonRoute": "release-readiness"},
+    "founder-repository-audit": {"classification": "THIN_ADAPTER", "pythonRoute": "repo-audit"},
+    "founder-security-audit": {"classification": "THIN_ADAPTER", "pythonRoute": "security-audit"},
+    "founder-ui-review": {"classification": "THIN_ADAPTER", "pythonRoute": "ui-review"},
+    "founder-fix-until-green": {"classification": "THIN_ADAPTER", "pythonRoute": "fix-until-green"},
+    "founder-changed-files-review": {"classification": "MERGE", "pythonRoute": "tier1"},
+    "founder-docs-drift": {"classification": "MERGE", "pythonRoute": "repo-audit", "profile": "docs-drift"},
+    "founder-performance-audit": {"classification": "MERGE", "pythonRoute": "repo-audit", "profile": "performance"},
+    "founder-test-gap-analysis": {"classification": "MERGE", "pythonRoute": "repo-audit", "profile": "test-gap"},
+    "founder-incident-root-cause": {"classification": "MERGE", "pythonRoute": "repo-audit", "profile": "incident"}
+  }
+}

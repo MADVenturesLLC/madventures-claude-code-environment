@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "confidence": {
+      "enum": [
+        "certain",
+        "high",
+        "moderate",
+        "low"
+      ],
+      "type": "string"
+    },
+    "diagnosis": {
+      "type": "string"
+    },
+    "files_changed": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "residual_risks": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "round": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "status": {
+      "enum": [
+        "repaired",
+        "partial",
+        "blocked"
+      ],
+      "type": "string"
+    },
+    "verification_expected": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "round",
+    "status",
+    "diagnosis",
+    "files_changed",
+    "verification_expected",
+    "residual_risks",
+    "confidence"
+  ],
+  "type": "object"
+}

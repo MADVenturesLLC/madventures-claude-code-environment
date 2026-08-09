@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "founderApproved": false,
+  "approvedBy": "",
+  "approvedAt": "",
+  "approvalReference": "",
+  "goal": "REPLACE_WITH_THE_EXACT_PLAN_AND_BUILD_GOAL",
+  "planFile": "/absolute/path/to/structured-output.json",
+  "planSha256": "REPLACE_WITH_THE_GENERATED_PLAN_SHA256",
+  "allowedScope": [
+    "REPLACE_WITH_REPOSITORY_RELATIVE_SCOPE"
+  ],
+  "acceptanceCriteria": [
+    "REPLACE_WITH_AN_OBSERVABLE_ACCEPTANCE_CRITERION"
+  ],
+  "verificationCommands": [
+    "REPLACE_WITH_A_DIRECT_NON_DESTRUCTIVE_COMMAND"
+  ],
+  "notes": "Generate this file with madclaude approval-template. Set founderApproved=true only after the Founder approves the exact plan hash, goal, scopes, criteria, and commands."
+}

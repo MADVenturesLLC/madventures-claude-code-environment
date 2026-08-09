@@ -1,0 +1,1754 @@
+{
+  "package": "MADVentures-Claude-Code-Environment-v4.4.1",
+  "version": "4.4.1",
+  "generatedAt": "2026-08-09T17:09:57+00:00",
+  "algorithm": "SHA-256",
+  "fileCount": 349,
+  "files": [
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 5829,
+      "sha256": "2deb97c331a38f1c53125f3886a6cb798cfb3c97d191d6ef0a8f3995af463ce1"
+    },
+    {
+      "path": "DELIVERY_FIX.md",
+      "bytes": 959,
+      "sha256": "fc55d7a0901e059b07f00364c657bc3ac3ff4edbd399430ab880f95f26fa1211"
+    },
+    {
+      "path": "INSTALL_MAC.command",
+      "bytes": 2655,
+      "sha256": "e495f8c415c86c4468d58bb5215606cd6dfcf41c4d7afeb22b5a44bf4266ae7d"
+    },
+    {
+      "path": "INSTALL_WINDOWS.ps1",
+      "bytes": 1765,
+      "sha256": "894e9026455f68419602fa999b5aea2621721ef5c9651bb813aeea2e9e908dfb"
+    },
+    {
+      "path": "NOTICE.md",
+      "bytes": 513,
+      "sha256": "6581b18b65fed68ef6b5cc6d08a24c774d565cf1f627b621e53338987a49d44b"
+    },
+    {
+      "path": "OPEN_ME_FIRST.md",
+      "bytes": 1636,
+      "sha256": "b3944664eb3626cb6f93b94b26641bcc565620b2a0f320318ef4c17f6c4e2923"
+    },
+    {
+      "path": "PACKAGE_CONTENTS.txt",
+      "bytes": 22504,
+      "sha256": "85782c1ce272a7a6d250b7b1b5f67e82b8c2c577b05d369bf648f3d4cbec5282"
+    },
+    {
+      "path": "README.md",
+      "bytes": 17269,
+      "sha256": "a16c5e4d3209925b08c805d12b8be2871b5e93cc048380feda4b013dfcb3e7aa"
+    },
+    {
+      "path": "README_FIRST.txt",
+      "bytes": 2637,
+      "sha256": "1d88718e9ff9277b55a7216f9cdf0e00a40f4148afcf61a6af517ea08736b993"
+    },
+    {
+      "path": "START_HERE.md",
+      "bytes": 12424,
+      "sha256": "6b287494550d828831a46b75a016362c63480cec12800336b9cb1d6e4b255dec"
+    },
+    {
+      "path": "VERIFY_PACKAGE.command",
+      "bytes": 307,
+      "sha256": "d1e39c83ac1997a9b514cbafa3461e10948f02e0ec759344a098935b148f3e1d"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "3f0762a9e5531383c10a801cc8dcb2fe899b6a3aa6717591863b852a87aa252f"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/FOUNDEROS.md",
+      "bytes": 4551,
+      "sha256": "a8c4a5e0dd6bd12d81e25c046d75b69990636dfee4526b478f836967618a6ded"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/MODEL_REGISTRY.md",
+      "bytes": 4422,
+      "sha256": "6cb26630261333187983d6c484263fd0c5653a3d7ae93b7724a9988debf0cba4"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/PROJECT_PROFILE.md",
+      "bytes": 1389,
+      "sha256": "32f83cb2379f059b56b45ae38a08e3fda6594bebff54418e45774924070edd89"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/agents/adversarial-verifier.md",
+      "bytes": 800,
+      "sha256": "138f584c2ec1988a96fe750fcf48d20e72d76323900397814d9da03641aeff54"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/agents/architecture-planner.md",
+      "bytes": 1054,
+      "sha256": "745119400bfe48cadb7ebbaf5e23bfe4cb7798f91d787b65e7ca387e19866941"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/agents/code-reviewer.md",
+      "bytes": 840,
+      "sha256": "c059be6a2c61cd0248cc2d8d1ffd2b29cb140ef8846d762f7d394a44cd135bbb"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/agents/decision-proposer.md",
+      "bytes": 966,
+      "sha256": "3768c890f1f61f586fd958ee0f1909edad68d1545f1e8d2632eb323b5c24d3ea"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/agents/dependency-mapper.md",
+      "bytes": 815,
+      "sha256": "12f2d920c5f40eb2cd321e2492d7e079583e89553daf81762132b7b37a5f4eb7"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/agents/doc-updater.md",
+      "bytes": 812,
+      "sha256": "addaaaacbba4a2d6af1624516de2abd893da39d1f5140f406d9303fd18a295eb"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/agents/feature-builder.md",
+      "bytes": 1098,
+      "sha256": "fe05915fc585850a498cc14ba6dc9dc3ee1e494167c1a67db02e567663695237"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/agents/final-synthesizer.md",
+      "bytes": 866,
+      "sha256": "d0e0ea7c69c0a3e959ec1d6f6ff63ff9964e42208eb4c3fa36c27c8b3658c5a5"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/agents/founder-os-explorer.md",
+      "bytes": 980,
+      "sha256": "3cf9c8a65b7383615eaf3abe165a1c7426495dfa809a24e68ab5a77510a9e67c"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/agents/governance-auditor.md",
+      "bytes": 944,
+      "sha256": "6f9f5a2fe1e86def9a7fd079626281b74d62f6b62bc77ea86d645b0105f3c839"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/agents/independent-reviewer.md",
+      "bytes": 1172,
+      "sha256": "e968d7fc41d29a0ef2b2c2da448c91f78a01ff00ea77e4438fbfcf43e8bd2d9f"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/agents/neon-reader.md",
+      "bytes": 976,
+      "sha256": "24edba8e880690d51cd7d1bad9efec60f91fa9f50ac0b3ea26290dfbcca17e9e"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/agents/orchestration-coordinator.md",
+      "bytes": 1103,
+      "sha256": "d3642e8b24df81ce4656ba728e8b1db2cc341fe28911b7f155953f8aa2312007"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/agents/performance-optimizer.md",
+      "bytes": 819,
+      "sha256": "48f0dcace3211a81782038e011f9506861549d287870b7fe159f4c0d33c44dcf"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/agents/release-verifier.md",
+      "bytes": 886,
+      "sha256": "09e4ca50456e6a47af6553eb1089e9a4d142e45aa938dac77b2403e862e2d512"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/agents/root-cause-investigator.md",
+      "bytes": 920,
+      "sha256": "9932419bef21862ecbce1c6e91e6711e9674125b7d5088e93b5f7f53d6e2f911"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/agents/security-reviewer.md",
+      "bytes": 1014,
+      "sha256": "dfec1e465af600bda38c146b6c1e1a024126f4df8cf6aee02458c14c511bd869"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/agents/test-verifier.md",
+      "bytes": 883,
+      "sha256": "3c12779a43aa58acd510368706716825c2717da4a45b08d4bb6dcc9104ad133a"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/agents/ui-reviewer.md",
+      "bytes": 900,
+      "sha256": "58010b35044c9239675a1a2cd7e7412b02b2b208320d6abff73cd6003330fe96"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/agents/worktree-builder.md",
+      "bytes": 991,
+      "sha256": "17ef1a4c10a763d78b812b79ab148159e4316ecf1456ba1e9c9981a0b6aa8d45"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/cloud/session-start.sh",
+      "bytes": 1686,
+      "sha256": "902931bb80a30ee11a2ced66b3abc50773f3e0a4b72f8bdd315fe2f185516675"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/hooks/hook-adapter.mjs",
+      "bytes": 2163,
+      "sha256": "6972f5914a5a00090bd77e0a3ab5526814bfb4057e4be234b50e610933ca81c3"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/rules/00-operating-doctrine.md",
+      "bytes": 497,
+      "sha256": "d1ee1871b074e10b052e2b84d92c8bfa56aae81b517e4dd783bca62e4a259102"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/rules/10-model-routing.md",
+      "bytes": 634,
+      "sha256": "4a9b485d6c6b3deebadf54c005617c32260b27c86f127c1260a35840343b146c"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/rules/20-workflow-selection.md",
+      "bytes": 388,
+      "sha256": "6364a41016788924ef8c900fb1b21e06e2041bd035f0404a8035840a345343a8"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/rules/30-context-and-checkpoints.md",
+      "bytes": 364,
+      "sha256": "a15197f046203c07cf4b763c232948c1d1e6746ec470d134cccba85c5e90b0a0"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/rules/40-governance-authority.md",
+      "bytes": 469,
+      "sha256": "582f5b16504b67f32a2c5816dffae9c0a25d15a8094f00424dfc31e0b0aa3f84"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/rules/50-runtime-verification.md",
+      "bytes": 429,
+      "sha256": "dd5015a31b18bdc2deb42e5c6b05f8fde1a62093286811e5ce3b96f59e425898"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/rules/60-ui-truth.md",
+      "bytes": 453,
+      "sha256": "4fbdc75313025d9b930187f9525859763eb1a903b734c6cdcc4a8a4c73b71886"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/rules/70-python-control-plane.md",
+      "bytes": 4009,
+      "sha256": "13b3018af523c86bd7ff60e89cdbff952a0a0d82c5e10392f684c0c6ace50ac4"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/settings.json",
+      "bytes": 3927,
+      "sha256": "c1946aa75d3e3cb87b6324b4a68e236ede301ce6f7bedc55e5fb9d54cf5e6873"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/attribution-check/SKILL.md",
+      "bytes": 902,
+      "sha256": "4ece2e0a533e37a9afdb9b7c87f08632a64a39c55dd608b3b29e640e3059d198"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/bugfix-loop/SKILL.md",
+      "bytes": 1638,
+      "sha256": "2b594497f1339e00316c02826d805de25529ad64fc7b0770e356cf03cb94a054"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/checkpoint-recovery/SKILL.md",
+      "bytes": 1497,
+      "sha256": "b5b69015cf5caecf7be38f5d031d0594f8499492d7d4f17e3b5738624dcbfb1a"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/claude-doctor-plus/SKILL.md",
+      "bytes": 2032,
+      "sha256": "a02f2dc3771e22f311c5d931d6dc24be1744d10dbbc39eddc6035a415e24f050"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/cloud-session/SKILL.md",
+      "bytes": 3025,
+      "sha256": "e4501be7819a012f0403c96004e3df13bf9f3f62ce3cd1ae363927d7eb2ff24f"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/code-review-wf13/SKILL.md",
+      "bytes": 1092,
+      "sha256": "9fe786163b7c3ca6818047f76eb497d8ed911bb2855e057b184965355dfe4670"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/context-handoff/SKILL.md",
+      "bytes": 837,
+      "sha256": "cba773d5cdbd96540595c71f8a0e69a38bedc798c651c2af84e2eab2ac577173"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/decision-propose/SKILL.md",
+      "bytes": 1025,
+      "sha256": "671dfa76c469634d51308ac2a7d6f979d8ad777cf3e838f2cf5a7ef677cb67cc"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/dependency-audit/SKILL.md",
+      "bytes": 1547,
+      "sha256": "83779f1fbb61f713deae0b7d60dbbc564ccd59fe7a42e5997edd4ad181113ed6"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/doc-update/SKILL.md",
+      "bytes": 1067,
+      "sha256": "a40dae271163f412ee3aa967fa8e71c45629e2b4dc1629eb7324bfc064d4f445"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/external-model-delegation/SKILL.md",
+      "bytes": 1361,
+      "sha256": "5fa8408435a9372d82c91ea82cbfa351800983af8c7b25444c058b24b296730b"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/founder-command/SKILL.md",
+      "bytes": 3144,
+      "sha256": "87f0cd96b0a94706634cd1bd59bddc608f85127789f2c14822d5689b64f8345d"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/founderos-doctrine/SKILL.md",
+      "bytes": 2456,
+      "sha256": "d8faeb89b140b0d578b901efd34a3434dc85d8a2ae9cb9b510daaefb47ea2e6d"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/founderos-onboard/SKILL.md",
+      "bytes": 2256,
+      "sha256": "0bdfcf67709bd5688688dbbe2b066722002f5b679d691867009a4daa5773a0d9"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/goal-control/SKILL.md",
+      "bytes": 1635,
+      "sha256": "7d526a0cdac107e1e4808368ab03fb8210b612211ecf4cde5ab833731c470bfa"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/governed-feature/SKILL.md",
+      "bytes": 2055,
+      "sha256": "729d1e1960e1c775dbb079733819b50a0da7e48d36b9bce73f146f018475fe9c"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/handoff-create/SKILL.md",
+      "bytes": 990,
+      "sha256": "d791ecd7ae7103b700ac9dfb476a8f995091f7de0067230c90835f034f37985b"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/incident-response/SKILL.md",
+      "bytes": 1910,
+      "sha256": "1dc1d65195decac5bff283dc83d37e105f1f4dd87a76f7dbcfa3117f78582498"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/model-route/SKILL.md",
+      "bytes": 3393,
+      "sha256": "c2bbb3d7863c1391c712a7050c9e84475ca4744da9efe2227f7e04566bccfe77"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/multi-agent-build/SKILL.md",
+      "bytes": 1856,
+      "sha256": "8b56b324dd2f7109f832ce8f1c422fb71bedd72c117feb2d64ed798d91220161"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/parallel-route/SKILL.md",
+      "bytes": 1917,
+      "sha256": "c4483adc492f61ff4377555a3981303a1c124b9e1b66dd6f29e0842c9f7d060c"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/path-audit/SKILL.md",
+      "bytes": 914,
+      "sha256": "d69da61e71b33715f8f7d6151c1d5eae1831e082d7c77db42e44da4395f8b21a"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/performance-audit/SKILL.md",
+      "bytes": 1164,
+      "sha256": "d0d9bd1abd41166e190c79afbc31337a5d9cc367e38001e7a2079027e9200c23"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/pr-tier2-review/SKILL.md",
+      "bytes": 1570,
+      "sha256": "152a9abc2d7bdcdbbe1ffb28fd4a2714948d583d96614c3da05c05b390595735"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/python-control-plane/SKILL.md",
+      "bytes": 4074,
+      "sha256": "31c8a566d80d5ee8bb826806e2b46f6db39322ae419a26fbe5570da982b400c2"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/release-readiness/SKILL.md",
+      "bytes": 1512,
+      "sha256": "10cdc6cb89d188c04fbf30a80df49594d249c522dcf8974ec8f620eaa290bee3"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/repository-audit/SKILL.md",
+      "bytes": 1176,
+      "sha256": "27ef1216aae666ca186bbf1bbc3658ee6ede782021e67d7f14e5ae93ac991061"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/security-audit/SKILL.md",
+      "bytes": 1322,
+      "sha256": "d9ccbf93627aaa7ef961c8a5fe376728028264afc1380fe28292b87d30b9edfb"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/session-control/SKILL.md",
+      "bytes": 1788,
+      "sha256": "74aa25c2bdc6388439f730900cec54f1f2195e6b40b3542362612ef3bb02d809"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/ui-visual-verification/SKILL.md",
+      "bytes": 1767,
+      "sha256": "f04fc237c03b51500c7148a173c768fe1657cdd52b5d2fbde903f0fca4632587"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/workflow-author/SKILL.md",
+      "bytes": 1257,
+      "sha256": "55ca7eef71b979d887e718142b24ad7064b04dc2ce7d0090a7b6189394db0e30"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/README_FIRST.txt",
+      "bytes": 777,
+      "sha256": "a3260c589d3ec7fa5f7d4bf1281e05baacff95d0c1bd39359846535213398fd4"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/REPOSITORY_ROOT_FILES/gitignore.fragment.txt",
+      "bytes": 334,
+      "sha256": "a5da5d269f72d536e893bb05d720e6f17ed29dc910f38c454f3444cecf61758a"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/REPOSITORY_ROOT_FILES/mcp.example.json",
+      "bytes": 399,
+      "sha256": "37ea63b97d5f43bc853ae873ddc1bddc420fbd9a690df5bab8e4610317cd5765"
+    },
+    {
+      "path": "VISIBLE_PROJECT_TEMPLATE/REPOSITORY_ROOT_FILES/settings.local.example.json",
+      "bytes": 163,
+      "sha256": "18527298ab11985d6211c76c370ee983ce094262964220d18b02856255e0235c"
+    },
+    {
+      "path": "cloud/README.md",
+      "bytes": 2391,
+      "sha256": "64a25f1554468063999583962fec06aac3a3863014dc38b47645e97e7548f2c7"
+    },
+    {
+      "path": "cloud/allowed-domains.example.txt",
+      "bytes": 204,
+      "sha256": "06e1be45a6b1b7f46686c6b406cf7e55c082466018b50ab6829a288af0ac984d"
+    },
+    {
+      "path": "cloud/environment.env.example",
+      "bytes": 310,
+      "sha256": "676c3a7f753221d92326097b1a538bf1669878abd547eba9fbaf7e1e94f50ba0"
+    },
+    {
+      "path": "cloud/setup.sh",
+      "bytes": 1740,
+      "sha256": "d1495f31d4278eab14b8560e479c3e3962d9273749121fc93f19eabb91961d8b"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "bytes": 11701,
+      "sha256": "5cec115a823395745ff42b2b509a7d2868ffe5df17f0c37411667a03e59bdfe9"
+    },
+    {
+      "path": "docs/AUTHENTICATION_AND_BILLING.md",
+      "bytes": 9092,
+      "sha256": "f8cb2ff019b090e5297a2b27c519af9a1d0fdb417154146c59c98d2b565377cf"
+    },
+    {
+      "path": "docs/CLAUDE_CODE_FIELD_REFERENCE.md",
+      "bytes": 7482,
+      "sha256": "c98194abe00011602a2a6e20a9f1ba2a930a8223df83fbcbc4b88f8c882625e9"
+    },
+    {
+      "path": "docs/CLI_DEBUG_REFERENCE.md",
+      "bytes": 11572,
+      "sha256": "008e5e9f7f5a12ea3f79849226b2e8e364077a2731527207002021489d878220"
+    },
+    {
+      "path": "docs/CLOUD_ENVIRONMENT.md",
+      "bytes": 9218,
+      "sha256": "1180c84f2834ce50e117bea63ab7bad983cdfc7ab420e89f2f391d1d689892e9"
+    },
+    {
+      "path": "docs/COMMAND_PALETTE.md",
+      "bytes": 7481,
+      "sha256": "71ed10a4b319efe0cb1ec080ce5c1d3ef2e9fd20536d87f9453ba8dfd82b0468"
+    },
+    {
+      "path": "docs/DEPLOYMENT.md",
+      "bytes": 20306,
+      "sha256": "7754523ac4181b103465c80453649691bab1e4e87f81879f751e9f69fccf8b72"
+    },
+    {
+      "path": "docs/DYNAMIC_WORKFLOWS.md",
+      "bytes": 2527,
+      "sha256": "46da17a0d31b543fa9f41f38377df006575cc8909fa0abfc8d6dd897a145aab2"
+    },
+    {
+      "path": "docs/HOOKS_AND_ARTIFACTS.md",
+      "bytes": 3088,
+      "sha256": "f3eda48163773fd75526a23ee07e7bd4dd44dee95ccd6243cb427390bd101ac0"
+    },
+    {
+      "path": "docs/MODEL_ROUTE_PROFILES.md",
+      "bytes": 5611,
+      "sha256": "cb6f56877283ae1bba85c419f57c617dfa5ff029f2fb53ef9f8d6207f16e1032"
+    },
+    {
+      "path": "docs/MODEL_ROUTING.md",
+      "bytes": 10148,
+      "sha256": "01b4ecb1e189573c441a1b5f30fc8441cbe78907772e8f092abd0a1588f45479"
+    },
+    {
+      "path": "docs/OFFICIAL_SOURCE_AUDIT.md",
+      "bytes": 11946,
+      "sha256": "da2638458aa6f92ff6e751e52f33e82ddb0eaeb35fffe6b86b2d4bf17b6d2c37"
+    },
+    {
+      "path": "docs/OPERATIONAL_PLAYBOOK.md",
+      "bytes": 7802,
+      "sha256": "aae70b801c9b81b51a6b3b3d7ea97dd6eac6d78ff6e81fbe169babc82122f805"
+    },
+    {
+      "path": "docs/PARALLELISM_AND_AUTONOMY.md",
+      "bytes": 9078,
+      "sha256": "084f36b0fb26ec8d7ae226a5fe45521753c3a94c5211426dc5ca8c8568bec81a"
+    },
+    {
+      "path": "docs/PERFORMANCE_AND_TROUBLESHOOTING.md",
+      "bytes": 7259,
+      "sha256": "242191a805226cdd6a66e31c9c66edac0a3b9cd42d61c47ac64a79a561a7403b"
+    },
+    {
+      "path": "docs/PLUGIN_DEPLOYMENT.md",
+      "bytes": 4016,
+      "sha256": "ab1c9275ccc614188b66e281947e3023882b2e1021881d1cdc74e5f0986dbdf1"
+    },
+    {
+      "path": "docs/PYTHON_CONTROL_PLANE.md",
+      "bytes": 11001,
+      "sha256": "43a55330982965ebca23c30e990337a669b277d91e1c0db2a22cb0988d4c1ce3"
+    },
+    {
+      "path": "docs/SECURITY_GOVERNANCE.md",
+      "bytes": 11803,
+      "sha256": "67e4e28d6d13268647c73be264c9942ed0f3efed9d0360c8d36f97f891ebae44"
+    },
+    {
+      "path": "docs/SESSION_CONTEXT_CHECKPOINTS.md",
+      "bytes": 7145,
+      "sha256": "92270dec37a675a3eea22d11f59a1dffdc22002014196eae77b98f0160370b10"
+    },
+    {
+      "path": "docs/SUBAGENT_REGISTRY.md",
+      "bytes": 7051,
+      "sha256": "be0307e8bc544a4b1c0d3ba2274db91ff19b1c9e0c0b3054e94f67965db06b98"
+    },
+    {
+      "path": "docs/UPGRADE_FROM_V4.md",
+      "bytes": 7343,
+      "sha256": "198ee89850303849b95529912fe028392f848ab0d321191249c7aa41a1fe4d16"
+    },
+    {
+      "path": "docs/VALIDATION_REPORT.md",
+      "bytes": 5626,
+      "sha256": "69890c400ea7ea782a85d6c4b68b5afe1e707b0119b535b469f2083c1230d049"
+    },
+    {
+      "path": "examples/CLOUD_TASKS.md",
+      "bytes": 1093,
+      "sha256": "6a4943e5469df55b7bd73c92f632264749bfb7a6d78af3509c0b28d1a1422a97"
+    },
+    {
+      "path": "examples/FOUNDER_APPROVAL.example.json",
+      "bytes": 715,
+      "sha256": "67760a40d4e83597f9d56f0d2f6704273b8ce4fc2d8ac824d66ed2538b122f92"
+    },
+    {
+      "path": "examples/PYTHON_CONTROL_PLANE_INVOCATIONS.md",
+      "bytes": 3847,
+      "sha256": "e27c0f2d9beacaecc042793e45ada85e2084cf71ed5e8907200b45ab39ef4e40"
+    },
+    {
+      "path": "examples/SESSION_HANDOFF.md",
+      "bytes": 373,
+      "sha256": "16e568a55e9d634a8bad132182a919cc651e08e3be96def0887db5685c53643f"
+    },
+    {
+      "path": "examples/WORKFLOW_INVOCATIONS.md",
+      "bytes": 3321,
+      "sha256": "fcf8ba585e40149ab452766c8c03c16e1676fb3247bcb5e4474cae3fd8622658"
+    },
+    {
+      "path": "global/CLAUDE.md.append",
+      "bytes": 2670,
+      "sha256": "0788bd57002724c10fe8c8d55794f78c4b663f29b6a4f1b457a2da7ac108fa84"
+    },
+    {
+      "path": "global/claude.json.fragment",
+      "bytes": 94,
+      "sha256": "ea10b690720755645b0049318238f9e4520aee6c55a077ebf3eee57ca368028b"
+    },
+    {
+      "path": "global/madventures-statusline.mjs",
+      "bytes": 1365,
+      "sha256": "fa68903254aa922818607dea578ac1b882112c399b8c2a9f64436a16190375c8"
+    },
+    {
+      "path": "global/settings.json.fragment",
+      "bytes": 1397,
+      "sha256": "8b3c5baa7c64a30ddc6d7def73a7e993dd9c5e8084271f08b41be29a38106dd9"
+    },
+    {
+      "path": "managed/20-madventures-baseline.json",
+      "bytes": 740,
+      "sha256": "9f332ed84d11026303c6ae54396ece447cef131170b2d27fe82549882eb90fd6"
+    },
+    {
+      "path": "plugin/madventures-founderos/.claude-plugin/plugin.json",
+      "bytes": 466,
+      "sha256": "dea8a0c3295c1e94bb04e090d204597e8b018442e64387c96f199e8dd5447c4e"
+    },
+    {
+      "path": "plugin/madventures-founderos/NOTICE.md",
+      "bytes": 237,
+      "sha256": "0a75d4675a9a2f010cbf1fb763a576773175ead838fd9270013d57980f433a1f"
+    },
+    {
+      "path": "plugin/madventures-founderos/README.md",
+      "bytes": 1889,
+      "sha256": "a5d2f9e9ac39102e45f08db64622c18270fd1313b6004e31095f303fa32a4d67"
+    },
+    {
+      "path": "plugin/madventures-founderos/agents/adversarial-verifier.md",
+      "bytes": 1194,
+      "sha256": "4222dc338bb43fa04ce25c599ff08de0d1f088655a61b01901b82f13be1f53ea"
+    },
+    {
+      "path": "plugin/madventures-founderos/agents/architecture-planner.md",
+      "bytes": 1448,
+      "sha256": "170c8fa5353caad9fd2ebcac587c4022e52a10aba2992c0c57973474068d19f8"
+    },
+    {
+      "path": "plugin/madventures-founderos/agents/code-reviewer.md",
+      "bytes": 1234,
+      "sha256": "698ff2a2d96b9f4fc24d8f03df4aee337195f62d1e714b052c7b8a84dd8a5a0c"
+    },
+    {
+      "path": "plugin/madventures-founderos/agents/decision-proposer.md",
+      "bytes": 1302,
+      "sha256": "9e6f5af3976edad6b1049c71bdb0b7f36f84c86b4930cfc058dc29e678e4651f"
+    },
+    {
+      "path": "plugin/madventures-founderos/agents/dependency-mapper.md",
+      "bytes": 1209,
+      "sha256": "aad366e1e9440491ca1927b668779aa9dc7230c374bc61bcaf0477420ab98d9f"
+    },
+    {
+      "path": "plugin/madventures-founderos/agents/doc-updater.md",
+      "bytes": 1148,
+      "sha256": "ff1765668cb594b70062ab21709d5368c4b8c3bb42e371c4b96a154ca64d2815"
+    },
+    {
+      "path": "plugin/madventures-founderos/agents/feature-builder.md",
+      "bytes": 1434,
+      "sha256": "3a9259921cd3cf31fbda007e818e3097482b33dffbd77f7118f0a395b5fe7bc1"
+    },
+    {
+      "path": "plugin/madventures-founderos/agents/final-synthesizer.md",
+      "bytes": 1266,
+      "sha256": "bb2d716a251b59c5f30e261808593dce3901ffffd16380380552751161173d85"
+    },
+    {
+      "path": "plugin/madventures-founderos/agents/founder-os-explorer.md",
+      "bytes": 1374,
+      "sha256": "1e9b362e2c7754f3c6045b47317cf7c17e0e77d6e3e5219b86be156eec5db5c7"
+    },
+    {
+      "path": "plugin/madventures-founderos/agents/governance-auditor.md",
+      "bytes": 1338,
+      "sha256": "743d6d8f82a75c812e0093df27ca1a047b56ec48c36d8cd951e0d27cd48a17db"
+    },
+    {
+      "path": "plugin/madventures-founderos/agents/independent-reviewer.md",
+      "bytes": 1572,
+      "sha256": "1f2c25404a18af1ba4dfb456dc85ec1f265f34447e84bed7b9544fddc09c0ae1"
+    },
+    {
+      "path": "plugin/madventures-founderos/agents/orchestration-coordinator.md",
+      "bytes": 1503,
+      "sha256": "103efe25e5b5d61bc3eedbecdf6c6ed029474e271fd89418f5e26f805c7150b2"
+    },
+    {
+      "path": "plugin/madventures-founderos/agents/performance-optimizer.md",
+      "bytes": 1213,
+      "sha256": "74a14cba7344b3ff0daae4c3e7628df9421f54127f149595d10a76ded3471948"
+    },
+    {
+      "path": "plugin/madventures-founderos/agents/release-verifier.md",
+      "bytes": 1280,
+      "sha256": "ba7facbe9fe55d2b9b631feab91c30f278d6a2913a5b580590c01b96cbeecd66"
+    },
+    {
+      "path": "plugin/madventures-founderos/agents/root-cause-investigator.md",
+      "bytes": 1314,
+      "sha256": "8e4481d48506df5346b84510c7174813477d7e16fceadc83310f990bcd88df89"
+    },
+    {
+      "path": "plugin/madventures-founderos/agents/security-reviewer.md",
+      "bytes": 1408,
+      "sha256": "ddd50b082926709cc1a2b93e8a3f58a1ced4cab3ed784304770a6d6be1675af0"
+    },
+    {
+      "path": "plugin/madventures-founderos/agents/test-verifier.md",
+      "bytes": 1277,
+      "sha256": "52775045969846373beb88cf421359b51d34c0caba28b2e4cc8fb79bcff26356"
+    },
+    {
+      "path": "plugin/madventures-founderos/agents/ui-reviewer.md",
+      "bytes": 1294,
+      "sha256": "78faffc362e4b729311a77840e6b75ac374fe4194b7e67a78218ddc8685a5b0c"
+    },
+    {
+      "path": "plugin/madventures-founderos/agents/worktree-builder.md",
+      "bytes": 1327,
+      "sha256": "d64f111dcca7cad8ea465dcbef0d44b589d732c3cac5a2e59546a6706d1bfd75"
+    },
+    {
+      "path": "plugin/madventures-founderos/hooks/hook-adapter.mjs",
+      "bytes": 2163,
+      "sha256": "6972f5914a5a00090bd77e0a3ab5526814bfb4057e4be234b50e610933ca81c3"
+    },
+    {
+      "path": "plugin/madventures-founderos/hooks/hooks.json",
+      "bytes": 530,
+      "sha256": "bc140c177299a97276fda2357d07e12416eb3ab06798bdd419ceac0adb364bea"
+    },
+    {
+      "path": "plugin/madventures-founderos/python-control-plane/src/madclaude/__init__.py",
+      "bytes": 133,
+      "sha256": "fa447d7cea00a2017dd8b7f2146b292992d855766a5713af041850d9b6a7b7a1"
+    },
+    {
+      "path": "plugin/madventures-founderos/python-control-plane/src/madclaude/artifacts.py",
+      "bytes": 5496,
+      "sha256": "502f6b755653f7c31b5026d0221b80c2c36c475bc1ed2309271369db8596c486"
+    },
+    {
+      "path": "plugin/madventures-founderos/python-control-plane/src/madclaude/errors.py",
+      "bytes": 722,
+      "sha256": "a3bfc32a061369e687cee4b016fb3afca1ae9a2c810bf2eec9ba53525c84f64a"
+    },
+    {
+      "path": "plugin/madventures-founderos/python-control-plane/src/madclaude/evidence.py",
+      "bytes": 8595,
+      "sha256": "50a0ca2bcfeaf800250ff967661ec0b6cf42240d540ca52353ba5cb7856f9be2"
+    },
+    {
+      "path": "plugin/madventures-founderos/python-control-plane/src/madclaude/git.py",
+      "bytes": 6779,
+      "sha256": "b71825136dd561149108badfacdd897ee10038e740bd2465470d1c4883f86dda"
+    },
+    {
+      "path": "plugin/madventures-founderos/python-control-plane/src/madclaude/guard.py",
+      "bytes": 20935,
+      "sha256": "995b246d53acade4eb1db65a0417cffd37892ce3a6ce70bf759a4ebaff177037"
+    },
+    {
+      "path": "plugin/madventures-founderos/python-control-plane/src/madclaude/hook_cli.py",
+      "bytes": 3502,
+      "sha256": "fb5008a351c5a61f83818492e90458a126769a2a756827291db5a30e14b760b2"
+    },
+    {
+      "path": "plugin/madventures-founderos/python-control-plane/src/madclaude/hook_policy.py",
+      "bytes": 12687,
+      "sha256": "2adefe02f5aea48c2a81f2c5825fcf35c0c4d74aaa0dc18139a21a9c55485da7"
+    },
+    {
+      "path": "plugin/madventures-founderos/python-control-plane/src/madclaude/safe_read.py",
+      "bytes": 8537,
+      "sha256": "debef5b7b6a6d4f64b13e8a5573300771706809e0f7e5d36d0698db213ec28f3"
+    },
+    {
+      "path": "plugin/madventures-founderos/python-control-plane/src/madclaude/version.py",
+      "bytes": 22,
+      "sha256": "be8fe7b474f5b2a532a1bc5d46f5c9e7e0049370898c52a7d9378e7d4bb72279"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/attribution-check/SKILL.md",
+      "bytes": 902,
+      "sha256": "4ece2e0a533e37a9afdb9b7c87f08632a64a39c55dd608b3b29e640e3059d198"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/bugfix-loop/SKILL.md",
+      "bytes": 1638,
+      "sha256": "2b594497f1339e00316c02826d805de25529ad64fc7b0770e356cf03cb94a054"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/checkpoint-recovery/SKILL.md",
+      "bytes": 1497,
+      "sha256": "b5b69015cf5caecf7be38f5d031d0594f8499492d7d4f17e3b5738624dcbfb1a"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/claude-doctor-plus/SKILL.md",
+      "bytes": 2032,
+      "sha256": "a02f2dc3771e22f311c5d931d6dc24be1744d10dbbc39eddc6035a415e24f050"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/cloud-session/SKILL.md",
+      "bytes": 3025,
+      "sha256": "e4501be7819a012f0403c96004e3df13bf9f3f62ce3cd1ae363927d7eb2ff24f"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/code-review-wf13/SKILL.md",
+      "bytes": 1092,
+      "sha256": "9fe786163b7c3ca6818047f76eb497d8ed911bb2855e057b184965355dfe4670"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/context-handoff/SKILL.md",
+      "bytes": 837,
+      "sha256": "cba773d5cdbd96540595c71f8a0e69a38bedc798c651c2af84e2eab2ac577173"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/decision-propose/SKILL.md",
+      "bytes": 1025,
+      "sha256": "671dfa76c469634d51308ac2a7d6f979d8ad777cf3e838f2cf5a7ef677cb67cc"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/dependency-audit/SKILL.md",
+      "bytes": 1547,
+      "sha256": "83779f1fbb61f713deae0b7d60dbbc564ccd59fe7a42e5997edd4ad181113ed6"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/doc-update/SKILL.md",
+      "bytes": 1067,
+      "sha256": "a40dae271163f412ee3aa967fa8e71c45629e2b4dc1629eb7324bfc064d4f445"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/external-model-delegation/SKILL.md",
+      "bytes": 1361,
+      "sha256": "5fa8408435a9372d82c91ea82cbfa351800983af8c7b25444c058b24b296730b"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/founder-command/SKILL.md",
+      "bytes": 3144,
+      "sha256": "87f0cd96b0a94706634cd1bd59bddc608f85127789f2c14822d5689b64f8345d"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/founderos-doctrine/SKILL.md",
+      "bytes": 2456,
+      "sha256": "d8faeb89b140b0d578b901efd34a3434dc85d8a2ae9cb9b510daaefb47ea2e6d"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/founderos-onboard/SKILL.md",
+      "bytes": 2256,
+      "sha256": "0bdfcf67709bd5688688dbbe2b066722002f5b679d691867009a4daa5773a0d9"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/goal-control/SKILL.md",
+      "bytes": 1635,
+      "sha256": "7d526a0cdac107e1e4808368ab03fb8210b612211ecf4cde5ab833731c470bfa"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/governed-feature/SKILL.md",
+      "bytes": 2055,
+      "sha256": "729d1e1960e1c775dbb079733819b50a0da7e48d36b9bce73f146f018475fe9c"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/handoff-create/SKILL.md",
+      "bytes": 990,
+      "sha256": "d791ecd7ae7103b700ac9dfb476a8f995091f7de0067230c90835f034f37985b"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/incident-response/SKILL.md",
+      "bytes": 1910,
+      "sha256": "1dc1d65195decac5bff283dc83d37e105f1f4dd87a76f7dbcfa3117f78582498"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/model-route/SKILL.md",
+      "bytes": 3393,
+      "sha256": "c2bbb3d7863c1391c712a7050c9e84475ca4744da9efe2227f7e04566bccfe77"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/multi-agent-build/SKILL.md",
+      "bytes": 1856,
+      "sha256": "8b56b324dd2f7109f832ce8f1c422fb71bedd72c117feb2d64ed798d91220161"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/parallel-route/SKILL.md",
+      "bytes": 1917,
+      "sha256": "c4483adc492f61ff4377555a3981303a1c124b9e1b66dd6f29e0842c9f7d060c"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/path-audit/SKILL.md",
+      "bytes": 914,
+      "sha256": "d69da61e71b33715f8f7d6151c1d5eae1831e082d7c77db42e44da4395f8b21a"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/performance-audit/SKILL.md",
+      "bytes": 1164,
+      "sha256": "d0d9bd1abd41166e190c79afbc31337a5d9cc367e38001e7a2079027e9200c23"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/pr-tier2-review/SKILL.md",
+      "bytes": 1570,
+      "sha256": "152a9abc2d7bdcdbbe1ffb28fd4a2714948d583d96614c3da05c05b390595735"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/python-control-plane/SKILL.md",
+      "bytes": 4074,
+      "sha256": "31c8a566d80d5ee8bb826806e2b46f6db39322ae419a26fbe5570da982b400c2"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/release-readiness/SKILL.md",
+      "bytes": 1512,
+      "sha256": "10cdc6cb89d188c04fbf30a80df49594d249c522dcf8974ec8f620eaa290bee3"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/repository-audit/SKILL.md",
+      "bytes": 1176,
+      "sha256": "27ef1216aae666ca186bbf1bbc3658ee6ede782021e67d7f14e5ae93ac991061"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/security-audit/SKILL.md",
+      "bytes": 1322,
+      "sha256": "d9ccbf93627aaa7ef961c8a5fe376728028264afc1380fe28292b87d30b9edfb"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/session-control/SKILL.md",
+      "bytes": 1788,
+      "sha256": "74aa25c2bdc6388439f730900cec54f1f2195e6b40b3542362612ef3bb02d809"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/ui-visual-verification/SKILL.md",
+      "bytes": 1767,
+      "sha256": "f04fc237c03b51500c7148a173c768fe1657cdd52b5d2fbde903f0fca4632587"
+    },
+    {
+      "path": "plugin/madventures-founderos/skills/workflow-author/SKILL.md",
+      "bytes": 1257,
+      "sha256": "55ca7eef71b979d887e718142b24ad7064b04dc2ce7d0090a7b6189394db0e30"
+    },
+    {
+      "path": "project/.claude/FOUNDEROS.md",
+      "bytes": 4551,
+      "sha256": "a8c4a5e0dd6bd12d81e25c046d75b69990636dfee4526b478f836967618a6ded"
+    },
+    {
+      "path": "project/.claude/MODEL_REGISTRY.md",
+      "bytes": 4422,
+      "sha256": "6cb26630261333187983d6c484263fd0c5653a3d7ae93b7724a9988debf0cba4"
+    },
+    {
+      "path": "project/.claude/PROJECT_PROFILE.md",
+      "bytes": 1389,
+      "sha256": "32f83cb2379f059b56b45ae38a08e3fda6594bebff54418e45774924070edd89"
+    },
+    {
+      "path": "project/.claude/agents/adversarial-verifier.md",
+      "bytes": 800,
+      "sha256": "138f584c2ec1988a96fe750fcf48d20e72d76323900397814d9da03641aeff54"
+    },
+    {
+      "path": "project/.claude/agents/architecture-planner.md",
+      "bytes": 1054,
+      "sha256": "745119400bfe48cadb7ebbaf5e23bfe4cb7798f91d787b65e7ca387e19866941"
+    },
+    {
+      "path": "project/.claude/agents/code-reviewer.md",
+      "bytes": 840,
+      "sha256": "c059be6a2c61cd0248cc2d8d1ffd2b29cb140ef8846d762f7d394a44cd135bbb"
+    },
+    {
+      "path": "project/.claude/agents/decision-proposer.md",
+      "bytes": 966,
+      "sha256": "3768c890f1f61f586fd958ee0f1909edad68d1545f1e8d2632eb323b5c24d3ea"
+    },
+    {
+      "path": "project/.claude/agents/dependency-mapper.md",
+      "bytes": 815,
+      "sha256": "12f2d920c5f40eb2cd321e2492d7e079583e89553daf81762132b7b37a5f4eb7"
+    },
+    {
+      "path": "project/.claude/agents/doc-updater.md",
+      "bytes": 812,
+      "sha256": "addaaaacbba4a2d6af1624516de2abd893da39d1f5140f406d9303fd18a295eb"
+    },
+    {
+      "path": "project/.claude/agents/feature-builder.md",
+      "bytes": 1098,
+      "sha256": "fe05915fc585850a498cc14ba6dc9dc3ee1e494167c1a67db02e567663695237"
+    },
+    {
+      "path": "project/.claude/agents/final-synthesizer.md",
+      "bytes": 866,
+      "sha256": "d0e0ea7c69c0a3e959ec1d6f6ff63ff9964e42208eb4c3fa36c27c8b3658c5a5"
+    },
+    {
+      "path": "project/.claude/agents/founder-os-explorer.md",
+      "bytes": 980,
+      "sha256": "3cf9c8a65b7383615eaf3abe165a1c7426495dfa809a24e68ab5a77510a9e67c"
+    },
+    {
+      "path": "project/.claude/agents/governance-auditor.md",
+      "bytes": 944,
+      "sha256": "6f9f5a2fe1e86def9a7fd079626281b74d62f6b62bc77ea86d645b0105f3c839"
+    },
+    {
+      "path": "project/.claude/agents/independent-reviewer.md",
+      "bytes": 1172,
+      "sha256": "e968d7fc41d29a0ef2b2c2da448c91f78a01ff00ea77e4438fbfcf43e8bd2d9f"
+    },
+    {
+      "path": "project/.claude/agents/neon-reader.md",
+      "bytes": 976,
+      "sha256": "24edba8e880690d51cd7d1bad9efec60f91fa9f50ac0b3ea26290dfbcca17e9e"
+    },
+    {
+      "path": "project/.claude/agents/orchestration-coordinator.md",
+      "bytes": 1103,
+      "sha256": "d3642e8b24df81ce4656ba728e8b1db2cc341fe28911b7f155953f8aa2312007"
+    },
+    {
+      "path": "project/.claude/agents/performance-optimizer.md",
+      "bytes": 819,
+      "sha256": "48f0dcace3211a81782038e011f9506861549d287870b7fe159f4c0d33c44dcf"
+    },
+    {
+      "path": "project/.claude/agents/release-verifier.md",
+      "bytes": 886,
+      "sha256": "09e4ca50456e6a47af6553eb1089e9a4d142e45aa938dac77b2403e862e2d512"
+    },
+    {
+      "path": "project/.claude/agents/root-cause-investigator.md",
+      "bytes": 920,
+      "sha256": "9932419bef21862ecbce1c6e91e6711e9674125b7d5088e93b5f7f53d6e2f911"
+    },
+    {
+      "path": "project/.claude/agents/security-reviewer.md",
+      "bytes": 1014,
+      "sha256": "dfec1e465af600bda38c146b6c1e1a024126f4df8cf6aee02458c14c511bd869"
+    },
+    {
+      "path": "project/.claude/agents/test-verifier.md",
+      "bytes": 883,
+      "sha256": "3c12779a43aa58acd510368706716825c2717da4a45b08d4bb6dcc9104ad133a"
+    },
+    {
+      "path": "project/.claude/agents/ui-reviewer.md",
+      "bytes": 900,
+      "sha256": "58010b35044c9239675a1a2cd7e7412b02b2b208320d6abff73cd6003330fe96"
+    },
+    {
+      "path": "project/.claude/agents/worktree-builder.md",
+      "bytes": 991,
+      "sha256": "17ef1a4c10a763d78b812b79ab148159e4316ecf1456ba1e9c9981a0b6aa8d45"
+    },
+    {
+      "path": "project/.claude/cloud/session-start.sh",
+      "bytes": 1686,
+      "sha256": "902931bb80a30ee11a2ced66b3abc50773f3e0a4b72f8bdd315fe2f185516675"
+    },
+    {
+      "path": "project/.claude/hooks/hook-adapter.mjs",
+      "bytes": 2163,
+      "sha256": "6972f5914a5a00090bd77e0a3ab5526814bfb4057e4be234b50e610933ca81c3"
+    },
+    {
+      "path": "project/.claude/rules/00-operating-doctrine.md",
+      "bytes": 497,
+      "sha256": "d1ee1871b074e10b052e2b84d92c8bfa56aae81b517e4dd783bca62e4a259102"
+    },
+    {
+      "path": "project/.claude/rules/10-model-routing.md",
+      "bytes": 634,
+      "sha256": "4a9b485d6c6b3deebadf54c005617c32260b27c86f127c1260a35840343b146c"
+    },
+    {
+      "path": "project/.claude/rules/20-workflow-selection.md",
+      "bytes": 388,
+      "sha256": "6364a41016788924ef8c900fb1b21e06e2041bd035f0404a8035840a345343a8"
+    },
+    {
+      "path": "project/.claude/rules/30-context-and-checkpoints.md",
+      "bytes": 364,
+      "sha256": "a15197f046203c07cf4b763c232948c1d1e6746ec470d134cccba85c5e90b0a0"
+    },
+    {
+      "path": "project/.claude/rules/40-governance-authority.md",
+      "bytes": 469,
+      "sha256": "582f5b16504b67f32a2c5816dffae9c0a25d15a8094f00424dfc31e0b0aa3f84"
+    },
+    {
+      "path": "project/.claude/rules/50-runtime-verification.md",
+      "bytes": 429,
+      "sha256": "dd5015a31b18bdc2deb42e5c6b05f8fde1a62093286811e5ce3b96f59e425898"
+    },
+    {
+      "path": "project/.claude/rules/60-ui-truth.md",
+      "bytes": 453,
+      "sha256": "4fbdc75313025d9b930187f9525859763eb1a903b734c6cdcc4a8a4c73b71886"
+    },
+    {
+      "path": "project/.claude/rules/70-python-control-plane.md",
+      "bytes": 4009,
+      "sha256": "13b3018af523c86bd7ff60e89cdbff952a0a0d82c5e10392f684c0c6ace50ac4"
+    },
+    {
+      "path": "project/.claude/settings.json",
+      "bytes": 3927,
+      "sha256": "c1946aa75d3e3cb87b6324b4a68e236ede301ce6f7bedc55e5fb9d54cf5e6873"
+    },
+    {
+      "path": "project/.claude/skills/attribution-check/SKILL.md",
+      "bytes": 902,
+      "sha256": "4ece2e0a533e37a9afdb9b7c87f08632a64a39c55dd608b3b29e640e3059d198"
+    },
+    {
+      "path": "project/.claude/skills/bugfix-loop/SKILL.md",
+      "bytes": 1638,
+      "sha256": "2b594497f1339e00316c02826d805de25529ad64fc7b0770e356cf03cb94a054"
+    },
+    {
+      "path": "project/.claude/skills/checkpoint-recovery/SKILL.md",
+      "bytes": 1497,
+      "sha256": "b5b69015cf5caecf7be38f5d031d0594f8499492d7d4f17e3b5738624dcbfb1a"
+    },
+    {
+      "path": "project/.claude/skills/claude-doctor-plus/SKILL.md",
+      "bytes": 2032,
+      "sha256": "a02f2dc3771e22f311c5d931d6dc24be1744d10dbbc39eddc6035a415e24f050"
+    },
+    {
+      "path": "project/.claude/skills/cloud-session/SKILL.md",
+      "bytes": 3025,
+      "sha256": "e4501be7819a012f0403c96004e3df13bf9f3f62ce3cd1ae363927d7eb2ff24f"
+    },
+    {
+      "path": "project/.claude/skills/code-review-wf13/SKILL.md",
+      "bytes": 1092,
+      "sha256": "9fe786163b7c3ca6818047f76eb497d8ed911bb2855e057b184965355dfe4670"
+    },
+    {
+      "path": "project/.claude/skills/context-handoff/SKILL.md",
+      "bytes": 837,
+      "sha256": "cba773d5cdbd96540595c71f8a0e69a38bedc798c651c2af84e2eab2ac577173"
+    },
+    {
+      "path": "project/.claude/skills/decision-propose/SKILL.md",
+      "bytes": 1025,
+      "sha256": "671dfa76c469634d51308ac2a7d6f979d8ad777cf3e838f2cf5a7ef677cb67cc"
+    },
+    {
+      "path": "project/.claude/skills/dependency-audit/SKILL.md",
+      "bytes": 1547,
+      "sha256": "83779f1fbb61f713deae0b7d60dbbc564ccd59fe7a42e5997edd4ad181113ed6"
+    },
+    {
+      "path": "project/.claude/skills/doc-update/SKILL.md",
+      "bytes": 1067,
+      "sha256": "a40dae271163f412ee3aa967fa8e71c45629e2b4dc1629eb7324bfc064d4f445"
+    },
+    {
+      "path": "project/.claude/skills/external-model-delegation/SKILL.md",
+      "bytes": 1361,
+      "sha256": "5fa8408435a9372d82c91ea82cbfa351800983af8c7b25444c058b24b296730b"
+    },
+    {
+      "path": "project/.claude/skills/founder-command/SKILL.md",
+      "bytes": 3144,
+      "sha256": "87f0cd96b0a94706634cd1bd59bddc608f85127789f2c14822d5689b64f8345d"
+    },
+    {
+      "path": "project/.claude/skills/founderos-doctrine/SKILL.md",
+      "bytes": 2456,
+      "sha256": "d8faeb89b140b0d578b901efd34a3434dc85d8a2ae9cb9b510daaefb47ea2e6d"
+    },
+    {
+      "path": "project/.claude/skills/founderos-onboard/SKILL.md",
+      "bytes": 2256,
+      "sha256": "0bdfcf67709bd5688688dbbe2b066722002f5b679d691867009a4daa5773a0d9"
+    },
+    {
+      "path": "project/.claude/skills/goal-control/SKILL.md",
+      "bytes": 1635,
+      "sha256": "7d526a0cdac107e1e4808368ab03fb8210b612211ecf4cde5ab833731c470bfa"
+    },
+    {
+      "path": "project/.claude/skills/governed-feature/SKILL.md",
+      "bytes": 2055,
+      "sha256": "729d1e1960e1c775dbb079733819b50a0da7e48d36b9bce73f146f018475fe9c"
+    },
+    {
+      "path": "project/.claude/skills/handoff-create/SKILL.md",
+      "bytes": 990,
+      "sha256": "d791ecd7ae7103b700ac9dfb476a8f995091f7de0067230c90835f034f37985b"
+    },
+    {
+      "path": "project/.claude/skills/incident-response/SKILL.md",
+      "bytes": 1910,
+      "sha256": "1dc1d65195decac5bff283dc83d37e105f1f4dd87a76f7dbcfa3117f78582498"
+    },
+    {
+      "path": "project/.claude/skills/model-route/SKILL.md",
+      "bytes": 3393,
+      "sha256": "c2bbb3d7863c1391c712a7050c9e84475ca4744da9efe2227f7e04566bccfe77"
+    },
+    {
+      "path": "project/.claude/skills/multi-agent-build/SKILL.md",
+      "bytes": 1856,
+      "sha256": "8b56b324dd2f7109f832ce8f1c422fb71bedd72c117feb2d64ed798d91220161"
+    },
+    {
+      "path": "project/.claude/skills/parallel-route/SKILL.md",
+      "bytes": 1917,
+      "sha256": "c4483adc492f61ff4377555a3981303a1c124b9e1b66dd6f29e0842c9f7d060c"
+    },
+    {
+      "path": "project/.claude/skills/path-audit/SKILL.md",
+      "bytes": 914,
+      "sha256": "d69da61e71b33715f8f7d6151c1d5eae1831e082d7c77db42e44da4395f8b21a"
+    },
+    {
+      "path": "project/.claude/skills/performance-audit/SKILL.md",
+      "bytes": 1164,
+      "sha256": "d0d9bd1abd41166e190c79afbc31337a5d9cc367e38001e7a2079027e9200c23"
+    },
+    {
+      "path": "project/.claude/skills/pr-tier2-review/SKILL.md",
+      "bytes": 1570,
+      "sha256": "152a9abc2d7bdcdbbe1ffb28fd4a2714948d583d96614c3da05c05b390595735"
+    },
+    {
+      "path": "project/.claude/skills/python-control-plane/SKILL.md",
+      "bytes": 4074,
+      "sha256": "31c8a566d80d5ee8bb826806e2b46f6db39322ae419a26fbe5570da982b400c2"
+    },
+    {
+      "path": "project/.claude/skills/release-readiness/SKILL.md",
+      "bytes": 1512,
+      "sha256": "10cdc6cb89d188c04fbf30a80df49594d249c522dcf8974ec8f620eaa290bee3"
+    },
+    {
+      "path": "project/.claude/skills/repository-audit/SKILL.md",
+      "bytes": 1176,
+      "sha256": "27ef1216aae666ca186bbf1bbc3658ee6ede782021e67d7f14e5ae93ac991061"
+    },
+    {
+      "path": "project/.claude/skills/security-audit/SKILL.md",
+      "bytes": 1322,
+      "sha256": "d9ccbf93627aaa7ef961c8a5fe376728028264afc1380fe28292b87d30b9edfb"
+    },
+    {
+      "path": "project/.claude/skills/session-control/SKILL.md",
+      "bytes": 1788,
+      "sha256": "74aa25c2bdc6388439f730900cec54f1f2195e6b40b3542362612ef3bb02d809"
+    },
+    {
+      "path": "project/.claude/skills/ui-visual-verification/SKILL.md",
+      "bytes": 1767,
+      "sha256": "f04fc237c03b51500c7148a173c768fe1657cdd52b5d2fbde903f0fca4632587"
+    },
+    {
+      "path": "project/.claude/skills/workflow-author/SKILL.md",
+      "bytes": 1257,
+      "sha256": "55ca7eef71b979d887e718142b24ad7064b04dc2ce7d0090a7b6189394db0e30"
+    },
+    {
+      "path": "project/.gitignore.fragment",
+      "bytes": 334,
+      "sha256": "a5da5d269f72d536e893bb05d720e6f17ed29dc910f38c454f3444cecf61758a"
+    },
+    {
+      "path": "project/.mcp.example.json",
+      "bytes": 399,
+      "sha256": "37ea63b97d5f43bc853ae873ddc1bddc420fbd9a690df5bab8e4610317cd5765"
+    },
+    {
+      "path": "project/profiles/advisor-opus.settings.fragment.json",
+      "bytes": 100,
+      "sha256": "17fd5dd3ba4a806c7ddafcb3c3fa59dd3d79a86e2d15c2b6072e914ddc735507"
+    },
+    {
+      "path": "project/profiles/cloud-session-start.settings.fragment.json",
+      "bytes": 299,
+      "sha256": "e1275d9424a84ed0a4055d6a942896c4a6fd78e6b637c56f4c258b471c6b2261"
+    },
+    {
+      "path": "project/profiles/founderos-console.PROJECT_PROFILE.md",
+      "bytes": 627,
+      "sha256": "4bac59cc2bd9acc16a51718f3a5c5da00c60fbff16b4ea9aa502dab9a9d473ff"
+    },
+    {
+      "path": "project/profiles/founderos-doctrine.PROJECT_PROFILE.md",
+      "bytes": 1317,
+      "sha256": "e0c4af0d956d295f1e4ce809b8f26979fa640b0589a8c320a5acf1298f0a1b93"
+    },
+    {
+      "path": "project/profiles/founderos-runtime.PROJECT_PROFILE.md",
+      "bytes": 610,
+      "sha256": "55e86a35f694c840d19c5a609424b550be9a5363a1108da06c38f8596dd0b7eb"
+    },
+    {
+      "path": "project/profiles/large-audit.settings.json",
+      "bytes": 228,
+      "sha256": "944a56dac265bc84586ec2bbff14999d6b4e91351852fdebf6e59049f174bc2f"
+    },
+    {
+      "path": "project/profiles/review-only.settings.json",
+      "bytes": 265,
+      "sha256": "aa8a0127094ee33073fd66f884c81ba9338718366d2faf84be86626ea062dffd"
+    },
+    {
+      "path": "project/settings.local.example.json",
+      "bytes": 163,
+      "sha256": "18527298ab11985d6211c76c370ee983ce094262964220d18b02856255e0235c"
+    },
+    {
+      "path": "python-control-plane/README.md",
+      "bytes": 4957,
+      "sha256": "57ac2ee4d6c4caf27bebf7f3e3b705ffe53f18a2aef96c996f92ee9e62c9827c"
+    },
+    {
+      "path": "python-control-plane/WORKFLOW_MIGRATION.json",
+      "bytes": 1530,
+      "sha256": "8aa1cce4e98f3cfb0e7f1234f28b9f32db27870d5d442978be66654072f51f62"
+    },
+    {
+      "path": "python-control-plane/bin/madclaude.py",
+      "bytes": 1058,
+      "sha256": "a6990709e42986b36ab2c95c3c5e31c146f58fa6ce15e943db54971879f00718"
+    },
+    {
+      "path": "python-control-plane/pyproject.toml",
+      "bytes": 1088,
+      "sha256": "27a02aeb321c73a6bd4d905816c7f32546c5d3c5292225be50ce964349a14e2f"
+    },
+    {
+      "path": "python-control-plane/run-tests.py",
+      "bytes": 4734,
+      "sha256": "bdb17f9a63256dc07e8df52a2b3c1b5612e6831aa975a5e79b395b495b56a207"
+    },
+    {
+      "path": "python-control-plane/schemas/architecture-validation.schema.json",
+      "bytes": 2558,
+      "sha256": "bb97962a3ef128da773eafb901b0a984d416200a46942b287f3ab079d5580b50"
+    },
+    {
+      "path": "python-control-plane/schemas/build.schema.json",
+      "bytes": 1597,
+      "sha256": "5b5b3d8e57270d047621f3d8d888f85d2cb45f7ddfd366e74cd6f4788d4db6db"
+    },
+    {
+      "path": "python-control-plane/schemas/fix-until-green.schema.json",
+      "bytes": 998,
+      "sha256": "7c02092c859e36e5b5b87ed5630b4856b505d33ec0ac962d025b500d94d113f8"
+    },
+    {
+      "path": "python-control-plane/schemas/plan.schema.json",
+      "bytes": 3842,
+      "sha256": "969fdebfdb9fecd3c4054b8ee34c37065ca74f703abb4fbb0321178cf9c3711e"
+    },
+    {
+      "path": "python-control-plane/schemas/release-readiness.schema.json",
+      "bytes": 2568,
+      "sha256": "a6d0927d7cffae40b7bfcc6e9c1ce6b67b01a147e2036ed50cc595394ac4e467"
+    },
+    {
+      "path": "python-control-plane/schemas/repo-audit.schema.json",
+      "bytes": 2334,
+      "sha256": "3c8c4b327c0a36bd54c1c4d2049b3f331352d50c18bea2488ffe0a8ea5429b60"
+    },
+    {
+      "path": "python-control-plane/schemas/review.schema.json",
+      "bytes": 2598,
+      "sha256": "c6abcd2cc253e71d6a06b4e32beadafa5b777eaaf69add069a29ea56fea0f0f0"
+    },
+    {
+      "path": "python-control-plane/schemas/security-audit.schema.json",
+      "bytes": 2334,
+      "sha256": "3c8c4b327c0a36bd54c1c4d2049b3f331352d50c18bea2488ffe0a8ea5429b60"
+    },
+    {
+      "path": "python-control-plane/schemas/ui-review.schema.json",
+      "bytes": 2334,
+      "sha256": "3c8c4b327c0a36bd54c1c4d2049b3f331352d50c18bea2488ffe0a8ea5429b60"
+    },
+    {
+      "path": "python-control-plane/schemas/verify.schema.json",
+      "bytes": 2480,
+      "sha256": "2368ccc425a927a79cb5c1d30c45be6440d773300920d62582cf87ad049c0d7d"
+    },
+    {
+      "path": "python-control-plane/src/madclaude/__init__.py",
+      "bytes": 133,
+      "sha256": "fa447d7cea00a2017dd8b7f2146b292992d855766a5713af041850d9b6a7b7a1"
+    },
+    {
+      "path": "python-control-plane/src/madclaude/__main__.py",
+      "bytes": 48,
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+    },
+    {
+      "path": "python-control-plane/src/madclaude/approval.py",
+      "bytes": 4693,
+      "sha256": "3ec450b7daeffbfe8c0ea1bc0f82ba50ccce120cddab4f7267e2126c5937fe09"
+    },
+    {
+      "path": "python-control-plane/src/madclaude/artifacts.py",
+      "bytes": 5496,
+      "sha256": "502f6b755653f7c31b5026d0221b80c2c36c475bc1ed2309271369db8596c486"
+    },
+    {
+      "path": "python-control-plane/src/madclaude/auth.py",
+      "bytes": 17703,
+      "sha256": "cfea64a27cab115dbd8f25f770546796b269396e67faefa390f4f43cab73f0ea"
+    },
+    {
+      "path": "python-control-plane/src/madclaude/backend.py",
+      "bytes": 17414,
+      "sha256": "2e483de9daf39afa01186a6547e51fc80541be1d6cbab565b1e7477c05c18308"
+    },
+    {
+      "path": "python-control-plane/src/madclaude/cli.py",
+      "bytes": 26410,
+      "sha256": "a150c0493e7f6545b1d1c77e6add30ef4f0bf6e0aa066fc077820e338090785f"
+    },
+    {
+      "path": "python-control-plane/src/madclaude/config.py",
+      "bytes": 7066,
+      "sha256": "7c92328a4686566e329f1774fa239575e38e0837c697a2b1685c1228c1cf7922"
+    },
+    {
+      "path": "python-control-plane/src/madclaude/errors.py",
+      "bytes": 722,
+      "sha256": "a3bfc32a061369e687cee4b016fb3afca1ae9a2c810bf2eec9ba53525c84f64a"
+    },
+    {
+      "path": "python-control-plane/src/madclaude/evidence.py",
+      "bytes": 8595,
+      "sha256": "50a0ca2bcfeaf800250ff967661ec0b6cf42240d540ca52353ba5cb7856f9be2"
+    },
+    {
+      "path": "python-control-plane/src/madclaude/execution.py",
+      "bytes": 5385,
+      "sha256": "1f014a08b4a869e2d6245c2f920b3b9e37f76d615f41d6039dd6e59bcb7995ff"
+    },
+    {
+      "path": "python-control-plane/src/madclaude/git.py",
+      "bytes": 6779,
+      "sha256": "b71825136dd561149108badfacdd897ee10038e740bd2465470d1c4883f86dda"
+    },
+    {
+      "path": "python-control-plane/src/madclaude/guard.py",
+      "bytes": 20935,
+      "sha256": "995b246d53acade4eb1db65a0417cffd37892ce3a6ce70bf759a4ebaff177037"
+    },
+    {
+      "path": "python-control-plane/src/madclaude/hook_cli.py",
+      "bytes": 3502,
+      "sha256": "fb5008a351c5a61f83818492e90458a126769a2a756827291db5a30e14b760b2"
+    },
+    {
+      "path": "python-control-plane/src/madclaude/hook_policy.py",
+      "bytes": 12687,
+      "sha256": "2adefe02f5aea48c2a81f2c5825fcf35c0c4d74aaa0dc18139a21a9c55485da7"
+    },
+    {
+      "path": "python-control-plane/src/madclaude/mcp_lifecycle.py",
+      "bytes": 58059,
+      "sha256": "a2ed6ccdeb451cc61471921ee5607cf4a7246f9d5acffdac4174ae33921dad24"
+    },
+    {
+      "path": "python-control-plane/src/madclaude/mcp_server.py",
+      "bytes": 17542,
+      "sha256": "83f6ad0ac6ffedfb4ac857c6703106ee9b6c8e6bfd421c6447db0945dd582fa9"
+    },
+    {
+      "path": "python-control-plane/src/madclaude/prompts.py",
+      "bytes": 9379,
+      "sha256": "213aa2c12cf07ad4503696cbd22f61a8e0a3739ed8ce6daa7ada04ec402fc42a"
+    },
+    {
+      "path": "python-control-plane/src/madclaude/safe_read.py",
+      "bytes": 8537,
+      "sha256": "debef5b7b6a6d4f64b13e8a5573300771706809e0f7e5d36d0698db213ec28f3"
+    },
+    {
+      "path": "python-control-plane/src/madclaude/schemas.py",
+      "bytes": 15311,
+      "sha256": "a1f6ba4ba44d9233e5ab2cd9f999f2dc5bbab10072b529186781232de3a2ade1"
+    },
+    {
+      "path": "python-control-plane/src/madclaude/term.py",
+      "bytes": 2480,
+      "sha256": "13b5b6d0620eb6a3ee46a315948d1587c50dbe3c6010ef7e055225119c52060e"
+    },
+    {
+      "path": "python-control-plane/src/madclaude/verification.py",
+      "bytes": 2969,
+      "sha256": "ceb4aabdcb7c5a8837a989fe564fa0cd986e55720911225df3e62d9b2d1e5261"
+    },
+    {
+      "path": "python-control-plane/src/madclaude/version.py",
+      "bytes": 22,
+      "sha256": "be8fe7b474f5b2a532a1bc5d46f5c9e7e0049370898c52a7d9378e7d4bb72279"
+    },
+    {
+      "path": "python-control-plane/src/madclaude/workflows.py",
+      "bytes": 29058,
+      "sha256": "3cbf07ea80bfabd68937ba8a36a731d62e6a525683a906d9ea7eabfb8b663c0f"
+    },
+    {
+      "path": "python-control-plane/tests/support.py",
+      "bytes": 6037,
+      "sha256": "ed13465136ae7da797a5c8449c89e2fae835258c129967c4a635eab8b3b5b90e"
+    },
+    {
+      "path": "python-control-plane/tests/test_approval.py",
+      "bytes": 2982,
+      "sha256": "ec121a783f440cfa4954b6e4a6157c1753ec9dd90ff9e35283369f4f53c1b577"
+    },
+    {
+      "path": "python-control-plane/tests/test_artifacts.py",
+      "bytes": 1337,
+      "sha256": "e176474e41912eaf0eefe4cd44f8d5dcc969599a59f24f1519d52dce46518e4b"
+    },
+    {
+      "path": "python-control-plane/tests/test_auth.py",
+      "bytes": 9076,
+      "sha256": "660a91c6b117cd9cf7235e17a5c899627b1e6d75319bfb5b7337019a51a756e6"
+    },
+    {
+      "path": "python-control-plane/tests/test_authoritative_engine.py",
+      "bytes": 590,
+      "sha256": "02fabe679121b30243dcdc50307f3b729f9eb34f151a6f1d45afbc6027c1604e"
+    },
+    {
+      "path": "python-control-plane/tests/test_backend.py",
+      "bytes": 18535,
+      "sha256": "5d74fb213651a8be0d184a4a0366687850526ab3c2d2e32263a5e1876ed0b209"
+    },
+    {
+      "path": "python-control-plane/tests/test_evidence.py",
+      "bytes": 1284,
+      "sha256": "4d39a75661589d8c35190fbf2c666a5040d4f1b648fa0450dbc4a4470f12bd8f"
+    },
+    {
+      "path": "python-control-plane/tests/test_evidence_hashing.py",
+      "bytes": 6306,
+      "sha256": "f05d30b10d79da24b1455e2c38937184adc5daaf91f2f6586c373b9324a6519f"
+    },
+    {
+      "path": "python-control-plane/tests/test_git.py",
+      "bytes": 2598,
+      "sha256": "a6336931d6e2381fda41cf6c3f5b6b228158ca10ef8bd6274e5c0663f73bb912"
+    },
+    {
+      "path": "python-control-plane/tests/test_guard.py",
+      "bytes": 4907,
+      "sha256": "027cb2b9b2d69d17920d3faea57486478d4e81c8cbba6e0a1d2fb35427c876f6"
+    },
+    {
+      "path": "python-control-plane/tests/test_guard_adversarial.py",
+      "bytes": 26625,
+      "sha256": "17616c9350aa3cfdf2c2ad9f84819729bfbd4e61d687eda12610108c4f41150e"
+    },
+    {
+      "path": "python-control-plane/tests/test_hooks.py",
+      "bytes": 6265,
+      "sha256": "c1311104c8e26fe2cd707885524dc3635c0bf1591d65dcdff67ab90a9ec71b09"
+    },
+    {
+      "path": "python-control-plane/tests/test_mcp_installed_copy.py",
+      "bytes": 6936,
+      "sha256": "3dc6210a65706f7be5a885e97793e1f9ca01eb2489c4e3c984048ce3594dbae4"
+    },
+    {
+      "path": "python-control-plane/tests/test_mcp_lifecycle.py",
+      "bytes": 31454,
+      "sha256": "e17ca2d59b2a777fec8e797517e365ec992c5982fad4c169476cb685aa68cb5d"
+    },
+    {
+      "path": "python-control-plane/tests/test_mcp_release_install.py",
+      "bytes": 22858,
+      "sha256": "62936ddb8683c97acc091d8fb5ab293a6ca9ff9270ef019ae585f7013a12a3f5"
+    },
+    {
+      "path": "python-control-plane/tests/test_mcp_server.py",
+      "bytes": 15441,
+      "sha256": "f52e054e37b3a03067d6b3b0243fc72689804a7c159c36f73d003eb1643a6795"
+    },
+    {
+      "path": "python-control-plane/tests/test_plugin_parity.py",
+      "bytes": 5167,
+      "sha256": "1d0da2f6049b06aebf761e73c06cdc69f4beb8c8a18c09ac05b1f2e1d6e02685"
+    },
+    {
+      "path": "python-control-plane/tests/test_safe_read.py",
+      "bytes": 11730,
+      "sha256": "b082b76eb7802b6f08662d5667d1388614bf1515209a672b02381d01cac81593"
+    },
+    {
+      "path": "python-control-plane/tests/test_schema_keyword_coverage.py",
+      "bytes": 3670,
+      "sha256": "251db22c2382e5c50a29a01b54d90b40cd776f10cd9c9356b5badf0696a97943"
+    },
+    {
+      "path": "python-control-plane/tests/test_schemas.py",
+      "bytes": 1773,
+      "sha256": "599011b96289cf8e6616e7b98fc91fd8d90d27e29bdd5775b11b508446e83e87"
+    },
+    {
+      "path": "python-control-plane/tests/test_term.py",
+      "bytes": 6478,
+      "sha256": "d481272199f8a2f3de4f64c25cba3ad65051022aae782f4efed7a96f990a4103"
+    },
+    {
+      "path": "python-control-plane/tests/test_wheelhouse_script.py",
+      "bytes": 17145,
+      "sha256": "9f6e12e6c411d0decbf5c9711af81ff4623ca40d6cb77f161b7b0b4c3a4d786d"
+    },
+    {
+      "path": "python-control-plane/tests/test_workflow.py",
+      "bytes": 17177,
+      "sha256": "c86a99819b799f65d62b84a75ed3cfb26314eb219a776172c78f1597b54db05f"
+    },
+    {
+      "path": "scripts/audit9-target-gate.py",
+      "bytes": 16191,
+      "sha256": "8c10bdd12c48edf2ff37827feeed5b9c7441cf4e02b573f9318dc2969ea918d3"
+    },
+    {
+      "path": "scripts/build-plugin.py",
+      "bytes": 10018,
+      "sha256": "2efba4971cc31ef90dd6d20d7d38d132d01113e8d67def3247b514dec87844f5"
+    },
+    {
+      "path": "scripts/build-release.sh",
+      "bytes": 2788,
+      "sha256": "452fce42619bc857d5ebabdee2fd7ba68a5c5140cd6329c3a2064979ed3b7de5"
+    },
+    {
+      "path": "scripts/create-plugin-zip.py",
+      "bytes": 1423,
+      "sha256": "77e4762a16d0b22458588d4f5c10548587a7a1f8350492a22e2976aff2dc66f9"
+    },
+    {
+      "path": "scripts/create-tar.py",
+      "bytes": 1302,
+      "sha256": "06a15f1e1f40cd29364f13e680a9e66132904fa35559134648fe97b7f8f39cd2"
+    },
+    {
+      "path": "scripts/create-zip.py",
+      "bytes": 1210,
+      "sha256": "cf6a9c603524fa2119d834d52a1ada62d46b62653845c288411d8355a38548f4"
+    },
+    {
+      "path": "scripts/environment-lifecycle.py",
+      "bytes": 42908,
+      "sha256": "2078d13f0c40d309e7961e6d83d8f60b73604ffa9d63f2ca81be7287033f5704"
+    },
+    {
+      "path": "scripts/generate-delivery-index.py",
+      "bytes": 2114,
+      "sha256": "02ccfe9ff2dc44739b69ea1116f8ee126e0c9e16b6a67d99b56751823a27c1ae"
+    },
+    {
+      "path": "scripts/generate-manifest.py",
+      "bytes": 1941,
+      "sha256": "ffc59e387f3bf5bf62294c2f2417de7010672d8286b2b32c06629a104fad03f3"
+    },
+    {
+      "path": "scripts/install-plugin.ps1",
+      "bytes": 2556,
+      "sha256": "200e9b62233f9df944bad583814c023469b86ac0dfc5fbb18505557bf5ba9475"
+    },
+    {
+      "path": "scripts/install-plugin.sh",
+      "bytes": 2994,
+      "sha256": "17daddd293fd3d2ac40db8b8b2db56500a9ae4aef2b03d4e3dd8adc309ed0d63"
+    },
+    {
+      "path": "scripts/install-python-control-plane.ps1",
+      "bytes": 6472,
+      "sha256": "c536ee2e43650498fd1d8f68662f17ed45a3bf5786f81341ab7b5638b529e659"
+    },
+    {
+      "path": "scripts/install-python-control-plane.sh",
+      "bytes": 6937,
+      "sha256": "8c63ab2167fdb639a8798251c6dd7e556ad1adf230fe9541652398f23e56d724"
+    },
+    {
+      "path": "scripts/install.ps1",
+      "bytes": 2466,
+      "sha256": "53854a6ae616fa916dbb02d0dcdfb5e5ac8c14dd30bf5f6960abf65b92d7eb19"
+    },
+    {
+      "path": "scripts/install.sh",
+      "bytes": 513,
+      "sha256": "d544940ca0e5d16eba2bbccfa260acef9ac5292cfce322b051f679fbc4fe5bfb"
+    },
+    {
+      "path": "scripts/mcp-wheelhouse.py",
+      "bytes": 17050,
+      "sha256": "40d0f0c71321c7aa783643852e9e8ab74bb9cf93d731155dfe508b76bb58dee3"
+    },
+    {
+      "path": "scripts/quick-validate.py",
+      "bytes": 6395,
+      "sha256": "0ad855697b4b221eab9dc50e8fb4bb7f222293d79652813036b6aaa973c32a4a"
+    },
+    {
+      "path": "scripts/smoke-test-install.sh",
+      "bytes": 8813,
+      "sha256": "b1e9db466b602791794339bce225fbddce1f94699cb2bf56d8c80b0151ea7257"
+    },
+    {
+      "path": "scripts/start-claude-route.ps1",
+      "bytes": 2200,
+      "sha256": "9edacba147bf4e3756dcbb159a1e308494f5e97a711eae682032ff77de20ae4f"
+    },
+    {
+      "path": "scripts/start-claude-route.sh",
+      "bytes": 2693,
+      "sha256": "836c985e9217ea4ee796dbd8297efbbc9267d84952a1a6b41cd3cc22119954b5"
+    },
+    {
+      "path": "scripts/sync-visible-template.py",
+      "bytes": 2050,
+      "sha256": "9ec03514f2360dfe02d828e0c96fbc807574db18ef2a7d11b5a305ac38aaf1da"
+    },
+    {
+      "path": "scripts/test-cloud-session.sh",
+      "bytes": 1656,
+      "sha256": "d0244036a5c2b604f464344eb8a90face733effeb663133922bbe919debad640"
+    },
+    {
+      "path": "scripts/test-hooks.mjs",
+      "bytes": 3480,
+      "sha256": "694af9177a65062440fe5ceb14cdac6ddf697de8714a3c84a8d451afb2297ae7"
+    },
+    {
+      "path": "scripts/test-python-control-plane.sh",
+      "bytes": 9328,
+      "sha256": "d968ce25e0fa958c21dc30425bc990dbe403815895b923c557537e514a473254"
+    },
+    {
+      "path": "scripts/test-release-archives.py",
+      "bytes": 10542,
+      "sha256": "9cfa94b49f08c5e4e367488622dffcdcccc142ad78a9b4842f35b9cf5dfa55e1"
+    },
+    {
+      "path": "scripts/test-route-launcher.sh",
+      "bytes": 2426,
+      "sha256": "2425fc5f0ccd602dbf553a9733ef0eeb43d2b8a82087c7700f4d03cefa34acc3"
+    },
+    {
+      "path": "scripts/validate-config.py",
+      "bytes": 58272,
+      "sha256": "ba9fb344b1aad6a32e22f73eb4d685334d13a26deceecbd122c1525391b485fd"
+    },
+    {
+      "path": "scripts/validate-workflows.mjs",
+      "bytes": 1684,
+      "sha256": "d05edec411c8b51c74910b3131aff7b38f46bef15c98e7979e5e30cb1717b069"
+    },
+    {
+      "path": "scripts/verify-release.py",
+      "bytes": 10236,
+      "sha256": "4733a3583119e1f5765f8533b7e677e1f644229f0500dad74fdcf73aab5394fd"
+    },
+    {
+      "path": "workspace/.claude/MADVENTURES_WORKSPACE.md",
+      "bytes": 817,
+      "sha256": "fdaccc427f1b02d65846a2102a61b1d90646514253af3cb2868fa56e5cd448ce"
+    }
+  ]
+}
