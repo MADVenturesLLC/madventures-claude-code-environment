@@ -16,10 +16,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Source suite
-        env:
-          PYTHONPATH: python-control-plane/src:python-control-plane/tests
-        run: python3 -m unittest discover -s python-control-plane/tests
+      # Installed suite: the repo's explicit clean-tree gate
+      # (run-tests.py --installed, allowlist + asserted counts).
+      # The full source suite (294 tests) is the release-tree gate and
+      # requires release artifacts (wheelhouse, MANIFEST, mcp SDK) that
+      # only exist in release validation — not a clean checkout.
       - name: Installed suite
         run: python3 -B python-control-plane/run-tests.py --installed
       - name: Plugin parity
