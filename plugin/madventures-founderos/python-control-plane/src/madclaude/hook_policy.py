@@ -17,6 +17,42 @@ from .git import get_state, working_tree_fingerprint
 
 FILE_TOOLS = {"Read", "Edit", "Write", "NotebookEdit", "MultiEdit", "Grep", "Glob"}
 MUTATION_TOOLS = {"Edit", "Write", "NotebookEdit", "MultiEdit"}
+
+# A10-A: explicit supported-tool policy matrix (DEC-20260812-01 A10-A scope
+# item 3). Before this package, the baseline hook fell through to
+# `return True, "allowed"` for every non-file, non-shell tool (the A10-2
+# hole at hook_policy.py:99-100). The flip below removes the default allow:
+# every supported family has an explicit disposition, and any tool not in
+# these sets fails closed. Rationale per family (ratified in the A10-A
+# build commission; see docs/audit10-a10a-tool-surface-inventory.md):
+#   - File read/mutate, Shell: existing governed routes (unchanged).
+#   - Web (WebFetch/WebSearch): WEB_TOOLS in guard.py is dead code — never
+#     consulted by any decision path; no governed route uses web tools.
+#     Deny at baseline.
+#   - Delegation (Agent/Task): governed by the control-plane route layer,
+#     where MADCLAUDE_ALLOWED_SUBAGENTS_JSON supplies the allowlist and
+#     unapproved subagents are denied. The plugin baseline hook has no
+#     subagent registry and MUST defer to that layer — both hooks fire on
+#     every tool call in the installed environment, and a baseline deny
+#     would override a legitimate governed-route allow. The A10-2 hole for
+#     delegation is closed at the governing layer (which is where the
+#     allowlist data exists); the baseline defers by design, documented
+#     here as the Delegation cell of the policy matrix.
+#   - Skill: instruction-content loading with no authority or mutation
+#     effect — the same class as the task/plan meta tools. The 31 shipped
+#     skills must keep working in the installed environment, so Skill is
+#     an EXPLICIT allow (it previously fell through to the default allow
+#     as a silent hole; the matrix makes the disposition explicit rather
+#     than flipping a live surface). A future route that needs Skill
+#     beyond instruction loading must add a scope-guarded allow.
+#   - Task/plan meta (TodoWrite, ExitPlanMode, TaskCreate, TaskUpdate):
+#     model-internal bookkeeping, no repository or authority effect. Allow.
+#   - MCP surfaces (mcp__*): denied by evaluate_tool_call in governed
+#     routes; deny at baseline too (matches control-plane stance).
+BASELINE_META_ALLOW = frozenset({"TodoWrite", "ExitPlanMode", "TaskCreate", "TaskUpdate"})
+BASELINE_INSTRUCTION_ALLOW = frozenset({"Skill"})
+BASELINE_DEFER = frozenset({"Agent"})  # Task normalizes to Agent via ALIASES
+BASELINE_DENY = frozenset({"WebFetch", "WebSearch"})
 DATABASE_CLIENT = re.compile(r"\b(?:psql|pgcli|mysql|mariadb|sqlite3|duckdb|sqlcmd)\b", re.I)
 SHELL_SECRET = re.compile(
     r"(?:^|[\s'\"/\\])(?:\.env(?:\.[A-Za-z0-9_-]+)?|id_(?:rsa|ed25519|ecdsa)(?:\.pub)?|"
@@ -97,7 +133,20 @@ def evaluate_baseline(repo: Path, payload: dict[str, Any]) -> tuple[bool, str]:
     if name in {"Bash", "PowerShell"}:
         return _baseline_shell(payload)
     if name not in FILE_TOOLS:
-        return True, "allowed"
+        # A10-A: supported-tool policy matrix — no default allow. Every
+        # non-file, non-shell tool either has an explicit disposition or
+        # fails closed as unrecognized.
+        if name in BASELINE_META_ALLOW:
+            return True, "task-management meta tool has no authority effect"
+        if name in BASELINE_INSTRUCTION_ALLOW:
+            return True, "Skill instruction-content loading has no authority or mutation effect"
+        if name in BASELINE_DEFER:
+            if os.environ.get("MADCLAUDE_CONTROL_PLANE_ACTIVE") == "1":
+                return True, "delegation is governed by the control-plane route layer"
+            return False, "Delegation (Agent/Task) is only permitted inside governed control-plane routes."
+        if name in BASELINE_DENY or name.lower().startswith("mcp__"):
+            return False, f"Tool {name} is not supported at baseline (policy matrix)."
+        return False, f"Unrecognized tool {name} is denied at baseline (fail closed)."
 
     allowed, reason = evaluate_tool_call(
         repo=repo,

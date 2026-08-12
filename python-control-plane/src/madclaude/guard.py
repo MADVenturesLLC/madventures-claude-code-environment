@@ -9,6 +9,7 @@ from pathlib import Path, PurePosixPath
 from typing import Any
 
 from .errors import PolicyViolation
+from .secrets_patterns import DETECTION_PATTERNS
 
 MUTATION_TOOLS = {"Edit", "Write", "NotebookEdit", "MultiEdit"}
 WEB_TOOLS = {"WebFetch", "WebSearch"}
@@ -37,12 +38,11 @@ PROTECTED_AUTHORITY_PATTERNS = (
     re.compile(r"(^|/)decision-id-reservations\.md$", re.I),
     re.compile(r"(^|/)evidence(?:/|$)", re.I),
 )
-SECRET_CONTENT_PATTERNS = (
-    re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
-    re.compile(r"\bsk-ant-[A-Za-z0-9_-]{12,}\b"),
-    re.compile(r"\bgh[pousr]_[A-Za-z0-9]{20,}\b"),
-    re.compile(r"\bAKIA[0-9A-Z]{16}\b"),
-)
+# A10-A: recall-optimized detection patterns, derived from the canonical
+# primitive registry (secrets_patterns.REGISTRY). Detection flags anything
+# that could be a secret and never replaces text; the redaction consumer
+# (evidence.redact) composes the same primitives for safe replacement.
+SECRET_CONTENT_PATTERNS = DETECTION_PATTERNS
 
 DANGEROUS_PATTERNS = (
     r"\bgit\s+reset\s+--hard\b",
