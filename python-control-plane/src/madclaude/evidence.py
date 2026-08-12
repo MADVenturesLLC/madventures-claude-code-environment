@@ -14,14 +14,14 @@ from typing import Any
 
 from . import safe_read
 from .errors import EvidenceError, SafeReadError
+from .secrets_patterns import REDACTION_PATTERNS
 
 SECRET_KEYS = re.compile(r"(?:api[_-]?key|auth[_-]?token|oauth[_-]?token|password|secret|credential|private[_-]?key)", re.I)
-SECRET_VALUES = (
-    re.compile(r"sk-ant-[A-Za-z0-9_-]+"),
-    re.compile(r"(?i)(ANTHROPIC_API_KEY|ANTHROPIC_AUTH_TOKEN|CLAUDE_CODE_OAUTH_TOKEN)\s*[=:]\s*[^\s,;]+"),
-    re.compile(r"(?i)Bearer\s+[A-Za-z0-9._~+/=-]+"),
-    re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----[\s\S]*?-----END (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
-)
+# A10-A: replacement-safe redaction patterns derived from the canonical
+# primitive registry (secrets_patterns.REGISTRY). Anchored boundaries keep
+# benign text unscrubbed while every audit-confirmed secret shape is
+# replaced with a clean [REDACTED] substitution.
+SECRET_VALUES = REDACTION_PATTERNS
 
 
 def redact(value: Any, key: str | None = None) -> Any:
