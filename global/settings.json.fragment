@@ -22,7 +22,8 @@
   "env": {
     "CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH": "2",
     "CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS": "8",
-    "CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION": "100"
+    "CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION": "100",
+    "MADVENTURES_ENV": "1"
   },
   "permissions": {
     "disableBypassPermissionsMode": "disable",

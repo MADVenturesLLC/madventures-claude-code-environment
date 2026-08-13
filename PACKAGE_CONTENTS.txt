@@ -2,11 +2,11 @@ MAD VENTURES CLAUDE CODE OPERATING ENVIRONMENT — PACKAGE CONTENTS
 ========================================================================
 
 Version: 4.4.1
-Indexed files (excluding generated manifest/checksum/index): 348
+Indexed files (excluding generated manifest/checksum/index): 405
 Core project agents: 20
 Core project skills: 31
 Core project workflows: 0
-Core project hooks: 1
+Core project hooks: 2
 Core project rules: 8
 
 IMPORTANT FOR macOS FINDER
@@ -17,13 +17,15 @@ or inspect the generated VISIBLE_PROJECT_TEMPLATE directory.
 
 FILE INDEX
 ----------
+       865  .github/workflows/ci.yml
+       170  .gitignore
       5829  CHANGELOG.md
        959  DELIVERY_FIX.md
       2655  INSTALL_MAC.command
       1765  INSTALL_WINDOWS.ps1
        513  NOTICE.md
       1636  OPEN_ME_FIRST.md
-     17269  README.md
+      1159  README.md
       2637  README_FIRST.txt
      12424  START_HERE.md
        307  VERIFY_PACKAGE.command
@@ -53,6 +55,7 @@ FILE INDEX
        991  VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/agents/worktree-builder.md
       1686  VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/cloud/session-start.sh
       2163  VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/hooks/hook-adapter.mjs
+      2233  VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/hooks/madventures-statusline.mjs
        497  VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/rules/00-operating-doctrine.md
        634  VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/rules/10-model-routing.md
        388  VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/rules/20-workflow-selection.md
@@ -61,7 +64,7 @@ FILE INDEX
        429  VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/rules/50-runtime-verification.md
        453  VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/rules/60-ui-truth.md
       4009  VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/rules/70-python-control-plane.md
-      3927  VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/settings.json
+      4108  VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/settings.json
        902  VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/attribution-check/SKILL.md
       1638  VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/bugfix-loop/SKILL.md
       1497  VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/checkpoint-recovery/SKILL.md
@@ -107,7 +110,7 @@ FILE INDEX
      11572  docs/CLI_DEBUG_REFERENCE.md
       9218  docs/CLOUD_ENVIRONMENT.md
       7481  docs/COMMAND_PALETTE.md
-     20306  docs/DEPLOYMENT.md
+     21467  docs/DEPLOYMENT.md
       2527  docs/DYNAMIC_WORKFLOWS.md
       3088  docs/HOOKS_AND_ARTIFACTS.md
       5611  docs/MODEL_ROUTE_PROFILES.md
@@ -123,6 +126,7 @@ FILE INDEX
       7051  docs/SUBAGENT_REGISTRY.md
       7343  docs/UPGRADE_FROM_V4.md
       5626  docs/VALIDATION_REPORT.md
+      4295  docs/audit10-a10a-tool-surface-inventory.md
       1093  examples/CLOUD_TASKS.md
        715  examples/FOUNDER_APPROVAL.example.json
       3847  examples/PYTHON_CONTROL_PLANE_INVOCATIONS.md
@@ -130,8 +134,8 @@ FILE INDEX
       3321  examples/WORKFLOW_INVOCATIONS.md
       2670  global/CLAUDE.md.append
         94  global/claude.json.fragment
-      1365  global/madventures-statusline.mjs
-      1397  global/settings.json.fragment
+      2233  global/madventures-statusline.mjs
+      1425  global/settings.json.fragment
        740  managed/20-madventures-baseline.json
        466  plugin/madventures-founderos/.claude-plugin/plugin.json
        237  plugin/madventures-founderos/NOTICE.md
@@ -160,12 +164,14 @@ FILE INDEX
        133  plugin/madventures-founderos/python-control-plane/src/madclaude/__init__.py
       5496  plugin/madventures-founderos/python-control-plane/src/madclaude/artifacts.py
        722  plugin/madventures-founderos/python-control-plane/src/madclaude/errors.py
-      8595  plugin/madventures-founderos/python-control-plane/src/madclaude/evidence.py
+     16273  plugin/madventures-founderos/python-control-plane/src/madclaude/escalation_state.py
+      9841  plugin/madventures-founderos/python-control-plane/src/madclaude/evidence.py
       6779  plugin/madventures-founderos/python-control-plane/src/madclaude/git.py
-     20935  plugin/madventures-founderos/python-control-plane/src/madclaude/guard.py
-      3502  plugin/madventures-founderos/python-control-plane/src/madclaude/hook_cli.py
-     12687  plugin/madventures-founderos/python-control-plane/src/madclaude/hook_policy.py
+     21079  plugin/madventures-founderos/python-control-plane/src/madclaude/guard.py
+      6119  plugin/madventures-founderos/python-control-plane/src/madclaude/hook_cli.py
+     19354  plugin/madventures-founderos/python-control-plane/src/madclaude/hook_policy.py
       8537  plugin/madventures-founderos/python-control-plane/src/madclaude/safe_read.py
+      4569  plugin/madventures-founderos/python-control-plane/src/madclaude/secrets_patterns.py
         22  plugin/madventures-founderos/python-control-plane/src/madclaude/version.py
        902  plugin/madventures-founderos/skills/attribution-check/SKILL.md
       1638  plugin/madventures-founderos/skills/bugfix-loop/SKILL.md
@@ -223,6 +229,7 @@ FILE INDEX
        991  project/.claude/agents/worktree-builder.md
       1686  project/.claude/cloud/session-start.sh
       2163  project/.claude/hooks/hook-adapter.mjs
+      2233  project/.claude/hooks/madventures-statusline.mjs
        497  project/.claude/rules/00-operating-doctrine.md
        634  project/.claude/rules/10-model-routing.md
        388  project/.claude/rules/20-workflow-selection.md
@@ -231,7 +238,7 @@ FILE INDEX
        429  project/.claude/rules/50-runtime-verification.md
        453  project/.claude/rules/60-ui-truth.md
       4009  project/.claude/rules/70-python-control-plane.md
-      3927  project/.claude/settings.json
+      4108  project/.claude/settings.json
        902  project/.claude/skills/attribution-check/SKILL.md
       1638  project/.claude/skills/bugfix-loop/SKILL.md
       1497  project/.claude/skills/checkpoint-recovery/SKILL.md
@@ -277,7 +284,7 @@ FILE INDEX
       1530  python-control-plane/WORKFLOW_MIGRATION.json
       1058  python-control-plane/bin/madclaude.py
       1088  python-control-plane/pyproject.toml
-      4734  python-control-plane/run-tests.py
+      5019  python-control-plane/run-tests.py
       2558  python-control-plane/schemas/architecture-validation.schema.json
       1597  python-control-plane/schemas/build.schema.json
        998  python-control-plane/schemas/fix-until-green.schema.json
@@ -297,17 +304,19 @@ FILE INDEX
      26410  python-control-plane/src/madclaude/cli.py
       7066  python-control-plane/src/madclaude/config.py
        722  python-control-plane/src/madclaude/errors.py
-      8595  python-control-plane/src/madclaude/evidence.py
+     16273  python-control-plane/src/madclaude/escalation_state.py
+      9841  python-control-plane/src/madclaude/evidence.py
       5385  python-control-plane/src/madclaude/execution.py
       6779  python-control-plane/src/madclaude/git.py
-     20935  python-control-plane/src/madclaude/guard.py
-      3502  python-control-plane/src/madclaude/hook_cli.py
-     12687  python-control-plane/src/madclaude/hook_policy.py
+     21079  python-control-plane/src/madclaude/guard.py
+      6119  python-control-plane/src/madclaude/hook_cli.py
+     19354  python-control-plane/src/madclaude/hook_policy.py
      58059  python-control-plane/src/madclaude/mcp_lifecycle.py
      17542  python-control-plane/src/madclaude/mcp_server.py
       9379  python-control-plane/src/madclaude/prompts.py
       8537  python-control-plane/src/madclaude/safe_read.py
      15311  python-control-plane/src/madclaude/schemas.py
+      4569  python-control-plane/src/madclaude/secrets_patterns.py
       2480  python-control-plane/src/madclaude/term.py
       2969  python-control-plane/src/madclaude/verification.py
         22  python-control-plane/src/madclaude/version.py
@@ -318,6 +327,8 @@ FILE INDEX
       9076  python-control-plane/tests/test_auth.py
        590  python-control-plane/tests/test_authoritative_engine.py
      18535  python-control-plane/tests/test_backend.py
+      5723  python-control-plane/tests/test_baseline_policy_matrix.py
+     17541  python-control-plane/tests/test_escalation_state.py
       1284  python-control-plane/tests/test_evidence.py
       6306  python-control-plane/tests/test_evidence_hashing.py
       2598  python-control-plane/tests/test_git.py
@@ -332,18 +343,64 @@ FILE INDEX
      11730  python-control-plane/tests/test_safe_read.py
       3670  python-control-plane/tests/test_schema_keyword_coverage.py
       1773  python-control-plane/tests/test_schemas.py
+      8393  python-control-plane/tests/test_secrets_patterns.py
       6478  python-control-plane/tests/test_term.py
      17145  python-control-plane/tests/test_wheelhouse_script.py
      17177  python-control-plane/tests/test_workflow.py
+      7413  releases/Audit9-v4.4.1-20260809/AUDIT9_RELEASE_RECORD.md
+    441112  releases/Audit9-v4.4.1-20260809/artifacts/MADVentures-Claude-Code-Environment-v4.4.1.tar.gz
+       116  releases/Audit9-v4.4.1-20260809/artifacts/MADVentures-Claude-Code-Environment-v4.4.1.tar.gz.sha256
+    619105  releases/Audit9-v4.4.1-20260809/artifacts/MADVentures-Claude-Code-Environment-v4.4.1.zip
+       113  releases/Audit9-v4.4.1-20260809/artifacts/MADVentures-Claude-Code-Environment-v4.4.1.zip.sha256
+     78448  releases/Audit9-v4.4.1-20260809/artifacts/MADVentures-FounderOS-Claude-Code-Plugin-v4.4.1.zip
+       118  releases/Audit9-v4.4.1-20260809/artifacts/MADVentures-FounderOS-Claude-Code-Plugin-v4.4.1.zip.sha256
+      6723  releases/Audit9-v4.4.1-20260809/wheelhouse/arm64/WHEELHOUSE_MANIFEST.json
+      2729  releases/Audit9-v4.4.1-20260809/wheelhouse/arm64/requirements-cp314-macos-arm64.lock
+      9275  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/MERGED_WHEELHOUSE_MANIFEST.json
+     13427  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/annotated_types-0.8.0-py3-none-any.whl
+    125813  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/anyio-4.14.2-py3-none-any.whl
+     67548  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/attrs-26.1.0-py3-none-any.whl
+    184964  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/cffi-2.1.1-cp314-cp314-macosx_10_15_x86_64.whl
+    184962  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/cffi-2.1.1-cp314-cp314-macosx_11_0_arm64.whl
+    119243  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/click-8.4.2-py3-none-any.whl
+   8008324  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/cryptography-48.0.1-cp311-abi3-macosx_10_9_universal2.whl
+     37515  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/h11-0.16.0-py3-none-any.whl
+     83000  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/httpcore2-2.10.0-py3-none-any.whl
+     94355  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/httpx2-2.10.0-py3-none-any.whl
+     65455  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/idna-3.18-py3-none-any.whl
+     90630  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/jsonschema-4.26.0-py3-none-any.whl
+     18437  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/jsonschema_specifications-2025.9.1-py3-none-any.whl
+    349980  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/mcp-2.0.0-py3-none-any.whl
+     69649  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/mcp_types-2.0.0-py3-none-any.whl
+     60018  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/opentelemetry_api-1.44.0-py3-none-any.whl
+     48172  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/pycparser-3.0-py3-none-any.whl
+    472262  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/pydantic-2.13.4-py3-none-any.whl
+   2102079  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/pydantic_core-2.46.4-cp314-cp314-macosx_10_12_x86_64.whl
+   1952179  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/pydantic_core-2.46.4-cp314-cp314-macosx_11_0_arm64.whl
+     31274  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/pyjwt-2.13.0-py3-none-any.whl
+     30042  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/python_multipart-0.0.32-py3-none-any.whl
+     26766  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/referencing-0.37.0-py3-none-any.whl
+      2729  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/requirements-cp314-macos-arm64.lock
+      2729  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/requirements-cp314-macos-x86_64.lock
+    344510  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/rpds_py-2026.6.3-cp314-cp314-macosx_10_12_x86_64.whl
+    339495  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/rpds_py-2026.6.3-cp314-cp314-macosx_11_0_arm64.whl
+     16516  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/sse_starlette-3.4.8-py3-none-any.whl
+     75969  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/starlette-1.6.0-py3-none-any.whl
+     18660  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/truststore-0.10.4-py3-none-any.whl
+     45571  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/typing_extensions-4.16.0-py3-none-any.whl
+     14611  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/typing_inspection-0.4.2-py3-none-any.whl
+     79859  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/uvicorn-0.52.1-py3-none-any.whl
+      6749  releases/Audit9-v4.4.1-20260809/wheelhouse/x86_64/WHEELHOUSE_MANIFEST.json
+      2729  releases/Audit9-v4.4.1-20260809/wheelhouse/x86_64/requirements-cp314-macos-x86_64.lock
      16191  scripts/audit9-target-gate.py
-     10018  scripts/build-plugin.py
+     10064  scripts/build-plugin.py
       2788  scripts/build-release.sh
       1423  scripts/create-plugin-zip.py
       1302  scripts/create-tar.py
       1210  scripts/create-zip.py
      42908  scripts/environment-lifecycle.py
-      2114  scripts/generate-delivery-index.py
-      1941  scripts/generate-manifest.py
+      2357  scripts/generate-delivery-index.py
+      2184  scripts/generate-manifest.py
       2556  scripts/install-plugin.ps1
       2994  scripts/install-plugin.sh
       6472  scripts/install-python-control-plane.ps1
@@ -351,17 +408,17 @@ FILE INDEX
       2466  scripts/install.ps1
        513  scripts/install.sh
      17050  scripts/mcp-wheelhouse.py
-      6395  scripts/quick-validate.py
+      6415  scripts/quick-validate.py
       8813  scripts/smoke-test-install.sh
       2200  scripts/start-claude-route.ps1
       2693  scripts/start-claude-route.sh
       2050  scripts/sync-visible-template.py
       1656  scripts/test-cloud-session.sh
-      3480  scripts/test-hooks.mjs
+      5597  scripts/test-hooks.mjs
       9328  scripts/test-python-control-plane.sh
-     10542  scripts/test-release-archives.py
+     10602  scripts/test-release-archives.py
       2426  scripts/test-route-launcher.sh
-     58272  scripts/validate-config.py
+     58343  scripts/validate-config.py
       1684  scripts/validate-workflows.mjs
      10236  scripts/verify-release.py
        817  workspace/.claude/MADVENTURES_WORKSPACE.md

@@ -78,7 +78,7 @@ def fresh_install(package: Path, root: Path, label: str) -> tuple[Path, dict[str
     assert payload["layers"]["managedGlobal"] == "verified", payload["layers"]
     assert payload["layers"]["workspace"] == "verified", payload["layers"]
     assert not list((repo / ".claude/workflows").glob("*.js"))
-    assert sorted(path.name for path in (repo / ".claude/hooks").glob("*.mjs")) == ["hook-adapter.mjs"]
+    assert sorted(path.name for path in (repo / ".claude/hooks").glob("*.mjs")) == ["hook-adapter.mjs", "madventures-statusline.mjs"]
     return repo, payload
 
 
@@ -130,7 +130,7 @@ def legacy_update(package: Path, root: Path) -> None:
         env=dict(os.environ, MADVENTURES_LIFECYCLE_TEST_FAST="1"),
     )
     assert not list(workflows.glob("*.js"))
-    assert sorted(path.name for path in hooks.glob("*.mjs")) == ["hook-adapter.mjs"]
+    assert sorted(path.name for path in hooks.glob("*.mjs")) == ["hook-adapter.mjs", "madventures-statusline.mjs"]
     settings = json.loads((repo / ".claude/settings.json").read_text(encoding="utf-8"))
     assert settings["model"] == "haiku"
     assert "guard-control-plane" not in json.dumps(settings)

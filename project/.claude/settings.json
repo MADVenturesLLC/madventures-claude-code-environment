@@ -15,11 +15,18 @@
   "showClearContextOnPlanAccept": true,
   "skillListingBudgetFraction": 0.02,
   "skillListingMaxDescChars": 1200,
+  "statusLine": {
+    "type": "command",
+    "command": "node .claude/hooks/madventures-statusline.mjs",
+    "refreshInterval": 5,
+    "padding": 1
+  },
   "env": {
     "CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH": "2",
     "CLAUDE_CODE_MAX_CONCURRENT_SUBAGENTS": "8",
     "CLAUDE_CODE_MAX_SUBAGENTS_PER_SESSION": "100",
-    "FOUNDEROS_LIVE_ACCESS_ENABLED": "false"
+    "FOUNDEROS_LIVE_ACCESS_ENABLED": "false",
+    "MADVENTURES_ENV": "1"
   },
   "permissions": {
     "defaultMode": "default",

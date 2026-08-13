@@ -30,7 +30,7 @@ EXPECTED = {
     "skills": 31,
     "workflows": 0,
     "rules": 8,
-    "hooks": 1,
+    "hooks": 2,  # hook-adapter.mjs + madventures-statusline.mjs (env identity marker)
 }
 
 ALLOWED_AGENT_KEYS = {

@@ -1,10 +1,20 @@
 {
   "package": "MADVentures-Claude-Code-Environment-v4.4.1",
   "version": "4.4.1",
-  "generatedAt": "2026-08-09T17:09:57+00:00",
+  "generatedAt": "2026-08-13T05:28:04+00:00",
   "algorithm": "SHA-256",
-  "fileCount": 349,
+  "fileCount": 406,
   "files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 865,
+      "sha256": "3e169476b91e2bc789b639965c64529b468a16a118e0f002c47ac8b0f242da4d"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 170,
+      "sha256": "b5aa02c9c62b345c98240ea0e98d0f58ed1a433d7539492f27ccc7f6f8e014f8"
+    },
     {
       "path": "CHANGELOG.md",
       "bytes": 5829,
@@ -37,13 +47,13 @@
     },
     {
       "path": "PACKAGE_CONTENTS.txt",
-      "bytes": 22504,
-      "sha256": "85782c1ce272a7a6d250b7b1b5f67e82b8c2c577b05d369bf648f3d4cbec5282"
+      "bytes": 27786,
+      "sha256": "e63c93cbf9c573ab923d4ce880cd7c3c13ca91a5677cb5931311c381460838bf"
     },
     {
       "path": "README.md",
-      "bytes": 17269,
-      "sha256": "a16c5e4d3209925b08c805d12b8be2871b5e93cc048380feda4b013dfcb3e7aa"
+      "bytes": 1159,
+      "sha256": "9497d3dc5968d3d5f263fd045be82012979deb71cee11f465a9769209af8a951"
     },
     {
       "path": "README_FIRST.txt",
@@ -191,6 +201,11 @@
       "sha256": "6972f5914a5a00090bd77e0a3ab5526814bfb4057e4be234b50e610933ca81c3"
     },
     {
+      "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/hooks/madventures-statusline.mjs",
+      "bytes": 2233,
+      "sha256": "accc5af690d1ad66075e240318edf6377b481601802c74ea45b4390bcb42ff1d"
+    },
+    {
       "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/rules/00-operating-doctrine.md",
       "bytes": 497,
       "sha256": "d1ee1871b074e10b052e2b84d92c8bfa56aae81b517e4dd783bca62e4a259102"
@@ -232,8 +247,8 @@
     },
     {
       "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/settings.json",
-      "bytes": 3927,
-      "sha256": "c1946aa75d3e3cb87b6324b4a68e236ede301ce6f7bedc55e5fb9d54cf5e6873"
+      "bytes": 4108,
+      "sha256": "50fdf05a83233ba2919ae1f877d0faa197e58686ae6c1ec5b1e90d23f2a7b103"
     },
     {
       "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/skills/attribution-check/SKILL.md",
@@ -462,8 +477,8 @@
     },
     {
       "path": "docs/DEPLOYMENT.md",
-      "bytes": 20306,
-      "sha256": "7754523ac4181b103465c80453649691bab1e4e87f81879f751e9f69fccf8b72"
+      "bytes": 21467,
+      "sha256": "9478d99630faf4acd12ede1dd4cad0e30f49db99293e3066abe468063db221d3"
     },
     {
       "path": "docs/DYNAMIC_WORKFLOWS.md",
@@ -541,6 +556,11 @@
       "sha256": "69890c400ea7ea782a85d6c4b68b5afe1e707b0119b535b469f2083c1230d049"
     },
     {
+      "path": "docs/audit10-a10a-tool-surface-inventory.md",
+      "bytes": 4295,
+      "sha256": "ef044e61f5fcb8069331deb6f8175a00853bc89ac1f2b69857391840413b41f9"
+    },
+    {
       "path": "examples/CLOUD_TASKS.md",
       "bytes": 1093,
       "sha256": "6a4943e5469df55b7bd73c92f632264749bfb7a6d78af3509c0b28d1a1422a97"
@@ -577,13 +597,13 @@
     },
     {
       "path": "global/madventures-statusline.mjs",
-      "bytes": 1365,
-      "sha256": "fa68903254aa922818607dea578ac1b882112c399b8c2a9f64436a16190375c8"
+      "bytes": 2233,
+      "sha256": "accc5af690d1ad66075e240318edf6377b481601802c74ea45b4390bcb42ff1d"
     },
     {
       "path": "global/settings.json.fragment",
-      "bytes": 1397,
-      "sha256": "8b3c5baa7c64a30ddc6d7def73a7e993dd9c5e8084271f08b41be29a38106dd9"
+      "bytes": 1425,
+      "sha256": "f6344fc07af9884cc1084ba97b839f3156ed3f83824fb8903adf9d9d67f7c69e"
     },
     {
       "path": "managed/20-madventures-baseline.json",
@@ -726,9 +746,14 @@
       "sha256": "a3bfc32a061369e687cee4b016fb3afca1ae9a2c810bf2eec9ba53525c84f64a"
     },
     {
+      "path": "plugin/madventures-founderos/python-control-plane/src/madclaude/escalation_state.py",
+      "bytes": 16273,
+      "sha256": "dd0ab1ce94111a1545dc006eb47cdace9fca600229ff87d031be7033d5c202d0"
+    },
+    {
       "path": "plugin/madventures-founderos/python-control-plane/src/madclaude/evidence.py",
-      "bytes": 8595,
-      "sha256": "50a0ca2bcfeaf800250ff967661ec0b6cf42240d540ca52353ba5cb7856f9be2"
+      "bytes": 9841,
+      "sha256": "0dcb4c9794b703a411353fa82cb5204f904471d0ced7aa21d700b42125286a7a"
     },
     {
       "path": "plugin/madventures-founderos/python-control-plane/src/madclaude/git.py",
@@ -737,23 +762,28 @@
     },
     {
       "path": "plugin/madventures-founderos/python-control-plane/src/madclaude/guard.py",
-      "bytes": 20935,
-      "sha256": "995b246d53acade4eb1db65a0417cffd37892ce3a6ce70bf759a4ebaff177037"
+      "bytes": 21079,
+      "sha256": "9c52bc69e3b5170b03457288cc2474dc3798c0917cc36326b2bbbaf7bc808f99"
     },
     {
       "path": "plugin/madventures-founderos/python-control-plane/src/madclaude/hook_cli.py",
-      "bytes": 3502,
-      "sha256": "fb5008a351c5a61f83818492e90458a126769a2a756827291db5a30e14b760b2"
+      "bytes": 6119,
+      "sha256": "a9ae336ffb0d897a5d1801f1c4a8b1a17d7e4830b520741b08826a8cf332a1cd"
     },
     {
       "path": "plugin/madventures-founderos/python-control-plane/src/madclaude/hook_policy.py",
-      "bytes": 12687,
-      "sha256": "2adefe02f5aea48c2a81f2c5825fcf35c0c4d74aaa0dc18139a21a9c55485da7"
+      "bytes": 19354,
+      "sha256": "ceb9399b8f7b6b2e5e7f0d28da47b2e1d0fa147d24bf4c4c4232939783d7406f"
     },
     {
       "path": "plugin/madventures-founderos/python-control-plane/src/madclaude/safe_read.py",
       "bytes": 8537,
       "sha256": "debef5b7b6a6d4f64b13e8a5573300771706809e0f7e5d36d0698db213ec28f3"
+    },
+    {
+      "path": "plugin/madventures-founderos/python-control-plane/src/madclaude/secrets_patterns.py",
+      "bytes": 4569,
+      "sha256": "8bab5fd488c1c2d4cdbdce64728cb60273b98265c8127e2ad47cfec2fdb0cd46"
     },
     {
       "path": "plugin/madventures-founderos/python-control-plane/src/madclaude/version.py",
@@ -1041,6 +1071,11 @@
       "sha256": "6972f5914a5a00090bd77e0a3ab5526814bfb4057e4be234b50e610933ca81c3"
     },
     {
+      "path": "project/.claude/hooks/madventures-statusline.mjs",
+      "bytes": 2233,
+      "sha256": "accc5af690d1ad66075e240318edf6377b481601802c74ea45b4390bcb42ff1d"
+    },
+    {
       "path": "project/.claude/rules/00-operating-doctrine.md",
       "bytes": 497,
       "sha256": "d1ee1871b074e10b052e2b84d92c8bfa56aae81b517e4dd783bca62e4a259102"
@@ -1082,8 +1117,8 @@
     },
     {
       "path": "project/.claude/settings.json",
-      "bytes": 3927,
-      "sha256": "c1946aa75d3e3cb87b6324b4a68e236ede301ce6f7bedc55e5fb9d54cf5e6873"
+      "bytes": 4108,
+      "sha256": "50fdf05a83233ba2919ae1f877d0faa197e58686ae6c1ec5b1e90d23f2a7b103"
     },
     {
       "path": "project/.claude/skills/attribution-check/SKILL.md",
@@ -1312,8 +1347,8 @@
     },
     {
       "path": "python-control-plane/run-tests.py",
-      "bytes": 4734,
-      "sha256": "bdb17f9a63256dc07e8df52a2b3c1b5612e6831aa975a5e79b395b495b56a207"
+      "bytes": 5019,
+      "sha256": "378ce408afb58b29f1c14d856f0fae3b3ba2c16e179c63dfd68a8f5512dbd4b0"
     },
     {
       "path": "python-control-plane/schemas/architecture-validation.schema.json",
@@ -1411,9 +1446,14 @@
       "sha256": "a3bfc32a061369e687cee4b016fb3afca1ae9a2c810bf2eec9ba53525c84f64a"
     },
     {
+      "path": "python-control-plane/src/madclaude/escalation_state.py",
+      "bytes": 16273,
+      "sha256": "dd0ab1ce94111a1545dc006eb47cdace9fca600229ff87d031be7033d5c202d0"
+    },
+    {
       "path": "python-control-plane/src/madclaude/evidence.py",
-      "bytes": 8595,
-      "sha256": "50a0ca2bcfeaf800250ff967661ec0b6cf42240d540ca52353ba5cb7856f9be2"
+      "bytes": 9841,
+      "sha256": "0dcb4c9794b703a411353fa82cb5204f904471d0ced7aa21d700b42125286a7a"
     },
     {
       "path": "python-control-plane/src/madclaude/execution.py",
@@ -1427,18 +1467,18 @@
     },
     {
       "path": "python-control-plane/src/madclaude/guard.py",
-      "bytes": 20935,
-      "sha256": "995b246d53acade4eb1db65a0417cffd37892ce3a6ce70bf759a4ebaff177037"
+      "bytes": 21079,
+      "sha256": "9c52bc69e3b5170b03457288cc2474dc3798c0917cc36326b2bbbaf7bc808f99"
     },
     {
       "path": "python-control-plane/src/madclaude/hook_cli.py",
-      "bytes": 3502,
-      "sha256": "fb5008a351c5a61f83818492e90458a126769a2a756827291db5a30e14b760b2"
+      "bytes": 6119,
+      "sha256": "a9ae336ffb0d897a5d1801f1c4a8b1a17d7e4830b520741b08826a8cf332a1cd"
     },
     {
       "path": "python-control-plane/src/madclaude/hook_policy.py",
-      "bytes": 12687,
-      "sha256": "2adefe02f5aea48c2a81f2c5825fcf35c0c4d74aaa0dc18139a21a9c55485da7"
+      "bytes": 19354,
+      "sha256": "ceb9399b8f7b6b2e5e7f0d28da47b2e1d0fa147d24bf4c4c4232939783d7406f"
     },
     {
       "path": "python-control-plane/src/madclaude/mcp_lifecycle.py",
@@ -1464,6 +1504,11 @@
       "path": "python-control-plane/src/madclaude/schemas.py",
       "bytes": 15311,
       "sha256": "a1f6ba4ba44d9233e5ab2cd9f999f2dc5bbab10072b529186781232de3a2ade1"
+    },
+    {
+      "path": "python-control-plane/src/madclaude/secrets_patterns.py",
+      "bytes": 4569,
+      "sha256": "8bab5fd488c1c2d4cdbdce64728cb60273b98265c8127e2ad47cfec2fdb0cd46"
     },
     {
       "path": "python-control-plane/src/madclaude/term.py",
@@ -1514,6 +1559,16 @@
       "path": "python-control-plane/tests/test_backend.py",
       "bytes": 18535,
       "sha256": "5d74fb213651a8be0d184a4a0366687850526ab3c2d2e32263a5e1876ed0b209"
+    },
+    {
+      "path": "python-control-plane/tests/test_baseline_policy_matrix.py",
+      "bytes": 5723,
+      "sha256": "59a62a786554ae674381aa2ddfa17955b582b0d0f4d0b659718446c510d46d5f"
+    },
+    {
+      "path": "python-control-plane/tests/test_escalation_state.py",
+      "bytes": 17541,
+      "sha256": "431ca26b8800815b9a3ccd830df28d4074689cdd447950fcb55b8be2c6c950d0"
     },
     {
       "path": "python-control-plane/tests/test_evidence.py",
@@ -1586,6 +1641,11 @@
       "sha256": "599011b96289cf8e6616e7b98fc91fd8d90d27e29bdd5775b11b508446e83e87"
     },
     {
+      "path": "python-control-plane/tests/test_secrets_patterns.py",
+      "bytes": 8393,
+      "sha256": "3970c200f39dcb2e602c43c06dbd91b959ee0cab7fc6e9d57bf5ad6963fa2b95"
+    },
+    {
       "path": "python-control-plane/tests/test_term.py",
       "bytes": 6478,
       "sha256": "d481272199f8a2f3de4f64c25cba3ad65051022aae782f4efed7a96f990a4103"
@@ -1601,14 +1661,239 @@
       "sha256": "c86a99819b799f65d62b84a75ed3cfb26314eb219a776172c78f1597b54db05f"
     },
     {
+      "path": "releases/Audit9-v4.4.1-20260809/AUDIT9_RELEASE_RECORD.md",
+      "bytes": 7413,
+      "sha256": "73ed96b2eb5d244d600c8e55f46feea24a1ab8cdcc8e59b5b9094ae1e1334406"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/artifacts/MADVentures-Claude-Code-Environment-v4.4.1.tar.gz",
+      "bytes": 441112,
+      "sha256": "acd4789da9b978dd069f044d0b69110cd6a5e5ec6e6ba540ada09b1489d9d335"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/artifacts/MADVentures-Claude-Code-Environment-v4.4.1.tar.gz.sha256",
+      "bytes": 116,
+      "sha256": "919af8e0e20c52e3dfa17b57a399670412ba723de1d6f61967d2613a0a548c70"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/artifacts/MADVentures-Claude-Code-Environment-v4.4.1.zip",
+      "bytes": 619105,
+      "sha256": "a33fdbeddb7bc1eceede374ca094c9d4014712a5706d53b840716183c4a64d77"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/artifacts/MADVentures-Claude-Code-Environment-v4.4.1.zip.sha256",
+      "bytes": 113,
+      "sha256": "d611e873a20db57ac3f4e865ec58fbb4ca93f6359af5cc797f27a6cad46052be"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/artifacts/MADVentures-FounderOS-Claude-Code-Plugin-v4.4.1.zip",
+      "bytes": 78448,
+      "sha256": "c34cd6ea63b89c81fdd8449ba918866a42f176bcbeb47fedad769f4e5803f98e"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/artifacts/MADVentures-FounderOS-Claude-Code-Plugin-v4.4.1.zip.sha256",
+      "bytes": 118,
+      "sha256": "2bacc01bca8b83d188d3379fad3eb51e0df69fe05468b15a67ae132b6fa7cc8e"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/arm64/WHEELHOUSE_MANIFEST.json",
+      "bytes": 6723,
+      "sha256": "0c8be5e77ac962ce6d73cb9d8be797055a64b7e93b23df8ee5d18ad81846d5df"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/arm64/requirements-cp314-macos-arm64.lock",
+      "bytes": 2729,
+      "sha256": "cde78a524a39fd52882baa6338d935838132283fb8a6743842f9875a6396cde6"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/MERGED_WHEELHOUSE_MANIFEST.json",
+      "bytes": 9275,
+      "sha256": "d0b3d2e7753ba0f5d834c70f0ad049fd8ca8888bbe90ee7d15fb48eae622b865"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/annotated_types-0.8.0-py3-none-any.whl",
+      "bytes": 13427,
+      "sha256": "f072f4d804ea359e4eaf198b1af7a8b0943881a87f31bb764f8bf219bb9419e0"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/anyio-4.14.2-py3-none-any.whl",
+      "bytes": 125813,
+      "sha256": "9f505dda5ac9f0c8309b5e8bd445a8c2bf7246f3ce950121e45ea15bc41d1494"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/attrs-26.1.0-py3-none-any.whl",
+      "bytes": 67548,
+      "sha256": "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/cffi-2.1.1-cp314-cp314-macosx_10_15_x86_64.whl",
+      "bytes": 184964,
+      "sha256": "d28630f5854ab07ab1fd4aba756de52326c82e6be15d414b12793f1975048b54"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/cffi-2.1.1-cp314-cp314-macosx_11_0_arm64.whl",
+      "bytes": 184962,
+      "sha256": "661c298b4821edebead0c91edd2b00374d67ad7c5a1f7a91d4442633b79d6a72"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/click-8.4.2-py3-none-any.whl",
+      "bytes": 119243,
+      "sha256": "e6f9f66136c816745b9d65817da91d61d957fb16e02e4dcd0552553c5a197b76"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/cryptography-48.0.1-cp311-abi3-macosx_10_9_universal2.whl",
+      "bytes": 8008324,
+      "sha256": "3e4a1a3232eef2e6c732827d5722db29a0cc8b27af2a4d865b094cf954be9ca1"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/h11-0.16.0-py3-none-any.whl",
+      "bytes": 37515,
+      "sha256": "63cf8bbe7522de3bf65932fda1d9c2772064ffb3dae62d55932da54b31cb6c86"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/httpcore2-2.10.0-py3-none-any.whl",
+      "bytes": 83000,
+      "sha256": "7df06cfb34070cae4f7c89be69dc1095eca138e9704ceffb98d25c1912ab6f01"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/httpx2-2.10.0-py3-none-any.whl",
+      "bytes": 94355,
+      "sha256": "5e3194a432701e1cc6f69a8b1b2fa199ef907013fede8d9a09a2c5b7b8141a18"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/idna-3.18-py3-none-any.whl",
+      "bytes": 65455,
+      "sha256": "7f952cbe720b688055e3f87de14f5c3e5fdaa8bc3928985c4077ca689de849a2"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/jsonschema-4.26.0-py3-none-any.whl",
+      "bytes": 90630,
+      "sha256": "d489f15263b8d200f8387e64b4c3a75f06629559fb73deb8fdfb525f2dab50ce"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/jsonschema_specifications-2025.9.1-py3-none-any.whl",
+      "bytes": 18437,
+      "sha256": "98802fee3a11ee76ecaca44429fda8a41bff98b00a0f2838151b113f210cc6fe"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/mcp-2.0.0-py3-none-any.whl",
+      "bytes": 349980,
+      "sha256": "1cb4c75d2d2c7b8c1d756355e5d82a39f2822cc7f13e22a2051d7ca3592349d6"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/mcp_types-2.0.0-py3-none-any.whl",
+      "bytes": 69649,
+      "sha256": "6b2de797ca2797f568b79529e1b25948e34de511bcc0bd82fef1039a6d1b8eb0"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/opentelemetry_api-1.44.0-py3-none-any.whl",
+      "bytes": 60018,
+      "sha256": "94b98c893a91b88657eaac1e3ba89618cdb85be6918196705354f34728b2cdef"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/pycparser-3.0-py3-none-any.whl",
+      "bytes": 48172,
+      "sha256": "b727414169a36b7d524c1c3e31839a521725078d7b2ff038656844266160a992"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/pydantic-2.13.4-py3-none-any.whl",
+      "bytes": 472262,
+      "sha256": "45a282cde31d808236fd7ea9d919b128653c8b38b393d1c4ab335c62924d9aba"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/pydantic_core-2.46.4-cp314-cp314-macosx_10_12_x86_64.whl",
+      "bytes": 2102079,
+      "sha256": "428e04521a40150c85216fc8b85e8d39fece235a9cf5e383761238c7fa9b96fb"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/pydantic_core-2.46.4-cp314-cp314-macosx_11_0_arm64.whl",
+      "bytes": 1952179,
+      "sha256": "23ace664830ee0bfe014a0c7bc248b1f7f25ed7ad103852c317624a1083af462"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/pyjwt-2.13.0-py3-none-any.whl",
+      "bytes": 31274,
+      "sha256": "66adcc2aff09b3f1bbd95fc1e1577df8ac8723c978552fd43304c8a290ac5728"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/python_multipart-0.0.32-py3-none-any.whl",
+      "bytes": 30042,
+      "sha256": "ff6d3f776f16878c894e52e107296ffc890e913c611b1a4ec6c44e2821fe2e23"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/referencing-0.37.0-py3-none-any.whl",
+      "bytes": 26766,
+      "sha256": "381329a9f99628c9069361716891d34ad94af76e461dcb0335825aecc7692231"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/requirements-cp314-macos-arm64.lock",
+      "bytes": 2729,
+      "sha256": "cde78a524a39fd52882baa6338d935838132283fb8a6743842f9875a6396cde6"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/requirements-cp314-macos-x86_64.lock",
+      "bytes": 2729,
+      "sha256": "a534ffcb4579d0cbdebeccd0c7517ae39d51330390ae53023fde6872ec0a6fdd"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/rpds_py-2026.6.3-cp314-cp314-macosx_10_12_x86_64.whl",
+      "bytes": 344510,
+      "sha256": "931908d9fc855d8f74783377822be318edb6dcb19e47169dc038f9a1bf60b06e"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/rpds_py-2026.6.3-cp314-cp314-macosx_11_0_arm64.whl",
+      "bytes": 339495,
+      "sha256": "d7469697dce35be237db177d42e2a2ee26e6dcc5fc052078a6fefabd288c6edd"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/sse_starlette-3.4.8-py3-none-any.whl",
+      "bytes": 16516,
+      "sha256": "6e82314c786709a3cd9520f2285cf9fff90e181e598e8a357b0cf80f66afba0d"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/starlette-1.6.0-py3-none-any.whl",
+      "bytes": 75969,
+      "sha256": "a86dd39d14bb45f85a3d18525215a9ef0cfd1f192ac793220e72598c90335f0c"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/truststore-0.10.4-py3-none-any.whl",
+      "bytes": 18660,
+      "sha256": "adaeaecf1cbb5f4de3b1959b42d41f6fab57b2b1666adb59e89cb0b53361d981"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/typing_extensions-4.16.0-py3-none-any.whl",
+      "bytes": 45571,
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/typing_inspection-0.4.2-py3-none-any.whl",
+      "bytes": 14611,
+      "sha256": "4ed1cacbdc298c220f1bd249ed5287caa16f34d44ef4e9c3d0cbad5b521545e7"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/uvicorn-0.52.1-py3-none-any.whl",
+      "bytes": 79859,
+      "sha256": "e4403f9d93188cf9d1088e9f40e3acd12630e2df8675316704379a7fc20fff6a"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/x86_64/WHEELHOUSE_MANIFEST.json",
+      "bytes": 6749,
+      "sha256": "90ca5ca6c09656142e4e5725b18fef067f205699011b252877985b48bee06ace"
+    },
+    {
+      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/x86_64/requirements-cp314-macos-x86_64.lock",
+      "bytes": 2729,
+      "sha256": "a534ffcb4579d0cbdebeccd0c7517ae39d51330390ae53023fde6872ec0a6fdd"
+    },
+    {
       "path": "scripts/audit9-target-gate.py",
       "bytes": 16191,
       "sha256": "8c10bdd12c48edf2ff37827feeed5b9c7441cf4e02b573f9318dc2969ea918d3"
     },
     {
       "path": "scripts/build-plugin.py",
-      "bytes": 10018,
-      "sha256": "2efba4971cc31ef90dd6d20d7d38d132d01113e8d67def3247b514dec87844f5"
+      "bytes": 10064,
+      "sha256": "586e0023dc3b6387e448e2fbe89d0b9cfab4d5ea8796c77751b4d210bad8e0c9"
     },
     {
       "path": "scripts/build-release.sh",
@@ -1637,13 +1922,13 @@
     },
     {
       "path": "scripts/generate-delivery-index.py",
-      "bytes": 2114,
-      "sha256": "02ccfe9ff2dc44739b69ea1116f8ee126e0c9e16b6a67d99b56751823a27c1ae"
+      "bytes": 2357,
+      "sha256": "6eac76463fb9c7b6a23c22d6294306bb90e9d23d425aaff0894c852965cad72d"
     },
     {
       "path": "scripts/generate-manifest.py",
-      "bytes": 1941,
-      "sha256": "ffc59e387f3bf5bf62294c2f2417de7010672d8286b2b32c06629a104fad03f3"
+      "bytes": 2184,
+      "sha256": "43bbf302b091a0956acb1241e972266e096b824e08ba91e718e7866fdc447329"
     },
     {
       "path": "scripts/install-plugin.ps1",
@@ -1682,8 +1967,8 @@
     },
     {
       "path": "scripts/quick-validate.py",
-      "bytes": 6395,
-      "sha256": "0ad855697b4b221eab9dc50e8fb4bb7f222293d79652813036b6aaa973c32a4a"
+      "bytes": 6415,
+      "sha256": "24cdfeb7fff5007410d1189efe8570455f71e28c01162850b9ecf6945a965f74"
     },
     {
       "path": "scripts/smoke-test-install.sh",
@@ -1712,8 +1997,8 @@
     },
     {
       "path": "scripts/test-hooks.mjs",
-      "bytes": 3480,
-      "sha256": "694af9177a65062440fe5ceb14cdac6ddf697de8714a3c84a8d451afb2297ae7"
+      "bytes": 5597,
+      "sha256": "6db4ab9db3e804b82e810d3b8ddfbf87b40b63125a46376f6a9a98aa26800852"
     },
     {
       "path": "scripts/test-python-control-plane.sh",
@@ -1722,8 +2007,8 @@
     },
     {
       "path": "scripts/test-release-archives.py",
-      "bytes": 10542,
-      "sha256": "9cfa94b49f08c5e4e367488622dffcdcccc142ad78a9b4842f35b9cf5dfa55e1"
+      "bytes": 10602,
+      "sha256": "31e75a41fae7015736895f770e9c66684746c7f977c7ade62792a78d5f9d5503"
     },
     {
       "path": "scripts/test-route-launcher.sh",
@@ -1732,8 +2017,8 @@
     },
     {
       "path": "scripts/validate-config.py",
-      "bytes": 58272,
-      "sha256": "ba9fb344b1aad6a32e22f73eb4d685334d13a26deceecbd122c1525391b485fd"
+      "bytes": 58343,
+      "sha256": "2ce447adeae5e13b8b82d2ba0fe32c309392d524b9915069dae5962ba7c7b381"
     },
     {
       "path": "scripts/validate-workflows.mjs",

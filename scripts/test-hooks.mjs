@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 import path from 'node:path';
+import fs from 'node:fs';
+import os from 'node:os';
 import process from 'node:process';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
@@ -55,6 +57,40 @@ const status = spawnSync(process.execPath, [path.join(root, 'global', 'madventur
 if (status.status !== 0 || !status.stdout.includes('Sonnet 5/high') || !status.stdout.includes('ctx 42%')) {
   failures.push(`status line: status ${status.status}; ${status.stderr}`);
 }
+
+// Environment identity marker: with MADVENTURES_ENV=1 the statusline prefixes "[MAD_OS Env]".
+// Use a temp workspace with no .claude state so the env flag is the only trigger.
+const tmpWs = fs.mkdtempSync(path.join(os.tmpdir(), 'mad-statusline-'));
+const marked = spawnSync(process.execPath, [path.join(root, 'global', 'madventures-statusline.mjs')], {
+  env: { ...process.env, MADVENTURES_ENV: '1' },
+  input: JSON.stringify({ workspace: { current_dir: tmpWs }, model: { id: 'Sonnet' } }),
+  encoding: 'utf8',
+});
+if (marked.status !== 0 || !marked.stdout.includes('[MAD_OS Env]')) {
+  failures.push(`status line env marker: status ${marked.status}; ${marked.stderr}`);
+}
+// Install-state activation: INSTALLATION_STATE.json at the project root marks the env.
+fs.mkdirSync(path.join(tmpWs, '.claude'), { recursive: true });
+fs.writeFileSync(path.join(tmpWs, '.claude', 'INSTALLATION_STATE.json'), '{}');
+const stateMarked = spawnSync(process.execPath, [path.join(root, 'global', 'madventures-statusline.mjs')], {
+  input: JSON.stringify({ workspace: { current_dir: path.join(tmpWs, 'subdir'), project_dir: tmpWs }, model: { id: 'Sonnet' } }),
+  encoding: 'utf8',
+});
+if (stateMarked.status !== 0 || !stateMarked.stdout.includes('[MAD_OS Env]')) {
+  failures.push(`status line install-state marker: status ${stateMarked.status}; ${stateMarked.stderr}`);
+}
+// Negative case: no env flag, no install-state record => no marker.
+// Use a FRESH temp dir (tmpWs now carries the install-state file above).
+const plainWs = fs.mkdtempSync(path.join(os.tmpdir(), 'mad-statusline-plain-'));
+const plain = spawnSync(process.execPath, [path.join(root, 'global', 'madventures-statusline.mjs')], {
+  input: JSON.stringify({ workspace: { current_dir: plainWs }, model: { id: 'Sonnet' } }),
+  encoding: 'utf8',
+});
+if (plain.status !== 0 || plain.stdout.includes('[MAD_OS Env]')) {
+  failures.push(`status line negative marker: status ${plain.status}; ${plain.stderr}`);
+}
+fs.rmSync(plainWs, { recursive: true, force: true });
+fs.rmSync(tmpWs, { recursive: true, force: true });
 
 if (failures.length) {
   console.error('HOOK/STATUSLINE TESTS FAILED');
