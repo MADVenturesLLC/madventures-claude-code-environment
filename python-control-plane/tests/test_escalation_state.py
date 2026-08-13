@@ -42,6 +42,11 @@ def make_journal(repo: Path) -> es.DenialJournal:
     return es.DenialJournal(repo)
 
 
+def mint(repo: Path, artifact: str = "DEC-20260812-05@d5adae5") -> str:
+    """Mint a Founder objective_id persisted in this repo's store (Q1.6)."""
+    return es.mint_objective_id(artifact, store_root=repo)
+
+
 def denial_fields(objective_id: str = "", action_type: str = "Bash", reason: str = "blocked") -> dict:
     return {
         "objective_id": objective_id,
@@ -69,8 +74,15 @@ class ObjectiveLifecycleTests(unittest.TestCase):
         self.assertFalse(journal.validate_objective_id("20260812T120000Z-1a2b3c4d"))
 
     def test_minted_id_is_wellformed(self):
-        objective_id = es.mint_objective_id("DEC-20260812-05@d5adae5")
+        repo = make_repo()
+        objective_id = mint(repo)
         self.assertTrue(es.OBJECTIVE_ID_RE.fullmatch(objective_id))
+        # Q1.6: the mint record is durably persisted with the source ref.
+        record = make_journal(repo).objective_record(objective_id)
+        self.assertIsNotNone(record)
+        assert record is not None
+        self.assertEqual(record["source_artifact"], "DEC-20260812-05@d5adae5")
+        self.assertEqual(record["objective_id"], objective_id)
 
     def test_mint_requires_source_artifact(self):
         # Q1.6: traceability requires a Founder-anchored source reference.
@@ -79,7 +91,7 @@ class ObjectiveLifecycleTests(unittest.TestCase):
 
     def test_lifecycle_derives_durably(self):
         repo = make_repo()
-        objective_id = es.mint_objective_id("DEC-x@sha")
+        objective_id = mint(repo)
         journal = make_journal(repo)
         self.assertEqual(journal.objective_state(objective_id), "created")
         journal.record_denial(denial_fields(objective_id, "Bash"))
@@ -94,7 +106,7 @@ class ObjectiveLifecycleTests(unittest.TestCase):
 class DurableCounterTests(unittest.TestCase):
     def test_retry_counter_counts_same_action_type(self):
         repo = make_repo()
-        objective_id = "obj-20260812T120000Z-1a2b3c4d"
+        objective_id = mint(repo)
         journal = make_journal(repo)
         journal.record_denial(denial_fields(objective_id, "Bash"))
         journal.record_denial(denial_fields(objective_id, "Bash"))
@@ -104,7 +116,7 @@ class DurableCounterTests(unittest.TestCase):
 
     def test_workaround_counter_distinct_per_objective(self):
         repo = make_repo()
-        objective_id = "obj-20260812T120000Z-1a2b3c4d"
+        objective_id = mint(repo)
         journal = make_journal(repo)
         journal.record_denial(denial_fields(objective_id, "Bash"))
         self.assertEqual(journal.workaround_count(objective_id), 0)  # primary action
@@ -117,7 +129,7 @@ class DurableCounterTests(unittest.TestCase):
         # Q3.3 acceptance: counters and escalation state survive a "restart"
         # — a fresh DenialJournal instance reads the same durable state.
         repo = make_repo()
-        objective_id = "obj-20260812T120000Z-1a2b3c4d"
+        objective_id = mint(repo)
         make_journal(repo).record_denial(denial_fields(objective_id, "Bash"))
         make_journal(repo).record_denial(denial_fields(objective_id, "Bash"))
         fresh = make_journal(repo)  # new instance == new process equivalent
@@ -126,7 +138,7 @@ class DurableCounterTests(unittest.TestCase):
 
     def test_ceiling_event_escalates_and_records_reason(self):
         repo = make_repo()
-        objective_id = "obj-20260812T120000Z-1a2b3c4d"
+        objective_id = mint(repo)
         journal = make_journal(repo)
         for _ in range(RETRY_CEILING):
             journal.record_denial(denial_fields(objective_id, "Bash", "blocked"))
@@ -134,6 +146,11 @@ class DurableCounterTests(unittest.TestCase):
         records = journal.records()
         self.assertEqual(len(records), RETRY_CEILING)
         self.assertTrue(all(r.get("action_type") == "Bash" for r in records))
+        # Q3.4: the crossing record stamps the ceiling reason durably.
+        # (records are filename-sorted, so search, don't index.)
+        stamped = [r for r in records if r.get("ceiling_reason")]
+        self.assertEqual(len(stamped), 1)
+        self.assertIn(f"retry ceiling {RETRY_CEILING} reached for Bash", stamped[0]["ceiling_reason"])
 
 
 class WriteOnceTests(unittest.TestCase):
@@ -240,36 +257,84 @@ class FailClosedTests(unittest.TestCase):
         allowed, _ = consult_escalation(repo, {"objective_id": "obj-nope"})
         self.assertFalse(allowed)
 
+    def test_unknown_objective_denied(self):
+        # Q1.1/Q1.3: well-formed but never Founder-minted -> deny.
+        repo = make_repo()
+        allowed, reason = consult_escalation(
+            repo, {"objective_id": "obj-20260812T120000Z-1a2b3c4d"}
+        )
+        self.assertFalse(allowed)
+        self.assertIn("unknown objective_id", reason)
+
 
 class DispositionTests(unittest.TestCase):
-    def test_continuation_requires_matching_disposition(self):
-        # Q4.2/Q4.3: binding is per objective at per ceiling event.
-        repo = make_repo()
-        objective_id = "obj-20260812T120000Z-1a2b3c4d"
+    def _escalated(self, repo: Path, objective_id: str) -> es.DenialJournal:
         journal = make_journal(repo)
         for _ in range(RETRY_CEILING):
             journal.record_denial(denial_fields(objective_id, "Bash"))
+        return journal
+
+    def test_deny_disposition_is_terminal(self):
+        # Q4.1 blocking fix: a deny disposition is NOT a continuation grant.
+        # Consult must keep governed actions denied even with the exact
+        # ceiling record_id supplied.
+        repo = make_repo()
+        objective_id = mint(repo)
+        journal = self._escalated(repo, objective_id)
+        ceiling = journal.records()[-1]["record_id"]
+        journal.record_disposition(
+            objective_id, ceiling, "deny", "DEC-20260812-05@d5adae5", "michael",
+        )
+        self.assertEqual(journal.objective_state(objective_id), "closed")
+        # Direct consult with the exact ceiling event still denies.
+        allowed, reason = consult_escalation(
+            repo, {"objective_id": objective_id, "ceiling_record_id": ceiling}
+        )
+        self.assertFalse(allowed)
+        self.assertIn("deny disposition", reason)
+        # And with no ceiling event at all.
+        allowed, _ = consult_escalation(repo, {"objective_id": objective_id})
+        self.assertFalse(allowed)
+
+    def test_continuation_requires_exact_ceiling_binding(self):
+        # Q4.2/Q4.3: allow-with-conditions is a continuation grant ONLY when
+        # bound to the exact ceiling event.
+        repo = make_repo()
+        objective_id = mint(repo)
+        journal = self._escalated(repo, objective_id)
         records = journal.records()
         ceiling = records[-1]["record_id"]
+        other_ceiling = records[-2]["record_id"]
         self.assertTrue(journal.is_escalated(objective_id))
-        # No disposition yet -> consult denies.
-        self.assertFalse(
-            journal.has_valid_disposition(objective_id, ceiling)
+        # Escalated, no disposition -> consult denies.
+        allowed, _ = consult_escalation(
+            repo, {"objective_id": objective_id, "ceiling_record_id": ceiling}
         )
-        # Founder disposition for the exact ceiling event -> allowed.
+        self.assertFalse(allowed)
+        # Founder allow-with-conditions for the exact ceiling event.
         journal.record_disposition(
             objective_id, ceiling, "allow-with-conditions",
             "DEC-20260812-05@d5adae5", "michael",
         )
-        self.assertTrue(journal.has_valid_disposition(objective_id, ceiling))
-        self.assertFalse(journal.is_escalated(objective_id))
-        # Wrong ceiling event -> not valid (per-event binding).
-        other_ceiling = records[-2]["record_id"]
-        self.assertFalse(journal.has_valid_disposition(objective_id, other_ceiling))
+        self.assertTrue(journal.disposition_permits(objective_id, ceiling))
+        # Consult allows continuation for THAT ceiling event...
+        allowed, reason = consult_escalation(
+            repo, {"objective_id": objective_id, "ceiling_record_id": ceiling}
+        )
+        self.assertTrue(allowed)
+        self.assertIn("authorizes continuation", reason)
+        # ...but denies a DIFFERENT ceiling event (per-event binding).
+        allowed, _ = consult_escalation(
+            repo, {"objective_id": objective_id, "ceiling_record_id": other_ceiling}
+        )
+        self.assertFalse(allowed)
+        # And denies with no ceiling event at all.
+        allowed, _ = consult_escalation(repo, {"objective_id": objective_id})
+        self.assertFalse(allowed)
 
     def test_disposition_unknown_ceiling_refused(self):
         repo = make_repo()
-        objective_id = "obj-20260812T120000Z-1a2b3c4d"
+        objective_id = mint(repo)
         journal = make_journal(repo)
         with self.assertRaises(EvidenceError):
             journal.record_disposition(
@@ -292,7 +357,7 @@ class HookIntegrationTests(unittest.TestCase):
         # A10-C integration: evaluate_baseline with an escalated objective
         # denies before the tool is evaluated.
         repo = make_repo()
-        objective_id = "obj-20260812T120000Z-1a2b3c4d"
+        objective_id = mint(repo)
         journal = make_journal(repo)
         for _ in range(RETRY_CEILING):
             journal.record_denial(denial_fields(objective_id, "Bash"))

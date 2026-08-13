@@ -79,6 +79,8 @@ CALLER_FIELDS = tuple(f for f in REQUIRED_DENIAL_FIELDS if f not in COMPUTED_FIE
 OBJECTIVE_LIFECYCLE = ("created", "active", "escalated", "dispositioned", "closed")
 
 _DISPOSITIONS = frozenset({"allow-with-conditions", "deny", "modify-ceiling"})
+# Q4.1: deny is a terminal ruling, never a continuation grant.
+_CONTINUATION_DISPOSITIONS = frozenset({"allow-with-conditions", "modify-ceiling"})
 
 
 def _utc_stamp() -> str:
@@ -89,18 +91,31 @@ def _new_id(prefix: str) -> str:
     return f"{prefix}-{_utc_stamp()}-{uuid.uuid4().hex[:8]}"
 
 
-def mint_objective_id(source_artifact: str) -> str:
+def mint_objective_id(source_artifact: str, store_root: Path | None = None) -> str:
     """Q1.1/Q1.6: mint an objective_id bound to a Founder-anchored artifact.
 
     Founder-only by contract: this function is called by Founder-side flow
     (ratified DEC naming an objective, or a Founder-issued objective
-    record), never by hook decision code. The source artifact reference is
-    written to the objective reference file so the model cannot later
-    create or modify the traceability link.
+    record), never by hook decision code. The objective_id and its
+    source-artifact reference are durably persisted to the protected store
+    as ``objective-<id>.json`` (write-once via O_EXCL), so the traceability
+    link is a record, not a promise, and the model cannot create or modify
+    it.
     """
     if not source_artifact or not isinstance(source_artifact, str):
         raise EvidenceError("objective_id minting requires a Founder-anchored source artifact reference")
-    return _new_id("obj")
+    objective_id = _new_id("obj")
+    if store_root is not None:
+        journal = DenialJournal(store_root)
+        evidence.write_immutable_record(
+            journal._objective_path(objective_id),
+            {
+                "objective_id": objective_id,
+                "source_artifact": source_artifact,
+                "minted_at": datetime.now(timezone.utc).isoformat(),
+            },
+        )
+    return objective_id
 
 
 class DenialJournal:
@@ -200,6 +215,23 @@ class DenialJournal:
 
     # -- Q4 disposition references (founder-written, model-unwritable) ------
 
+    def _objective_path(self, objective_id: str) -> Path:
+        """Q1.6: the durable objective record carrying the Founder-anchored
+        source-artifact reference. Written once at mint time (O_EXCL)."""
+        return self.store_dir / f"objective-{objective_id}.json"
+
+    def objective_record(self, objective_id: str) -> dict[str, Any] | None:
+        """Q1.6 read: the persisted mint record (source artifact + minted_at)."""
+        path = self._objective_path(objective_id)
+        try:
+            if not path.is_file():
+                return None
+            with path.open("r", encoding="utf-8") as handle:
+                value = json.load(handle)
+        except (OSError, json.JSONDecodeError) as exc:
+            raise EvidenceError("objective record is unreadable") from exc
+        return value if isinstance(value, dict) else None
+
     def _disposition_path(self, objective_id: str) -> Path:
         return self.store_dir / f"disposition-{objective_id}.json"
 
@@ -227,6 +259,24 @@ class DenialJournal:
             and bool(disposition.get("artifact_ref"))
         )
 
+    def disposition_permits(self, objective_id: str, ceiling_record_id: str) -> bool:
+        """Q4.1/Q4.3 (blocking fix): whether a disposition authorizes
+        continuation — and only a continuation.
+
+        A ``deny`` disposition is NEVER a continuation grant: it keeps
+        governed actions denied. ``allow-with-conditions`` /
+        ``modify-ceiling`` authorize continuation only when bound to the
+        exact ceiling event named in the disposition (per-objective, per
+        ceiling-event binding). An unbound or deny disposition permits
+        nothing.
+        """
+        disposition = self.disposition_for(objective_id)
+        if not disposition:
+            return False
+        if disposition.get("disposition") not in _CONTINUATION_DISPOSITIONS:
+            return False
+        return self.has_valid_disposition(objective_id, ceiling_record_id)
+
     # -- Q2 write-once journal ----------------------------------------------
 
     def record_denial(self, fields: dict[str, Any]) -> Path:
@@ -246,6 +296,21 @@ class DenialJournal:
         if objective_id:
             if fields.get("governed") is not False:
                 fields["governed"] = True
+            # Q1.3/Q2.1: a governed denial is only meaningful against an
+            # objective that exists in the durable store (Founder-minted).
+            if self.objective_record(objective_id) is None:
+                raise EvidenceError("denial record references an unknown objective_id")
+            # Q3.4: stamp the ceiling reason when THIS denial is the
+            # crossing record — the one that reaches the ceiling (count
+            # after this write, not before).
+            ceiling_reason: str | None = None
+            action_type = str(fields.get("action_type") or "")
+            if self.retry_count(objective_id, action_type) + 1 >= RETRY_CEILING:
+                ceiling_reason = f"retry ceiling {RETRY_CEILING} reached for {action_type}"
+            elif self.workaround_count(objective_id) + 1 >= WORKAROUND_CEILING:
+                ceiling_reason = f"workaround ceiling {WORKAROUND_CEILING} reached"
+            if ceiling_reason is not None:
+                fields["ceiling_reason"] = ceiling_reason
         else:
             # Q2.1: empty objective_id is only valid for pre-objective
             # baseline denials, which are recorded governed: false.

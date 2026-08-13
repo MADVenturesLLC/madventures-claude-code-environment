@@ -125,11 +125,19 @@ def consult_escalation(repo: Path, payload: dict[str, Any]) -> tuple[bool, str]:
       un-governed; governed: false is recorded by the journal writer).
     - Malformed objective_id -> deny (Q1.3: validation on every governed
       action that consults it).
+    - Unknown (well-formed but never Founder-minted) objective_id -> deny
+      (Q1.1/Q1.3: ids are minted only by the Founder and must exist in the
+      durable objective store).
+    - Escalated objective -> deny (Q4.3: continuing past a ceiling
+      requires a Founder disposition).
+    - Closed objective (Founder deny disposition) -> deny, always: a deny
+      disposition is a terminal ruling, never a continuation grant.
+    - Dispositioned objective -> allow ONLY when the disposition is a
+      continuation type (allow-with-conditions / modify-ceiling) bound to
+      the exact ceiling event in this payload. A different ceiling event
+      needs its own disposition.
     - Journal read failure -> deny (Q5: fail closed; the returned reason
       never exposes storage error details).
-    - Escalated objective without a valid disposition for the exact ceiling
-      event -> deny (Q4.3: continuing past a ceiling requires a matching
-      Founder disposition reference).
     """
     objective_id = str(
         payload.get("objective_id")
@@ -142,12 +150,20 @@ def consult_escalation(repo: Path, payload: dict[str, Any]) -> tuple[bool, str]:
     if not journal.validate_objective_id(objective_id):
         return False, "Objective-bound escalation is denied: malformed objective_id."
     try:
-        if not journal.is_escalated(objective_id):
-            return True, "objective is not escalated"
-        ceiling_record_id = str(payload.get("ceiling_record_id") or "").strip()
-        if ceiling_record_id and journal.has_valid_disposition(objective_id, ceiling_record_id):
-            return True, "Founder disposition authorizes continuation past this ceiling event"
-        return False, "Objective-bound escalation is active: governed actions are denied pending a Founder disposition."
+        if journal.objective_record(objective_id) is None:
+            return False, "Objective-bound escalation is denied: unknown objective_id (not Founder-minted)."
+        state = journal.objective_state(objective_id)
+        if state == "closed":
+            return False, "Objective-bound escalation: this objective is closed by a Founder deny disposition."
+        if state == "escalated":
+            return False, "Objective-bound escalation is active: governed actions are denied pending a Founder disposition."
+        if state == "dispositioned":
+            ceiling_record_id = str(payload.get("ceiling_record_id") or "").strip()
+            if ceiling_record_id and journal.disposition_permits(objective_id, ceiling_record_id):
+                return True, "Founder disposition authorizes continuation past this ceiling event"
+            return False, "Objective-bound escalation: continuation requires a Founder disposition bound to this exact ceiling event."
+        # created / active
+        return True, "objective is not escalated"
     except EvidenceError:
         return False, "Objective-bound escalation state is unavailable: action denied (fail closed)."
 
