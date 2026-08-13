@@ -56,6 +56,16 @@ if (status.status !== 0 || !status.stdout.includes('Sonnet 5/high') || !status.s
   failures.push(`status line: status ${status.status}; ${status.stderr}`);
 }
 
+// Environment identity marker: with MADVENTURES_ENV=1 the statusline prefixes "[MAD_OS Env]".
+const marked = spawnSync(process.execPath, [path.join(root, 'global', 'madventures-statusline.mjs')], {
+  env: { ...process.env, MADVENTURES_ENV: '1' },
+  input: JSON.stringify({ workspace: { current_dir: root }, model: { id: 'Sonnet' } }),
+  encoding: 'utf8',
+});
+if (marked.status !== 0 || !marked.stdout.includes('[MAD_OS Env]')) {
+  failures.push(`status line env marker: status ${marked.status}; ${marked.stderr}`);
+}
+
 if (failures.length) {
   console.error('HOOK/STATUSLINE TESTS FAILED');
   failures.forEach(failure => console.error(`- ${failure}`));

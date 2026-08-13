@@ -189,6 +189,18 @@ It does **not** blindly merge settings fragments. User settings may already cont
 
 To enable the status line after review, merge the supplied status-line object into `~/.claude/settings.json`. Keep `~/.claude.json`-only fields in the separate fragment supplied for that file.
 
+### Environment identity marker
+
+Installed environments identify themselves on the Claude status line as `[MAD_OS Env]` — so you can tell at a glance that a session is running inside the governed MAD Ventures Claude Code environment, not a vanilla Claude session. The marker triggers when:
+
+- `MADVENTURES_ENV=1` is present in the session `env` (set by the canonical project settings), **or**
+- the project's `.claude/` carries an install-state record (`INSTALLATION_STATE.json` / `MADVENTURES_INSTALLATION_STATE.json`).
+
+The project layer ships the statusline script at `.claude/hooks/madventures-statusline.mjs` and the canonical settings reference it via `${CLAUDE_PROJECT_DIR}`; the global layer ships `~/.claude/madventures-statusline.mjs` for `--install-global`. Both are byte-identical copies of `global/madventures-statusline.mjs`.
+
+Shell-prompt marker: with `--install-global` the `MADVENTURES_ENV=1` env flag is also available to the shell, so a prompt can render a `MAD_OS` tag (see `global/settings.json.fragment`).
+
+
 Important for cloud use: user-home files remain local-machine state. Critical FounderOS behavior is duplicated at the project level so it travels with the repository.
 
 ## Workspace and hard global layers

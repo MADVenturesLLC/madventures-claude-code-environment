@@ -7,7 +7,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "PACKAGE_CONTENTS.txt"
 EXCLUDE = {"MANIFEST.json", "SHA256SUMS.txt", "PACKAGE_CONTENTS.txt"}
-EXCLUDED_PARTS = {"__pycache__", ".pytest_cache", ".DS_Store"}
+# "evidence" excludes runtime denial/approval byproducts written to ./claude/evidence
+# by test runs (never package content); project/.claude has no evidence dir.
+EXCLUDED_PARTS = {"__pycache__", ".pytest_cache", ".DS_Store", "evidence"}
 
 files: list[Path] = []
 for path in ROOT.rglob("*"):

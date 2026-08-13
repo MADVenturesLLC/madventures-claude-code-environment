@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+// Canonical statusline — mirrors global/madventures-statusline.mjs (project-layer copy).
+// Keep byte-identical with the global copy; installer ships both layers.
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';

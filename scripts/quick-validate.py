@@ -51,7 +51,7 @@ for rel in required:
 # source set (same membership and count as scripts/generate-delivery-index.py
 # would produce now); a stale index fails closed.
 _contents_exclude = {"MANIFEST.json", "SHA256SUMS.txt", "PACKAGE_CONTENTS.txt"}
-_contents_excluded_parts = {"__pycache__", ".pytest_cache", ".DS_Store"}
+_contents_excluded_parts = {"__pycache__", ".pytest_cache", ".DS_Store", "evidence"}
 eligible: set[str] = set()
 for path in ROOT.rglob("*"):
     if not path.is_file() or path.name in _contents_exclude:
@@ -86,7 +86,7 @@ expected_counts = {
     "agents": (ROOT / "project/.claude/agents", "*.md", 20),
     "skills": (ROOT / "project/.claude/skills", "*/SKILL.md", 31),
     "workflows": (ROOT / "project/.claude/workflows", "*.js", 0),
-    "hooks": (ROOT / "project/.claude/hooks", "*.mjs", 1),
+    "hooks": (ROOT / "project/.claude/hooks", "*.mjs", 2),
     "rules": (ROOT / "project/.claude/rules", "*.md", 8),
 }
 for name, (base, pattern, expected) in expected_counts.items():
