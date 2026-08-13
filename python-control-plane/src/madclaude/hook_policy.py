@@ -93,6 +93,43 @@ DANGEROUS_SHELL = (
     re.compile(r"\b(?:kubectl\s+(?:apply|delete|replace)|terraform\s+(?:apply|destroy)|tofu\s+(?:apply|destroy))\b", re.I),
 )
 
+# A10-D (DEC-20260813-01 §2): mechanical risk-tier classifier.
+# Deterministic pure function of (tool, target, route) — never model-supplied.
+#   high:     authority/exfil tools on protected/secret/remote targets
+#   moderate: the same tools on ordinary project targets
+#   low:      read-only tools with no protected target
+# A target matching no rule fails to 'moderate' (never 'unknown').
+AUTHORITY_TOOLS = frozenset({"Edit", "Write", "NotebookEdit", "MultiEdit", "Bash", "PowerShell", "Agent"})
+READONLY_TOOLS = frozenset({"Read", "Grep", "Glob"})
+REMOTE_TARGET = re.compile(r"https?://|s3://|gs://|ftp://|ssh://", re.I)
+
+
+def classify_risk_tier(tool_name: str, target: str, route: str = "") -> str:
+    """A10-D: mechanical risk tier for a denial record.
+
+    Pure function of (tool, target, route). The tier is a property of the
+    action, never of model-supplied payload. Protected/secret targets reuse
+    the A10-A SHELL_SECRET / SHELL_AUTHORITY patterns so the classifier and
+    the deny rules agree on what is sensitive. A target that matches no
+    rule fails to 'moderate' (never 'unknown').
+    """
+    name = ALIASES.get(str(tool_name or ""), str(tool_name or ""))
+    target = str(target or "")
+    if name in READONLY_TOOLS:
+        if SHELL_SECRET.search(target) or SHELL_AUTHORITY.search(target):
+            return "high"
+        return "low"
+    if name in AUTHORITY_TOOLS:
+        if (
+            SHELL_SECRET.search(target)
+            or SHELL_AUTHORITY.search(target)
+            or REMOTE_TARGET.search(target)
+        ):
+            return "high"
+        return "moderate"
+    # Unknown tool family: fail to moderate, never unknown.
+    return "moderate"
+
 
 def _tool_input(payload: dict[str, Any]) -> dict[str, Any]:
     value = payload.get("tool_input")

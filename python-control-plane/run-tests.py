@@ -57,7 +57,10 @@ INSTALLED_MODULE_COUNT = 19
 # A10-A: +12 (test_secrets_patterns) +7 (test_baseline_policy_matrix) = 163 -> 182.
 # A10-C: +26 (test_escalation_state, rev 2 — deny-terminal + exact-ceiling
 # binding split) = 182 -> 208.
-INSTALLED_TEST_CASE_COUNT = 208
+# A10-D: +9 (test_escalation_state A10D class — schema fields, adaptation
+# outcome incl. redacted-target retry, classifier matrix, mechanical-tier
+# integration) = 208 -> 217.
+INSTALLED_TEST_CASE_COUNT = 217
 
 # The six source-only modules: they require package-root resources
 # (scripts/, plugin/, MANIFEST.json) or transitively import a module that

@@ -164,12 +164,12 @@ FILE INDEX
        133  plugin/madventures-founderos/python-control-plane/src/madclaude/__init__.py
       5496  plugin/madventures-founderos/python-control-plane/src/madclaude/artifacts.py
        722  plugin/madventures-founderos/python-control-plane/src/madclaude/errors.py
-     16273  plugin/madventures-founderos/python-control-plane/src/madclaude/escalation_state.py
+     18904  plugin/madventures-founderos/python-control-plane/src/madclaude/escalation_state.py
       9841  plugin/madventures-founderos/python-control-plane/src/madclaude/evidence.py
       6779  plugin/madventures-founderos/python-control-plane/src/madclaude/git.py
      21079  plugin/madventures-founderos/python-control-plane/src/madclaude/guard.py
-      6119  plugin/madventures-founderos/python-control-plane/src/madclaude/hook_cli.py
-     19354  plugin/madventures-founderos/python-control-plane/src/madclaude/hook_policy.py
+      8382  plugin/madventures-founderos/python-control-plane/src/madclaude/hook_cli.py
+     21043  plugin/madventures-founderos/python-control-plane/src/madclaude/hook_policy.py
       8537  plugin/madventures-founderos/python-control-plane/src/madclaude/safe_read.py
       4569  plugin/madventures-founderos/python-control-plane/src/madclaude/secrets_patterns.py
         22  plugin/madventures-founderos/python-control-plane/src/madclaude/version.py
@@ -284,7 +284,7 @@ FILE INDEX
       1530  python-control-plane/WORKFLOW_MIGRATION.json
       1058  python-control-plane/bin/madclaude.py
       1088  python-control-plane/pyproject.toml
-      5019  python-control-plane/run-tests.py
+      5198  python-control-plane/run-tests.py
       2558  python-control-plane/schemas/architecture-validation.schema.json
       1597  python-control-plane/schemas/build.schema.json
        998  python-control-plane/schemas/fix-until-green.schema.json
@@ -304,13 +304,13 @@ FILE INDEX
      26410  python-control-plane/src/madclaude/cli.py
       7066  python-control-plane/src/madclaude/config.py
        722  python-control-plane/src/madclaude/errors.py
-     16273  python-control-plane/src/madclaude/escalation_state.py
+     18904  python-control-plane/src/madclaude/escalation_state.py
       9841  python-control-plane/src/madclaude/evidence.py
       5385  python-control-plane/src/madclaude/execution.py
       6779  python-control-plane/src/madclaude/git.py
      21079  python-control-plane/src/madclaude/guard.py
-      6119  python-control-plane/src/madclaude/hook_cli.py
-     19354  python-control-plane/src/madclaude/hook_policy.py
+      8382  python-control-plane/src/madclaude/hook_cli.py
+     21043  python-control-plane/src/madclaude/hook_policy.py
      58059  python-control-plane/src/madclaude/mcp_lifecycle.py
      17542  python-control-plane/src/madclaude/mcp_server.py
       9379  python-control-plane/src/madclaude/prompts.py
@@ -328,7 +328,7 @@ FILE INDEX
        590  python-control-plane/tests/test_authoritative_engine.py
      18535  python-control-plane/tests/test_backend.py
       5723  python-control-plane/tests/test_baseline_policy_matrix.py
-     17541  python-control-plane/tests/test_escalation_state.py
+     23169  python-control-plane/tests/test_escalation_state.py
       1284  python-control-plane/tests/test_evidence.py
       6306  python-control-plane/tests/test_evidence_hashing.py
       2598  python-control-plane/tests/test_git.py

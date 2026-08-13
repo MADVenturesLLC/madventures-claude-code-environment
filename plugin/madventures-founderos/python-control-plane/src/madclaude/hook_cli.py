@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import json
 import os
+import shutil
+import subprocess
 import sys
 import argparse
 from pathlib import Path
@@ -9,7 +11,7 @@ from typing import Any
 
 from .escalation_state import CALLER_FIELDS, DenialJournal
 from .guard import evaluate_tool_call
-from .hook_policy import evaluate_profile
+from .hook_policy import classify_risk_tier, evaluate_profile
 
 
 def _deny(reason: str) -> dict[str, Any]:
@@ -20,6 +22,31 @@ def _deny(reason: str) -> dict[str, Any]:
             "permissionDecisionReason": reason,
         }
     }
+
+
+def _repo_short_sha(repo: Path) -> str:
+    """A10-D: short HEAD SHA of the project dir; empty when not a git repo.
+
+    Best-effort and side-effect-free: a missing git binary, a non-repo
+    directory, or a read failure all yield the empty string (never omitted
+    from the record, never crashes the journal writer).
+    """
+    try:
+        git_bin = shutil.which("git")
+        if git_bin is None:
+            return ""
+        result = subprocess.run(
+            [git_bin, "rev-parse", "--short", "HEAD"],
+            cwd=str(repo),
+            capture_output=True,
+            text=True,
+            timeout=2,
+        )
+        if result.returncode == 0:
+            return result.stdout.strip()
+    except (OSError, subprocess.SubprocessError):
+        pass
+    return ""
 
 
 def _journal_denial(payload: dict[str, Any], reason: str) -> None:
@@ -41,14 +68,44 @@ def _journal_denial(payload: dict[str, Any], reason: str) -> None:
         return
     raw_input = payload.get("tool_input")
     tool_input = raw_input if isinstance(raw_input, dict) else {}
+    # A10-D: extract the action target across ALL tool-input shapes so the
+    # classifier never sees an empty target for a real action. Edit/MultiEdit
+    # carry edits[].file_path; NotebookEdit carries notebook_path; Grep/Glob
+    # carry path/pattern; Bash carries command; WebFetch carries url.
+    action_target = str(
+        tool_input.get("command")
+        or tool_input.get("file_path")
+        or tool_input.get("notebook_path")
+        or tool_input.get("path")
+        or tool_input.get("pattern")
+        or tool_input.get("url")
+        or ""
+    )
+    if not action_target and isinstance(tool_input.get("edits"), list):
+        paths = [
+            str(e.get("file_path") or "")
+            for e in tool_input["edits"]
+            if isinstance(e, dict) and e.get("file_path")
+        ]
+        action_target = paths[0] if paths else ""
+    action_type = str(payload.get("tool_name") or "unknown")
     fields = {
         "objective_id": str(payload.get("objective_id") or os.environ.get("MADCLAUDE_OBJECTIVE_ID") or ""),
-        "action_type": str(payload.get("tool_name") or "unknown"),
-        "action_target": str(tool_input.get("command") or tool_input.get("file_path") or tool_input.get("url") or ""),
+        "action_type": action_type,
+        "action_target": action_target,
         "resolved_route": str(payload.get("route") or "baseline"),
-        "risk_tier": str(payload.get("risk_tier") or "unknown"),
+        # A10-D (DEC-20260813-01 §2): risk_tier is mechanical, never
+        # payload-supplied. The classifier is a pure function of
+        # (tool, target, route) and fails to 'moderate', never 'unknown'.
+        "risk_tier": classify_risk_tier(action_type, action_target, str(payload.get("route") or "")),
         "denial_reason": reason,
         "control_id": str(payload.get("control_id") or "journal-writer"),
+        # A10-D (DEC-20260813-01 §1): session_id from the hook payload
+        # (empty string when unavailable, never omitted).
+        "session_id": str(payload.get("session_id") or ""),
+        # A10-D: repo_sha is the short HEAD SHA in the project dir; empty
+        # when the project is not a git repo (never omitted).
+        "repo_sha": _repo_short_sha(Path(root)),
     }
     missing = [f for f in CALLER_FIELDS if f not in fields]
     if missing:
