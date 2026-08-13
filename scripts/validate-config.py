@@ -560,7 +560,8 @@ def validate_secrets_and_mcp() -> None:
         # A10-A secret-pattern fixtures intentionally embed credential-shaped
         # strings to exercise the redactor; they are test data, not leaked
         # credentials, and are excluded from the release-tree secret scan.
-        if path.name == "test_secrets_patterns.py":
+        # Scoped to the EXACT path so a copy elsewhere cannot bypass the scan.
+        if path.relative_to(ROOT) == Path("python-control-plane/tests/test_secrets_patterns.py"):
             continue
         try:
             text = path.read_text(encoding="utf-8")

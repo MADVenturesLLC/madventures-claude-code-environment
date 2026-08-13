@@ -2,7 +2,7 @@ MAD VENTURES CLAUDE CODE OPERATING ENVIRONMENT — PACKAGE CONTENTS
 ========================================================================
 
 Version: 4.4.1
-Indexed files (excluding generated manifest/checksum/index): 360
+Indexed files (excluding generated manifest/checksum/index): 359
 Core project agents: 20
 Core project skills: 31
 Core project workflows: 0
@@ -125,7 +125,6 @@ FILE INDEX
       7145  docs/SESSION_CONTEXT_CHECKPOINTS.md
       7051  docs/SUBAGENT_REGISTRY.md
       7343  docs/UPGRADE_FROM_V4.md
-      5627  docs/VALIDATION_REPORT.md
       4295  docs/audit10-a10a-tool-surface-inventory.md
       1093  examples/CLOUD_TASKS.md
        715  examples/FOUNDER_APPROVAL.example.json
@@ -345,7 +344,7 @@ FILE INDEX
       1773  python-control-plane/tests/test_schemas.py
       8393  python-control-plane/tests/test_secrets_patterns.py
       6478  python-control-plane/tests/test_term.py
-     17505  python-control-plane/tests/test_wheelhouse_script.py
+     17738  python-control-plane/tests/test_wheelhouse_script.py
      17177  python-control-plane/tests/test_workflow.py
      16191  scripts/audit9-target-gate.py
      10064  scripts/build-plugin.py
@@ -373,7 +372,7 @@ FILE INDEX
       9328  scripts/test-python-control-plane.sh
      10602  scripts/test-release-archives.py
       2426  scripts/test-route-launcher.sh
-     58644  scripts/validate-config.py
+     58769  scripts/validate-config.py
       1684  scripts/validate-workflows.mjs
      10581  scripts/verify-release.py
        817  workspace/.claude/MADVENTURES_WORKSPACE.md
