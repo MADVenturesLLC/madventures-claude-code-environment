@@ -17,7 +17,7 @@ Design invariants carried from the A10-B decision:
   only by the Founder (this module never mints); never reused or reset;
   lifecycle ``created -> active -> escalated -> dispositioned -> closed``;
   every id carries a Founder-anchored source-artifact reference.
-- Q2 denial records: ten required fields, every field through the A10-A
+- Q2 denial records: thirteen required fields, every field through the A10-A
   registry redactor before write; durable store under the protected
   evidence tree (0700 dir, 0600 records); records are write-once — a
   duplicate record_id is refused (O_EXCL), never reopened, never modified.
@@ -57,7 +57,8 @@ WORKAROUND_CEILING = 2
 
 DENIAL_DIR_REL = ".claude/evidence/python-control-plane/denials"
 
-# Q2.1 required fields (all ten) — every one redacted before write (Q2.3).
+# Q2.1 required fields (all thirteen) — every one redacted before write (Q2.3).
+# A10-D (DEC-20260813-01 §1): +session_id, +repo_sha, +adaptation_outcome.
 REQUIRED_DENIAL_FIELDS = (
     "record_id",
     "objective_id",
@@ -69,11 +70,15 @@ REQUIRED_DENIAL_FIELDS = (
     "control_id",
     "utc_time",
     "evidence_ref",
+    "session_id",
+    "repo_sha",
+    "adaptation_outcome",
 )
 
 # Fields the journal computes itself (write-once identity + traceability);
-# callers must supply the other seven.
-COMPUTED_FIELDS = frozenset({"record_id", "utc_time", "evidence_ref"})
+# callers must supply the other nine. A10-D: adaptation_outcome is derived
+# by the journal from prior records (never caller-supplied).
+COMPUTED_FIELDS = frozenset({"record_id", "utc_time", "evidence_ref", "adaptation_outcome"})
 CALLER_FIELDS = tuple(f for f in REQUIRED_DENIAL_FIELDS if f not in COMPUTED_FIELDS)
 
 OBJECTIVE_LIFECYCLE = ("created", "active", "escalated", "dispositioned", "closed")
@@ -185,6 +190,38 @@ class DenialJournal:
             return 0
         primary = records[0].get("action_type")
         return sum(1 for r in records if r.get("action_type") != primary)
+
+    def _adaptation_outcome(self, objective_id: str, action_type: str, action_target: str) -> str:
+        """A10-D (DEC-20260813-01 §1): classify the model's behavior after
+        the PRIOR denial for this objective.
+
+        - same action_type AND same action_target as the prior denial =>
+          ``retry`` (the model re-attempted the exact denied action)
+        - different action_type (or different target) => ``workaround``
+          (the model re-approached the same goal differently)
+        - no prior denial for the objective => ``unknown`` (no evidence yet)
+
+        ``abandoned`` is reserved for a future Stop-hook capture and is
+        never derived here. The derivation is deterministic and durable:
+        it reads the journal, never process memory.
+
+        Ordering: records are compared in utc_time order (the journal's
+        own timestamp), not filename order — filenames embed the same
+        timestamp plus a random uuid, so same-second writes are
+        inherently ambiguous at second resolution and are documented as
+        such. Comparison: the journal persists the REDACTED target, so the
+        incoming target is redacted before comparison — a secret-bearing
+        target that was scrubbed in storage still matches itself.
+        """
+        prior = [r for r in self.records() if r.get("objective_id") == objective_id]
+        if not prior:
+            return "unknown"
+        prior.sort(key=lambda r: str(r.get("utc_time") or ""))
+        last = prior[-1]
+        redacted_target = evidence.redact(action_target)
+        if last.get("action_type") == action_type and last.get("action_target") == redacted_target:
+            return "retry"
+        return "workaround"
 
     def ceiling_exceeded(self, objective_id: str, action_type: str) -> bool:
         return self.retry_count(objective_id, action_type) >= RETRY_CEILING
@@ -300,6 +337,15 @@ class DenialJournal:
             # objective that exists in the durable store (Founder-minted).
             if self.objective_record(objective_id) is None:
                 raise EvidenceError("denial record references an unknown objective_id")
+            # A10-D (DEC-20260813-01 §1): adaptation_outcome is derived from
+            # the PRIOR denial for this objective — same action+target =>
+            # retry, different action => workaround, no prior => unknown.
+            # (abandoned is reserved for a future Stop-hook capture.)
+            fields["adaptation_outcome"] = self._adaptation_outcome(
+                objective_id,
+                str(fields.get("action_type") or ""),
+                str(fields.get("action_target") or ""),
+            )
             # Q3.4: stamp the ceiling reason when THIS denial is the
             # crossing record — the one that reaches the ceiling (count
             # after this write, not before).
@@ -315,6 +361,8 @@ class DenialJournal:
             # Q2.1: empty objective_id is only valid for pre-objective
             # baseline denials, which are recorded governed: false.
             fields["governed"] = False
+            # A10-D: no objective in scope => no adaptation evidence yet.
+            fields["adaptation_outcome"] = "unknown"
         record = {str(k): evidence.redact(v) for k, v in fields.items()}
         record["record_id"] = _new_id("denial")
         record["utc_time"] = _utc_stamp()

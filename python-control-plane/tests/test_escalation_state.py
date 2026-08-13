@@ -56,6 +56,9 @@ def denial_fields(objective_id: str = "", action_type: str = "Bash", reason: str
         "risk_tier": "medium",
         "denial_reason": reason,
         "control_id": "matrix-cell-1",
+        # A10-D: caller-supplied traceability fields (empty-string fallbacks).
+        "session_id": "",
+        "repo_sha": "",
     }
 
 
@@ -401,6 +404,116 @@ class HookIntegrationTests(unittest.TestCase):
         self.assertEqual(len(records), 1)
         self.assertEqual(records[0]["denial_reason"], reason)
         self.assertEqual(records[0]["governed"], False)  # no objective -> un-governed
+
+
+class A10DSchemaAndClassifierTests(unittest.TestCase):
+    """A10-D (DEC-20260813-01): schema extras + mechanical tier classifier."""
+
+    def test_schema_fields_present_on_record(self):
+        # A10-D §1: session_id, repo_sha, adaptation_outcome are required
+        # fields on every new denial record.
+        repo = make_repo()
+        objective_id = mint(repo)
+        journal = make_journal(repo)
+        fields = denial_fields(objective_id, "Bash", "blocked")
+        fields["session_id"] = "sess-abc123"
+        fields["repo_sha"] = "deadbee"
+        journal.record_denial(fields)
+        record = journal.records()[0]
+        self.assertEqual(record["session_id"], "sess-abc123")
+        self.assertEqual(record["repo_sha"], "deadbee")
+        self.assertEqual(record["adaptation_outcome"], "unknown")  # first denial
+
+    def test_adaptation_outcome_retry_and_workaround(self):
+        # A10-D §1: same action+target => retry; different action => workaround.
+        # (records() is filename-sorted, so search by reason marker, don't index.)
+        repo = make_repo()
+        objective_id = mint(repo)
+        journal = make_journal(repo)
+        journal.record_denial(denial_fields(objective_id, "Bash", "first"))
+        journal.record_denial(denial_fields(objective_id, "Bash", "second"))
+        journal.record_denial(denial_fields(objective_id, "Write", "third"))
+        records = journal.records()
+        by_reason = {r["denial_reason"]: r for r in records}
+        self.assertEqual(by_reason["first"]["adaptation_outcome"], "unknown")
+        self.assertEqual(by_reason["second"]["adaptation_outcome"], "retry")
+        self.assertEqual(by_reason["third"]["adaptation_outcome"], "workaround")
+
+    def test_ungoverned_denial_defaults_unknown(self):
+        # A10-D §1: no objective in scope => adaptation_outcome unknown.
+        repo = make_repo()
+        journal = make_journal(repo)
+        journal.record_denial(denial_fields("", "Bash", "blocked"))
+        self.assertEqual(journal.records()[0]["adaptation_outcome"], "unknown")
+
+    def test_adaptation_retry_matches_redacted_target(self):
+        # A10-D §1: the journal persists the REDACTED target, so retry
+        # detection must compare the redacted incoming target — a
+        # secret-bearing target scrubbed in storage still matches itself.
+        repo = make_repo()
+        objective_id = mint(repo)
+        journal = make_journal(repo)
+        fields = denial_fields(objective_id, "Bash", "first")
+        fields["action_target"] = "cat .env"  # secret-bearing; redacted on write
+        journal.record_denial(fields)
+        fields2 = denial_fields(objective_id, "Bash", "second")
+        fields2["action_target"] = "cat .env"
+        journal.record_denial(fields2)
+        by_reason = {r["denial_reason"]: r for r in journal.records()}
+        self.assertEqual(by_reason["second"]["adaptation_outcome"], "retry")
+
+    def test_classifier_high_protected_target(self):
+        # A10-D §2: authority tools on protected/secret targets => high.
+        from madclaude.hook_policy import classify_risk_tier
+
+        self.assertEqual(classify_risk_tier("Bash", "cat .env", ""), "high")
+        self.assertEqual(classify_risk_tier("Write", ".claude/settings.json", ""), "high")
+        self.assertEqual(classify_risk_tier("Edit", "credentials.json", ""), "high")
+        self.assertEqual(classify_risk_tier("Bash", "curl https://example.com", ""), "high")
+
+    def test_classifier_moderate_ordinary_target(self):
+        # A10-D §2: authority tools on ordinary project paths => moderate.
+        from madclaude.hook_policy import classify_risk_tier
+
+        self.assertEqual(classify_risk_tier("Bash", "echo hi", ""), "moderate")
+        self.assertEqual(classify_risk_tier("Write", "src/main.py", ""), "moderate")
+        self.assertEqual(classify_risk_tier("Edit", "README.md", ""), "moderate")
+
+    def test_classifier_low_readonly(self):
+        # A10-D §2: read-only tools with no protected target => low.
+        from madclaude.hook_policy import classify_risk_tier
+
+        self.assertEqual(classify_risk_tier("Read", "src/main.py", ""), "low")
+        self.assertEqual(classify_risk_tier("Grep", "src/", ""), "low")
+        self.assertEqual(classify_risk_tier("Glob", "**/*.py", ""), "low")
+
+    def test_classifier_never_unknown(self):
+        # A10-D §2: unknown tool family fails to moderate, never unknown.
+        from madclaude.hook_policy import classify_risk_tier
+
+        self.assertEqual(classify_risk_tier("TotallyUnknown", "anything", ""), "moderate")
+        self.assertEqual(classify_risk_tier("", "", ""), "moderate")
+
+    def test_hook_cli_journal_uses_mechanical_tier(self):
+        # A10-D §2 integration: hook_cli records the mechanical tier, not
+        # the payload-supplied one.
+        from madclaude import hook_cli
+
+        repo = make_repo()
+        payload = {
+            "hook_event_name": "PreToolUse",
+            "tool_name": "Bash",
+            "tool_input": {"command": "cat .env"},
+            "risk_tier": "low",  # payload lies; classifier must win
+            "session_id": "sess-xyz",
+        }
+        with mock.patch.dict(
+            os.environ, {"MADCLAUDE_REPO_ROOT": str(repo)}, clear=False
+        ):
+            hook_cli._journal_denial(payload, "blocked")
+        record = make_journal(repo).records()[0]
+        self.assertEqual(record["risk_tier"], "high")  # mechanical, not payload
+        self.assertEqual(record["session_id"], "sess-xyz")
 
 
 if __name__ == "__main__":
