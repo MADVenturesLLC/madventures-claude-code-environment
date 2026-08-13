@@ -36,6 +36,7 @@ INSTALLED_MODULES = frozenset({
     "test_baseline_policy_matrix",
     "test_evidence",
     "test_evidence_hashing",
+    "test_escalation_state",
     "test_git",
     "test_guard",
     "test_guard_adversarial",
@@ -47,14 +48,16 @@ INSTALLED_MODULES = frozenset({
     "test_term",
     "test_workflow",
 })
-INSTALLED_MODULE_COUNT = 18
+INSTALLED_MODULE_COUNT = 19
 
 # Exact number of test cases the installed-compatible modules produce.
 # If a test is added or removed from any installed module, this must be
 # updated deliberately — drift fails loudly so accidental exclusions or
 # inclusions cannot silently pass.
 # A10-A: +12 (test_secrets_patterns) +7 (test_baseline_policy_matrix) = 163 -> 182.
-INSTALLED_TEST_CASE_COUNT = 182
+# A10-C: +26 (test_escalation_state, rev 2 — deny-terminal + exact-ceiling
+# binding split) = 182 -> 208.
+INSTALLED_TEST_CASE_COUNT = 208
 
 # The six source-only modules: they require package-root resources
 # (scripts/, plugin/, MANIFEST.json) or transitively import a module that

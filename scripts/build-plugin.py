@@ -13,7 +13,7 @@ PLUGIN = ROOT / "plugin" / "madventures-founderos"
 VERSION = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
 POLICY_MODULES = (
     "__init__.py", "version.py", "errors.py", "safe_read.py", "guard.py", "git.py", "evidence.py",
-    "artifacts.py", "hook_policy.py", "hook_cli.py", "secrets_patterns.py",
+    "artifacts.py", "hook_policy.py", "hook_cli.py", "secrets_patterns.py", "escalation_state.py",
 )
 
 
