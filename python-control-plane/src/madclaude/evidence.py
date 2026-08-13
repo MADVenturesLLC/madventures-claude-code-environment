@@ -222,3 +222,32 @@ class EvidenceBundle:
             "files": entries,
         }
         return self.write_json("MANIFEST.json", manifest)
+
+
+def write_immutable_record(path: Path, value: Any) -> Path:
+    """A10-C (Q2.4): write one immutable, redacted JSON record.
+
+    Write-once by construction: the target file is created with O_EXCL so a
+    collision refuses instead of overwriting, and the content is redacted
+    through the A10-A registry before write (Q2.3). Parent directory is
+    created 0700, record file 0600 (evidence._chmod conventions). Raises
+    EvidenceError on any failure — callers must fail closed (Q5).
+    """
+    target = Path(path)
+    try:
+        target.parent.mkdir(parents=True, exist_ok=True)
+        _chmod(target.parent, 0o700)
+        descriptor = os.open(str(target), os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+    except OSError as exc:
+        raise EvidenceError(f"immutable record could not be written: {target.name}") from exc
+    try:
+        content = json.dumps(redact(value), indent=2, sort_keys=True, ensure_ascii=False) + "\n"
+        with os.fdopen(descriptor, "w", encoding="utf-8", newline="\n") as handle:
+            handle.write(content)
+            handle.flush()
+            os.fsync(handle.fileno())
+        _chmod(target, 0o600)
+    except Exception:
+        target.unlink(missing_ok=True)
+        raise
+    return target

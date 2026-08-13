@@ -11,6 +11,7 @@ from typing import Any
 from . import safe_read
 from .artifacts import read_canonical_artifact
 from .errors import EvidenceError, SafeReadError
+from .escalation_state import DenialJournal
 from .guard import ALIASES, evaluate_tool_call
 from .git import get_state, working_tree_fingerprint
 
@@ -116,6 +117,41 @@ def _baseline_shell(payload: dict[str, Any]) -> tuple[bool, str]:
     return True, "allowed"
 
 
+def consult_escalation(repo: Path, payload: dict[str, Any]) -> tuple[bool, str]:
+    """A10-C (Q1.3/Q3/Q4/Q5): objective/escalation consultation in the
+    decision path.
+
+    - No objective_id in scope -> allowed (baseline denials are
+      un-governed; governed: false is recorded by the journal writer).
+    - Malformed objective_id -> deny (Q1.3: validation on every governed
+      action that consults it).
+    - Journal read failure -> deny (Q5: fail closed; the returned reason
+      never exposes storage error details).
+    - Escalated objective without a valid disposition for the exact ceiling
+      event -> deny (Q4.3: continuing past a ceiling requires a matching
+      Founder disposition reference).
+    """
+    objective_id = str(
+        payload.get("objective_id")
+        or os.environ.get("MADCLAUDE_OBJECTIVE_ID")
+        or ""
+    ).strip()
+    if not objective_id:
+        return True, "no objective-bound escalation in scope"
+    journal = DenialJournal(repo)
+    if not journal.validate_objective_id(objective_id):
+        return False, "Objective-bound escalation is denied: malformed objective_id."
+    try:
+        if not journal.is_escalated(objective_id):
+            return True, "objective is not escalated"
+        ceiling_record_id = str(payload.get("ceiling_record_id") or "").strip()
+        if ceiling_record_id and journal.has_valid_disposition(objective_id, ceiling_record_id):
+            return True, "Founder disposition authorizes continuation past this ceiling event"
+        return False, "Objective-bound escalation is active: governed actions are denied pending a Founder disposition."
+    except EvidenceError:
+        return False, "Objective-bound escalation state is unavailable: action denied (fail closed)."
+
+
 def evaluate_baseline(repo: Path, payload: dict[str, Any]) -> tuple[bool, str]:
     event = str(payload.get("hook_event_name") or "PreToolUse")
     if event == "ConfigChange":
@@ -130,6 +166,13 @@ def evaluate_baseline(repo: Path, payload: dict[str, Any]) -> tuple[bool, str]:
     name = ALIASES.get(str(payload.get("tool_name") or ""), str(payload.get("tool_name") or ""))
     if not name:
         return False, "PreToolUse payload did not identify a tool."
+    # A10-C (Q1.3/Q3/Q4.3): objective/escalation consultation gates the
+    # decision. Escalated objectives keep governed actions denied until a
+    # Founder disposition for the exact ceiling event exists.
+    if payload.get("objective_id") or os.environ.get("MADCLAUDE_OBJECTIVE_ID"):
+        allowed, reason = consult_escalation(repo, payload)
+        if not allowed:
+            return False, reason
     if name in {"Bash", "PowerShell"}:
         return _baseline_shell(payload)
     if name not in FILE_TOOLS:
