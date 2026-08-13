@@ -127,7 +127,7 @@ def build_plan(
     """
     derived = plan_destinations(args, operation, project)
     managed_components = [
-        "agents", "skills", "hooks (single adapter)", "rules", "cloud",
+        "agents", "skills", "hooks (adapter + statusline)", "rules", "cloud",
         "control-plane (Python engine)", "FOUNDEROS.md", "MODEL_REGISTRY.md",
         "profiles", "examples", "settings.json", "PROJECT_PROFILE.md",
     ]
@@ -439,8 +439,8 @@ def check_invariants(project: Path) -> list[str]:
         path.name for path in (project / ".claude/hooks").iterdir()
         if path.is_file() and path.suffix in {".js", ".mjs"}
     ) if (project / ".claude/hooks").is_dir() else []
-    if scripts != ["hook-adapter.mjs"]:
-        failures.append(f"expected one JavaScript hook adapter, found {scripts}")
+    if scripts != ["hook-adapter.mjs", "madventures-statusline.mjs"]:
+        failures.append(f"expected the two governed JavaScript hooks, found {scripts}")
     settings_path = project / ".claude/settings.json"
     try:
         settings_text = settings_path.read_text(encoding="utf-8")

@@ -1,6 +1,6 @@
 # Validation report
 
-**Generated:** 2026-08-09T17:09:32+00:00
+**Generated:** 2026-08-13T19:56:44+00:00
 **Package:** MADVentures-Claude-Code-Environment-v4.4.1
 **Result:** PASSED
 **Summary:** 62 pass, 1 warning, 0 fail
@@ -15,10 +15,10 @@
 - **PASS** — expected skills count: 31
 - **PASS** — expected workflows count: 0
 - **PASS** — expected rules count: 8
-- **PASS** — expected hooks count: 1
+- **PASS** — expected hooks count: 2
 - **PASS** — agent names, frontmatter, tools, routing, and special guards validated
 - **PASS** — skill names and frontmatter validated
-- **PASS** — all 25 JSON configuration files parse
+- **PASS** — all 60 JSON configuration files parse
 - **PASS** — project settings: no ineffective path-scoped Write/NotebookEdit/Glob/MultiEdit rules
 - **PASS** — project settings: Read deny paths have matching Edit deny protection
 - **PASS** — project settings hook references resolve (1 unique)
@@ -45,7 +45,7 @@
 - **PASS** — Python control plane has one canonical package source
 - **PASS** — Python package is dependency-free by default and pins the optional API SDK extra exactly
 - **PASS** — ten Python structured-output schemas parse
-- **PASS** — all 49 Python control-plane modules/tests compile without cache files
+- **PASS** — all 54 Python control-plane modules/tests compile without cache files
 - **PASS** — Python CLI defaults to native claude -p under the authenticated subscription lane
 - **PASS** — native claude -p backend injects structured output, ephemeral policy hooks, strict MCP isolation, and API-only dollar caps
 - **PASS** — optional Agent SDK adapter is API-only and retains Claude Code preset, strict MCP, checkpoint, and PreToolUse controls
@@ -65,7 +65,7 @@
 - **PASS** — plugin hook references resolve (1 unique)
 - **PASS** — plugin ships one thin adapter backed by the shared Python policy modules
 - **PASS** — plugin Python policy modules are byte-identical to the canonical source
-- **PASS** — plugin policy modules cover the hook import closure (8 modules)
+- **PASS** — plugin policy modules cover the hook import closure (10 modules)
 - **PASS** — cloud environment assets present (7 files)
 - **PASS** — cloud SessionStart dependency installation is remote-scoped and opt-in
 - **PASS** — cloud environment example contains non-secret controls only

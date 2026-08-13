@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PACKAGE_NAME = 'MADVentures-Claude-Code-Environment-v4.4.1'
-EXCLUDED_PARTS = {"__pycache__", ".pytest_cache", ".DS_Store"}
+EXCLUDED_PARTS = {"__pycache__", ".pytest_cache", ".DS_Store", "releases", ".git", "evidence"}
 
 parser = argparse.ArgumentParser()
 parser.add_argument("output", nargs="?", default=str(ROOT.parent / f"{PACKAGE_NAME}.zip"))

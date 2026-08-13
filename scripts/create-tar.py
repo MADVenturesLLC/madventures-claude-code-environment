@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 VERSION = (ROOT / "VERSION").read_text(encoding="utf-8").strip()
 PACKAGE_NAME = f"MADVentures-Claude-Code-Environment-v{VERSION}"
-EXCLUDED_PARTS = {"__pycache__", ".pytest_cache", ".DS_Store"}
+EXCLUDED_PARTS = {"__pycache__", ".pytest_cache", ".DS_Store", "releases", ".git", "evidence"}
 
 parser = argparse.ArgumentParser()
 parser.add_argument("output", nargs="?", default=str(ROOT.parent / f"{PACKAGE_NAME}.tar.gz"))

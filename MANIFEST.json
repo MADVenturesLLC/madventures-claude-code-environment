@@ -1,9 +1,9 @@
 {
   "package": "MADVentures-Claude-Code-Environment-v4.4.1",
   "version": "4.4.1",
-  "generatedAt": "2026-08-13T13:02:52+00:00",
+  "generatedAt": "2026-08-13T19:57:12+00:00",
   "algorithm": "SHA-256",
-  "fileCount": 406,
+  "fileCount": 361,
   "files": [
     {
       "path": ".github/workflows/ci.yml",
@@ -47,8 +47,8 @@
     },
     {
       "path": "PACKAGE_CONTENTS.txt",
-      "bytes": 27786,
-      "sha256": "979ed3782e0e15e455ab50cf519c25c4091205162b04373e601bf56b5cd43f19"
+      "bytes": 23298,
+      "sha256": "8fe871c4fa72be9ed0b105ec91ed8c3713d08405d046634725b60b8f05c14c8d"
     },
     {
       "path": "README.md",
@@ -552,8 +552,8 @@
     },
     {
       "path": "docs/VALIDATION_REPORT.md",
-      "bytes": 5626,
-      "sha256": "69890c400ea7ea782a85d6c4b68b5afe1e707b0119b535b469f2083c1230d049"
+      "bytes": 5627,
+      "sha256": "f3fe63259b0587e0f184f876aba1dfaad259eded3261ab19afc74608c12abaae"
     },
     {
       "path": "docs/audit10-a10a-tool-surface-inventory.md",
@@ -1652,238 +1652,13 @@
     },
     {
       "path": "python-control-plane/tests/test_wheelhouse_script.py",
-      "bytes": 17145,
-      "sha256": "9f6e12e6c411d0decbf5c9711af81ff4623ca40d6cb77f161b7b0b4c3a4d786d"
+      "bytes": 17505,
+      "sha256": "e94c509aa023773b34f9a368b9a7dcea0b3b5796ec56e608638a7ae2ba2c79b7"
     },
     {
       "path": "python-control-plane/tests/test_workflow.py",
       "bytes": 17177,
       "sha256": "c86a99819b799f65d62b84a75ed3cfb26314eb219a776172c78f1597b54db05f"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/AUDIT9_RELEASE_RECORD.md",
-      "bytes": 7413,
-      "sha256": "73ed96b2eb5d244d600c8e55f46feea24a1ab8cdcc8e59b5b9094ae1e1334406"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/artifacts/MADVentures-Claude-Code-Environment-v4.4.1.tar.gz",
-      "bytes": 441112,
-      "sha256": "acd4789da9b978dd069f044d0b69110cd6a5e5ec6e6ba540ada09b1489d9d335"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/artifacts/MADVentures-Claude-Code-Environment-v4.4.1.tar.gz.sha256",
-      "bytes": 116,
-      "sha256": "919af8e0e20c52e3dfa17b57a399670412ba723de1d6f61967d2613a0a548c70"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/artifacts/MADVentures-Claude-Code-Environment-v4.4.1.zip",
-      "bytes": 619105,
-      "sha256": "a33fdbeddb7bc1eceede374ca094c9d4014712a5706d53b840716183c4a64d77"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/artifacts/MADVentures-Claude-Code-Environment-v4.4.1.zip.sha256",
-      "bytes": 113,
-      "sha256": "d611e873a20db57ac3f4e865ec58fbb4ca93f6359af5cc797f27a6cad46052be"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/artifacts/MADVentures-FounderOS-Claude-Code-Plugin-v4.4.1.zip",
-      "bytes": 78448,
-      "sha256": "c34cd6ea63b89c81fdd8449ba918866a42f176bcbeb47fedad769f4e5803f98e"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/artifacts/MADVentures-FounderOS-Claude-Code-Plugin-v4.4.1.zip.sha256",
-      "bytes": 118,
-      "sha256": "2bacc01bca8b83d188d3379fad3eb51e0df69fe05468b15a67ae132b6fa7cc8e"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/arm64/WHEELHOUSE_MANIFEST.json",
-      "bytes": 6723,
-      "sha256": "0c8be5e77ac962ce6d73cb9d8be797055a64b7e93b23df8ee5d18ad81846d5df"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/arm64/requirements-cp314-macos-arm64.lock",
-      "bytes": 2729,
-      "sha256": "cde78a524a39fd52882baa6338d935838132283fb8a6743842f9875a6396cde6"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/MERGED_WHEELHOUSE_MANIFEST.json",
-      "bytes": 9275,
-      "sha256": "d0b3d2e7753ba0f5d834c70f0ad049fd8ca8888bbe90ee7d15fb48eae622b865"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/annotated_types-0.8.0-py3-none-any.whl",
-      "bytes": 13427,
-      "sha256": "f072f4d804ea359e4eaf198b1af7a8b0943881a87f31bb764f8bf219bb9419e0"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/anyio-4.14.2-py3-none-any.whl",
-      "bytes": 125813,
-      "sha256": "9f505dda5ac9f0c8309b5e8bd445a8c2bf7246f3ce950121e45ea15bc41d1494"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/attrs-26.1.0-py3-none-any.whl",
-      "bytes": 67548,
-      "sha256": "c647aa4a12dfbad9333ca4e71fe62ddc36f4e63b2d260a37a8b83d2f043ac309"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/cffi-2.1.1-cp314-cp314-macosx_10_15_x86_64.whl",
-      "bytes": 184964,
-      "sha256": "d28630f5854ab07ab1fd4aba756de52326c82e6be15d414b12793f1975048b54"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/cffi-2.1.1-cp314-cp314-macosx_11_0_arm64.whl",
-      "bytes": 184962,
-      "sha256": "661c298b4821edebead0c91edd2b00374d67ad7c5a1f7a91d4442633b79d6a72"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/click-8.4.2-py3-none-any.whl",
-      "bytes": 119243,
-      "sha256": "e6f9f66136c816745b9d65817da91d61d957fb16e02e4dcd0552553c5a197b76"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/cryptography-48.0.1-cp311-abi3-macosx_10_9_universal2.whl",
-      "bytes": 8008324,
-      "sha256": "3e4a1a3232eef2e6c732827d5722db29a0cc8b27af2a4d865b094cf954be9ca1"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/h11-0.16.0-py3-none-any.whl",
-      "bytes": 37515,
-      "sha256": "63cf8bbe7522de3bf65932fda1d9c2772064ffb3dae62d55932da54b31cb6c86"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/httpcore2-2.10.0-py3-none-any.whl",
-      "bytes": 83000,
-      "sha256": "7df06cfb34070cae4f7c89be69dc1095eca138e9704ceffb98d25c1912ab6f01"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/httpx2-2.10.0-py3-none-any.whl",
-      "bytes": 94355,
-      "sha256": "5e3194a432701e1cc6f69a8b1b2fa199ef907013fede8d9a09a2c5b7b8141a18"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/idna-3.18-py3-none-any.whl",
-      "bytes": 65455,
-      "sha256": "7f952cbe720b688055e3f87de14f5c3e5fdaa8bc3928985c4077ca689de849a2"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/jsonschema-4.26.0-py3-none-any.whl",
-      "bytes": 90630,
-      "sha256": "d489f15263b8d200f8387e64b4c3a75f06629559fb73deb8fdfb525f2dab50ce"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/jsonschema_specifications-2025.9.1-py3-none-any.whl",
-      "bytes": 18437,
-      "sha256": "98802fee3a11ee76ecaca44429fda8a41bff98b00a0f2838151b113f210cc6fe"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/mcp-2.0.0-py3-none-any.whl",
-      "bytes": 349980,
-      "sha256": "1cb4c75d2d2c7b8c1d756355e5d82a39f2822cc7f13e22a2051d7ca3592349d6"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/mcp_types-2.0.0-py3-none-any.whl",
-      "bytes": 69649,
-      "sha256": "6b2de797ca2797f568b79529e1b25948e34de511bcc0bd82fef1039a6d1b8eb0"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/opentelemetry_api-1.44.0-py3-none-any.whl",
-      "bytes": 60018,
-      "sha256": "94b98c893a91b88657eaac1e3ba89618cdb85be6918196705354f34728b2cdef"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/pycparser-3.0-py3-none-any.whl",
-      "bytes": 48172,
-      "sha256": "b727414169a36b7d524c1c3e31839a521725078d7b2ff038656844266160a992"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/pydantic-2.13.4-py3-none-any.whl",
-      "bytes": 472262,
-      "sha256": "45a282cde31d808236fd7ea9d919b128653c8b38b393d1c4ab335c62924d9aba"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/pydantic_core-2.46.4-cp314-cp314-macosx_10_12_x86_64.whl",
-      "bytes": 2102079,
-      "sha256": "428e04521a40150c85216fc8b85e8d39fece235a9cf5e383761238c7fa9b96fb"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/pydantic_core-2.46.4-cp314-cp314-macosx_11_0_arm64.whl",
-      "bytes": 1952179,
-      "sha256": "23ace664830ee0bfe014a0c7bc248b1f7f25ed7ad103852c317624a1083af462"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/pyjwt-2.13.0-py3-none-any.whl",
-      "bytes": 31274,
-      "sha256": "66adcc2aff09b3f1bbd95fc1e1577df8ac8723c978552fd43304c8a290ac5728"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/python_multipart-0.0.32-py3-none-any.whl",
-      "bytes": 30042,
-      "sha256": "ff6d3f776f16878c894e52e107296ffc890e913c611b1a4ec6c44e2821fe2e23"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/referencing-0.37.0-py3-none-any.whl",
-      "bytes": 26766,
-      "sha256": "381329a9f99628c9069361716891d34ad94af76e461dcb0335825aecc7692231"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/requirements-cp314-macos-arm64.lock",
-      "bytes": 2729,
-      "sha256": "cde78a524a39fd52882baa6338d935838132283fb8a6743842f9875a6396cde6"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/requirements-cp314-macos-x86_64.lock",
-      "bytes": 2729,
-      "sha256": "a534ffcb4579d0cbdebeccd0c7517ae39d51330390ae53023fde6872ec0a6fdd"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/rpds_py-2026.6.3-cp314-cp314-macosx_10_12_x86_64.whl",
-      "bytes": 344510,
-      "sha256": "931908d9fc855d8f74783377822be318edb6dcb19e47169dc038f9a1bf60b06e"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/rpds_py-2026.6.3-cp314-cp314-macosx_11_0_arm64.whl",
-      "bytes": 339495,
-      "sha256": "d7469697dce35be237db177d42e2a2ee26e6dcc5fc052078a6fefabd288c6edd"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/sse_starlette-3.4.8-py3-none-any.whl",
-      "bytes": 16516,
-      "sha256": "6e82314c786709a3cd9520f2285cf9fff90e181e598e8a357b0cf80f66afba0d"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/starlette-1.6.0-py3-none-any.whl",
-      "bytes": 75969,
-      "sha256": "a86dd39d14bb45f85a3d18525215a9ef0cfd1f192ac793220e72598c90335f0c"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/truststore-0.10.4-py3-none-any.whl",
-      "bytes": 18660,
-      "sha256": "adaeaecf1cbb5f4de3b1959b42d41f6fab57b2b1666adb59e89cb0b53361d981"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/typing_extensions-4.16.0-py3-none-any.whl",
-      "bytes": 45571,
-      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/typing_inspection-0.4.2-py3-none-any.whl",
-      "bytes": 14611,
-      "sha256": "4ed1cacbdc298c220f1bd249ed5287caa16f34d44ef4e9c3d0cbad5b521545e7"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/merged/uvicorn-0.52.1-py3-none-any.whl",
-      "bytes": 79859,
-      "sha256": "e4403f9d93188cf9d1088e9f40e3acd12630e2df8675316704379a7fc20fff6a"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/x86_64/WHEELHOUSE_MANIFEST.json",
-      "bytes": 6749,
-      "sha256": "90ca5ca6c09656142e4e5725b18fef067f205699011b252877985b48bee06ace"
-    },
-    {
-      "path": "releases/Audit9-v4.4.1-20260809/wheelhouse/x86_64/requirements-cp314-macos-x86_64.lock",
-      "bytes": 2729,
-      "sha256": "a534ffcb4579d0cbdebeccd0c7517ae39d51330390ae53023fde6872ec0a6fdd"
     },
     {
       "path": "scripts/audit9-target-gate.py",
@@ -1907,28 +1682,28 @@
     },
     {
       "path": "scripts/create-tar.py",
-      "bytes": 1302,
-      "sha256": "06a15f1e1f40cd29364f13e680a9e66132904fa35559134648fe97b7f8f39cd2"
+      "bytes": 1334,
+      "sha256": "78a012b27931eddb722649b7f585792aa273af4375acb6cad55eba9ad4b7ee13"
     },
     {
       "path": "scripts/create-zip.py",
-      "bytes": 1210,
-      "sha256": "cf6a9c603524fa2119d834d52a1ada62d46b62653845c288411d8355a38548f4"
+      "bytes": 1242,
+      "sha256": "8d7d1377534e2b73f47d7965b7e21bed5ef5374610a19ee114091acb56817dc8"
     },
     {
       "path": "scripts/environment-lifecycle.py",
-      "bytes": 42908,
-      "sha256": "2078d13f0c40d309e7961e6d83d8f60b73604ffa9d63f2ca81be7287033f5704"
+      "bytes": 42950,
+      "sha256": "e52eed32b743b38d27852b1787c67b001fd1f3c63d06e0daa730fd3b1f6cd782"
     },
     {
       "path": "scripts/generate-delivery-index.py",
-      "bytes": 2357,
-      "sha256": "6eac76463fb9c7b6a23c22d6294306bb90e9d23d425aaff0894c852965cad72d"
+      "bytes": 2470,
+      "sha256": "862da71bab0ab001aa607ab992211ac2e6edb34a51bb3ffdaf41db4fb3d32034"
     },
     {
       "path": "scripts/generate-manifest.py",
-      "bytes": 2184,
-      "sha256": "43bbf302b091a0956acb1241e972266e096b824e08ba91e718e7866fdc447329"
+      "bytes": 2297,
+      "sha256": "1a786cb4dde289d145737b70aeeccc8dd379dc204f723efacb8a1b0c769ccdbc"
     },
     {
       "path": "scripts/install-plugin.ps1",
@@ -1967,8 +1742,8 @@
     },
     {
       "path": "scripts/quick-validate.py",
-      "bytes": 6415,
-      "sha256": "24cdfeb7fff5007410d1189efe8570455f71e28c01162850b9ecf6945a965f74"
+      "bytes": 6427,
+      "sha256": "55c8a382e18fc91db9e66bd77259a3474121cf60f0da8ba37dd58f67649dd495"
     },
     {
       "path": "scripts/smoke-test-install.sh",
@@ -2017,8 +1792,8 @@
     },
     {
       "path": "scripts/validate-config.py",
-      "bytes": 58343,
-      "sha256": "2ce447adeae5e13b8b82d2ba0fe32c309392d524b9915069dae5962ba7c7b381"
+      "bytes": 58644,
+      "sha256": "d93524144df0e3ea875ea06a813ef02168f1809c52de67849e552e4273f3bd86"
     },
     {
       "path": "scripts/validate-workflows.mjs",
@@ -2027,8 +1802,8 @@
     },
     {
       "path": "scripts/verify-release.py",
-      "bytes": 10236,
-      "sha256": "4733a3583119e1f5765f8533b7e677e1f644229f0500dad74fdcf73aab5394fd"
+      "bytes": 10581,
+      "sha256": "f2df24b8e2a3aca2e38bb03449f4cdf439a78cce364244b650aebdebc0a7392a"
     },
     {
       "path": "workspace/.claude/MADVENTURES_WORKSPACE.md",

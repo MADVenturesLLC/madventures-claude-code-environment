@@ -192,6 +192,11 @@ def verify_plugin_archive(path: Path, full_files: dict[str, bytes]) -> None:
         for name in (
             "__init__.py", "version.py", "errors.py", "safe_read.py", "guard.py", "git.py", "evidence.py",
             "artifacts.py", "hook_policy.py", "hook_cli.py",
+            # A10-A: secrets_patterns is the primitive registry imported by
+            # evidence.py and guard.py. A10-C: escalation_state is the denial
+            # journal imported by hook_policy.py and hook_cli.py. Both are
+            # part of the hook-policy dependency closure.
+            "secrets_patterns.py", "escalation_state.py",
         )
     }
     actual_policy = {name for name in files if name.startswith(prefix + "python-control-plane/")}
