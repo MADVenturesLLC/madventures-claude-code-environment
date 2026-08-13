@@ -12,8 +12,9 @@ PACKAGE_NAME = 'MADVentures-Claude-Code-Environment-v4.4.1'
 EXCLUDED_NAMES = {"MANIFEST.json", "SHA256SUMS.txt"}
 # "evidence" excludes runtime denial/approval byproducts written to ./claude/evidence
 # by test runs (never package content); project/.claude has no evidence dir.
-# ".git" excludes repository history from release metadata.
-EXCLUDED_PARTS = {"__pycache__", ".pytest_cache", ".DS_Store", "evidence", ".git"}
+# ".git" excludes repository history; "releases" excludes historical release
+# records (Audit 9 artifacts + wheelhouse) — evidence in the repo, never shipped.
+EXCLUDED_PARTS = {"__pycache__", ".pytest_cache", ".DS_Store", "evidence", ".git", "releases"}
 
 
 def digest(path: Path) -> str:

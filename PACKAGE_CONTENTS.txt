@@ -2,7 +2,7 @@ MAD VENTURES CLAUDE CODE OPERATING ENVIRONMENT — PACKAGE CONTENTS
 ========================================================================
 
 Version: 4.4.1
-Indexed files (excluding generated manifest/checksum/index): 405
+Indexed files (excluding generated manifest/checksum/index): 360
 Core project agents: 20
 Core project skills: 31
 Core project workflows: 0
@@ -345,62 +345,17 @@ FILE INDEX
       1773  python-control-plane/tests/test_schemas.py
       8393  python-control-plane/tests/test_secrets_patterns.py
       6478  python-control-plane/tests/test_term.py
-     17145  python-control-plane/tests/test_wheelhouse_script.py
+     17738  python-control-plane/tests/test_wheelhouse_script.py
      17177  python-control-plane/tests/test_workflow.py
-      7413  releases/Audit9-v4.4.1-20260809/AUDIT9_RELEASE_RECORD.md
-    441112  releases/Audit9-v4.4.1-20260809/artifacts/MADVentures-Claude-Code-Environment-v4.4.1.tar.gz
-       116  releases/Audit9-v4.4.1-20260809/artifacts/MADVentures-Claude-Code-Environment-v4.4.1.tar.gz.sha256
-    619105  releases/Audit9-v4.4.1-20260809/artifacts/MADVentures-Claude-Code-Environment-v4.4.1.zip
-       113  releases/Audit9-v4.4.1-20260809/artifacts/MADVentures-Claude-Code-Environment-v4.4.1.zip.sha256
-     78448  releases/Audit9-v4.4.1-20260809/artifacts/MADVentures-FounderOS-Claude-Code-Plugin-v4.4.1.zip
-       118  releases/Audit9-v4.4.1-20260809/artifacts/MADVentures-FounderOS-Claude-Code-Plugin-v4.4.1.zip.sha256
-      6723  releases/Audit9-v4.4.1-20260809/wheelhouse/arm64/WHEELHOUSE_MANIFEST.json
-      2729  releases/Audit9-v4.4.1-20260809/wheelhouse/arm64/requirements-cp314-macos-arm64.lock
-      9275  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/MERGED_WHEELHOUSE_MANIFEST.json
-     13427  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/annotated_types-0.8.0-py3-none-any.whl
-    125813  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/anyio-4.14.2-py3-none-any.whl
-     67548  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/attrs-26.1.0-py3-none-any.whl
-    184964  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/cffi-2.1.1-cp314-cp314-macosx_10_15_x86_64.whl
-    184962  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/cffi-2.1.1-cp314-cp314-macosx_11_0_arm64.whl
-    119243  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/click-8.4.2-py3-none-any.whl
-   8008324  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/cryptography-48.0.1-cp311-abi3-macosx_10_9_universal2.whl
-     37515  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/h11-0.16.0-py3-none-any.whl
-     83000  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/httpcore2-2.10.0-py3-none-any.whl
-     94355  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/httpx2-2.10.0-py3-none-any.whl
-     65455  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/idna-3.18-py3-none-any.whl
-     90630  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/jsonschema-4.26.0-py3-none-any.whl
-     18437  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/jsonschema_specifications-2025.9.1-py3-none-any.whl
-    349980  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/mcp-2.0.0-py3-none-any.whl
-     69649  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/mcp_types-2.0.0-py3-none-any.whl
-     60018  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/opentelemetry_api-1.44.0-py3-none-any.whl
-     48172  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/pycparser-3.0-py3-none-any.whl
-    472262  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/pydantic-2.13.4-py3-none-any.whl
-   2102079  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/pydantic_core-2.46.4-cp314-cp314-macosx_10_12_x86_64.whl
-   1952179  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/pydantic_core-2.46.4-cp314-cp314-macosx_11_0_arm64.whl
-     31274  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/pyjwt-2.13.0-py3-none-any.whl
-     30042  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/python_multipart-0.0.32-py3-none-any.whl
-     26766  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/referencing-0.37.0-py3-none-any.whl
-      2729  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/requirements-cp314-macos-arm64.lock
-      2729  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/requirements-cp314-macos-x86_64.lock
-    344510  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/rpds_py-2026.6.3-cp314-cp314-macosx_10_12_x86_64.whl
-    339495  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/rpds_py-2026.6.3-cp314-cp314-macosx_11_0_arm64.whl
-     16516  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/sse_starlette-3.4.8-py3-none-any.whl
-     75969  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/starlette-1.6.0-py3-none-any.whl
-     18660  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/truststore-0.10.4-py3-none-any.whl
-     45571  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/typing_extensions-4.16.0-py3-none-any.whl
-     14611  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/typing_inspection-0.4.2-py3-none-any.whl
-     79859  releases/Audit9-v4.4.1-20260809/wheelhouse/merged/uvicorn-0.52.1-py3-none-any.whl
-      6749  releases/Audit9-v4.4.1-20260809/wheelhouse/x86_64/WHEELHOUSE_MANIFEST.json
-      2729  releases/Audit9-v4.4.1-20260809/wheelhouse/x86_64/requirements-cp314-macos-x86_64.lock
      16191  scripts/audit9-target-gate.py
      10064  scripts/build-plugin.py
       2788  scripts/build-release.sh
       1423  scripts/create-plugin-zip.py
-      1302  scripts/create-tar.py
-      1210  scripts/create-zip.py
-     42908  scripts/environment-lifecycle.py
-      2357  scripts/generate-delivery-index.py
-      2184  scripts/generate-manifest.py
+      1334  scripts/create-tar.py
+      1242  scripts/create-zip.py
+     42950  scripts/environment-lifecycle.py
+      2470  scripts/generate-delivery-index.py
+      2297  scripts/generate-manifest.py
       2556  scripts/install-plugin.ps1
       2994  scripts/install-plugin.sh
       6472  scripts/install-python-control-plane.ps1
@@ -408,7 +363,7 @@ FILE INDEX
       2466  scripts/install.ps1
        513  scripts/install.sh
      17050  scripts/mcp-wheelhouse.py
-      6415  scripts/quick-validate.py
+      6427  scripts/quick-validate.py
       8813  scripts/smoke-test-install.sh
       2200  scripts/start-claude-route.ps1
       2693  scripts/start-claude-route.sh
@@ -418,7 +373,7 @@ FILE INDEX
       9328  scripts/test-python-control-plane.sh
      10602  scripts/test-release-archives.py
       2426  scripts/test-route-launcher.sh
-     58343  scripts/validate-config.py
+     58769  scripts/validate-config.py
       1684  scripts/validate-workflows.mjs
-     10236  scripts/verify-release.py
+     10581  scripts/verify-release.py
        817  workspace/.claude/MADVENTURES_WORKSPACE.md

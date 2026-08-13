@@ -35,11 +35,17 @@ def make_wheel(directory: Path, name: str, version: str, *, metadata_name: str |
     normalized = name.replace("-", "_")
     path = directory / f"{normalized}-{version}-py3-none-any.whl"
     with zipfile.ZipFile(path, "w") as archive:
+        # Fixed timestamp on EVERY entry: wheel bytes must be deterministic
+        # across calls so merge tests exercise the intended conflict path,
+        # not a hash mismatch caused by same-second vs cross-second zip
+        # timestamps (applies to __init__.py too, not just METADATA).
+        info = zipfile.ZipInfo(f"{normalized}-{version}.dist-info/METADATA", date_time=(2026, 1, 1, 0, 0, 0))
         archive.writestr(
-            f"{normalized}-{version}.dist-info/METADATA",
+            info,
             f"Metadata-Version: 2.1\nName: {metadata_name or name}\nVersion: {metadata_version or version}\n",
         )
-        archive.writestr(f"{normalized}/__init__.py", "")
+        init_info = zipfile.ZipInfo(f"{normalized}/__init__.py", date_time=(2026, 1, 1, 0, 0, 0))
+        archive.writestr(init_info, "")
     return path
 
 
@@ -134,11 +140,13 @@ def make_tagged_wheel(directory: Path, name: str, version: str, platform_tag: st
     normalized = name.replace("-", "_")
     path = directory / f"{normalized}-{version}-cp314-cp314-{platform_tag}.whl"
     with zipfile.ZipFile(path, "w") as archive:
+        info = zipfile.ZipInfo(f"{normalized}-{version}.dist-info/METADATA", date_time=(2026, 1, 1, 0, 0, 0))
         archive.writestr(
-            f"{normalized}-{version}.dist-info/METADATA",
+            info,
             f"Metadata-Version: 2.1\nName: {name}\nVersion: {version}\n",
         )
-        archive.writestr(f"{normalized}/__init__.py", f"# {platform_tag}\n")
+        init_info = zipfile.ZipInfo(f"{normalized}/__init__.py", date_time=(2026, 1, 1, 0, 0, 0))
+        archive.writestr(init_info, f"# {platform_tag}\n")
     return path
 
 
