@@ -196,7 +196,7 @@ Installed environments identify themselves on the Claude status line as `[MAD_OS
 - `MADVENTURES_ENV=1` is present in the session `env` (set by the canonical project settings), **or**
 - the project's `.claude/` carries an install-state record (`INSTALLATION_STATE.json` / `MADVENTURES_INSTALLATION_STATE.json`).
 
-The project layer ships the statusline script at `.claude/hooks/madventures-statusline.mjs` and the canonical settings reference it via `${CLAUDE_PROJECT_DIR}`; the global layer ships `~/.claude/madventures-statusline.mjs` for `--install-global`. Both are byte-identical copies of `global/madventures-statusline.mjs`.
+The project layer ships the statusline script at `.claude/hooks/madventures-statusline.mjs` and the canonical settings reference it via a relative path (`node .claude/hooks/madventures-statusline.mjs` — `statusLine.command` does not expand `${CLAUDE_PROJECT_DIR}`, unlike hook commands); the global layer ships `~/.claude/madventures-statusline.mjs` for `--install-global`. Both are byte-identical copies of `global/madventures-statusline.mjs`.
 
 Shell-prompt marker: with `--install-global` the `MADVENTURES_ENV=1` env flag is also available to the shell, so a prompt can render a `MAD_OS` tag (see `global/settings.json.fragment`).
 

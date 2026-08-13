@@ -51,7 +51,7 @@ for rel in required:
 # source set (same membership and count as scripts/generate-delivery-index.py
 # would produce now); a stale index fails closed.
 _contents_exclude = {"MANIFEST.json", "SHA256SUMS.txt", "PACKAGE_CONTENTS.txt"}
-_contents_excluded_parts = {"__pycache__", ".pytest_cache", ".DS_Store", "evidence"}
+_contents_excluded_parts = {"__pycache__", ".pytest_cache", ".DS_Store", "evidence", ".git"}
 eligible: set[str] = set()
 for path in ROOT.rglob("*"):
     if not path.is_file() or path.name in _contents_exclude:

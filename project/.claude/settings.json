@@ -17,7 +17,7 @@
   "skillListingMaxDescChars": 1200,
   "statusLine": {
     "type": "command",
-    "command": "node \"${CLAUDE_PROJECT_DIR}/.claude/hooks/madventures-statusline.mjs\"",
+    "command": "node .claude/hooks/madventures-statusline.mjs",
     "refreshInterval": 5,
     "padding": 1
   },

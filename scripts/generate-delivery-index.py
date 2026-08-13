@@ -9,7 +9,8 @@ OUT = ROOT / "PACKAGE_CONTENTS.txt"
 EXCLUDE = {"MANIFEST.json", "SHA256SUMS.txt", "PACKAGE_CONTENTS.txt"}
 # "evidence" excludes runtime denial/approval byproducts written to ./claude/evidence
 # by test runs (never package content); project/.claude has no evidence dir.
-EXCLUDED_PARTS = {"__pycache__", ".pytest_cache", ".DS_Store", "evidence"}
+# ".git" excludes repository history from release metadata.
+EXCLUDED_PARTS = {"__pycache__", ".pytest_cache", ".DS_Store", "evidence", ".git"}
 
 files: list[Path] = []
 for path in ROOT.rglob("*"):
