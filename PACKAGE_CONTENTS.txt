@@ -2,7 +2,7 @@ MAD VENTURES CLAUDE CODE OPERATING ENVIRONMENT — PACKAGE CONTENTS
 ========================================================================
 
 Version: 4.4.1
-Indexed files (excluding generated manifest/checksum/index): 359
+Indexed files (excluding generated manifest/checksum/index): 360
 Core project agents: 20
 Core project skills: 31
 Core project workflows: 0
@@ -125,6 +125,7 @@ FILE INDEX
       7145  docs/SESSION_CONTEXT_CHECKPOINTS.md
       7051  docs/SUBAGENT_REGISTRY.md
       7343  docs/UPGRADE_FROM_V4.md
+      5626  docs/VALIDATION_REPORT.md
       4295  docs/audit10-a10a-tool-surface-inventory.md
       1093  examples/CLOUD_TASKS.md
        715  examples/FOUNDER_APPROVAL.example.json
