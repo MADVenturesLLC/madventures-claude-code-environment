@@ -1,0 +1,41 @@
+# Wheelhouse constraints for the 4.4.2 native gates (cp314-macos).
+#
+# Both target machines must resolve an IDENTICAL distribution set or the
+# deterministic merge (scripts/mcp-wheelhouse.py merge) fails closed on
+# version divergence. cryptography is the one distribution whose latest
+# release (50.0.2) ships an arm64-only macOS wheel: there is no x86_64
+# build, so a native Intel run would resolve an older version and the
+# merge would abort. cryptography==48.0.1 is the newest release with a
+# macOS universal2 wheel (works on arm64 and x86_64) and is the version
+# the Founder-approved Audit 9 wheelhouse used on both targets.
+#
+# All other pins freeze the set resolved by the arm64 gate run of
+# 2026-10-03 so the x86_64 run cannot drift with time.
+annotated-types==0.8.0
+anyio==4.15.1
+attrs==26.1.0
+cffi==2.1.1
+click==8.5.0
+cryptography==48.0.1
+h11==0.16.0
+httpcore2==2.13.1
+httpx2==2.13.1
+idna==3.20
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+mcp==2.0.0
+mcp-types==2.0.0
+opentelemetry-api==1.45.0
+pycparser==3.0
+pydantic==2.13.5
+pydantic-core==2.46.5
+pyjwt==2.15.1
+python-multipart==0.0.32
+referencing==0.37.0
+rpds-py==2026.6.3
+sse-starlette==3.5.0
+starlette==1.7.0
+truststore==0.10.4
+typing-extensions==4.16.0
+typing-inspection==0.4.4
+uvicorn==0.54.0
