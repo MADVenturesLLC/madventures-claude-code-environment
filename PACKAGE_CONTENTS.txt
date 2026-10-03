@@ -2,7 +2,7 @@ MAD VENTURES CLAUDE CODE OPERATING ENVIRONMENT — PACKAGE CONTENTS
 ========================================================================
 
 Version: 4.4.2
-Indexed files (excluding generated manifest/checksum/index): 362
+Indexed files (excluding generated manifest/checksum/index): 366
 Core project agents: 20
 Core project skills: 31
 Core project workflows: 0
@@ -18,16 +18,17 @@ or inspect the generated VISIBLE_PROJECT_TEMPLATE directory.
 FILE INDEX
 ----------
       1312  .github/workflows/ci.yml
+      1254  .github/workflows/release-tooling.yml
        170  .gitignore
-      7764  CHANGELOG.md
+      7906  CHANGELOG.md
        959  DELIVERY_FIX.md
       2655  INSTALL_MAC.command
       1765  INSTALL_WINDOWS.ps1
        513  NOTICE.md
        596  OPEN_ME_FIRST.md
-      2245  README.md
+      2638  README.md
        479  README_FIRST.txt
-     12424  START_HERE.md
+     13009  START_HERE.md
        307  VERIFY_PACKAGE.command
          6  VERSION
       4551  VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/FOUNDEROS.md
@@ -120,8 +121,9 @@ FILE INDEX
       9078  docs/PARALLELISM_AND_AUTONOMY.md
       7259  docs/PERFORMANCE_AND_TROUBLESHOOTING.md
       4016  docs/PLUGIN_DEPLOYMENT.md
-     11001  docs/PYTHON_CONTROL_PLANE.md
-      2526  docs/README.md
+     11880  docs/PYTHON_CONTROL_PLANE.md
+      2657  docs/README.md
+      9169  docs/RELEASE_RUNBOOK.md
      11803  docs/SECURITY_GOVERNANCE.md
       7145  docs/SESSION_CONTEXT_CHECKPOINTS.md
       7051  docs/SUBAGENT_REGISTRY.md
@@ -352,6 +354,7 @@ FILE INDEX
      16191  scripts/audit9-target-gate.py
      10064  scripts/build-plugin.py
       2788  scripts/build-release.sh
+      6424  scripts/bump-version.py
       1423  scripts/create-plugin-zip.py
       1334  scripts/create-tar.py
       1242  scripts/create-zip.py
@@ -366,6 +369,7 @@ FILE INDEX
        513  scripts/install.sh
      17050  scripts/mcp-wheelhouse.py
       6427  scripts/quick-validate.py
+      7576  scripts/run-native-target-gate.sh
       8813  scripts/smoke-test-install.sh
       2200  scripts/start-claude-route.ps1
       2693  scripts/start-claude-route.sh
@@ -375,7 +379,7 @@ FILE INDEX
       9417  scripts/test-python-control-plane.sh
      10602  scripts/test-release-archives.py
       2426  scripts/test-route-launcher.sh
-     58769  scripts/validate-config.py
+     58910  scripts/validate-config.py
       1684  scripts/validate-workflows.mjs
      10581  scripts/verify-release.py
        817  workspace/.claude/MADVENTURES_WORKSPACE.md

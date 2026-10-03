@@ -475,6 +475,7 @@ def validate_installers() -> None:
             install_sh,
             smoke_sh,
             ROOT / "scripts" / "build-release.sh",
+            ROOT / "scripts" / "run-native-target-gate.sh",
             ROOT / "scripts" / "start-claude-route.sh",
             ROOT / "scripts" / "test-route-launcher.sh",
             ROOT / "scripts" / "install-plugin.sh",
@@ -506,6 +507,7 @@ def validate_installers() -> None:
         ROOT / "scripts" / "create-zip.py",
         ROOT / "scripts" / "create-plugin-zip.py",
         ROOT / "scripts" / "generate-manifest.py",
+        ROOT / "scripts" / "bump-version.py",
         ROOT / "scripts" / "environment-lifecycle.py",
         ROOT / "scripts" / "test-release-archives.py",
     ):
@@ -661,7 +663,8 @@ def validate_version_and_docs() -> None:
         "docs/COMMAND_PALETTE.md", "docs/PERFORMANCE_AND_TROUBLESHOOTING.md",
         "docs/PLUGIN_DEPLOYMENT.md", "docs/CLAUDE_CODE_FIELD_REFERENCE.md",
         "docs/MODEL_ROUTE_PROFILES.md", "docs/AUTHENTICATION_AND_BILLING.md",
-        "docs/PYTHON_CONTROL_PLANE.md", "docs/HOOKS_AND_ARTIFACTS.md", "python-control-plane/README.md",
+        "docs/PYTHON_CONTROL_PLANE.md", "docs/HOOKS_AND_ARTIFACTS.md", "docs/RELEASE_RUNBOOK.md",
+        "python-control-plane/README.md",
         "cloud/README.md", "examples/CLOUD_TASKS.md",
         "examples/PYTHON_CONTROL_PLANE_INVOCATIONS.md", "examples/FOUNDER_APPROVAL.example.json",
     }

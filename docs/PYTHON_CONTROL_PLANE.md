@@ -170,6 +170,23 @@ never enables credits. API mode requires:
 
 See [Authentication and billing controls](AUTHENTICATION_AND_BILLING.md).
 
+### Running on the clean lane when the shell already carries credentials
+
+The fail-closed preflight reads the process environment and settings files, not just stored
+credentials: an interactive shell that exports `ANTHROPIC_AUTH_TOKEN` or any watched route
+variable makes every subscription route refuse — the gate working as designed, not a broken
+install. Run governed routes on a dedicated clean config dir instead:
+
+```bash
+env -u ANTHROPIC_AUTH_TOKEN -u ANTHROPIC_BASE_URL \
+  CLAUDE_CONFIG_DIR="$HOME/.claude-control-plane" madclaude auth-check --repo .
+```
+
+The config dir must complete its own one-time `claude auth login` (credentials are per config
+dir and do not transfer by copying). A small wrapper that exports the config dir and unsets the
+watched variables before exec'ing `madclaude` is the recommended shape on hosts whose normal
+shell carries a proxy lane.
+
 ## Route registry
 
 | Route | Model | Effort | Mutation | Subagents | Deterministic gate |

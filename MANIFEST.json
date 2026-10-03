@@ -1,14 +1,19 @@
 {
   "package": "MADVentures-Claude-Code-Environment-v4.4.2",
   "version": "4.4.2",
-  "generatedAt": "2026-10-03T13:57:07+00:00",
+  "generatedAt": "2026-10-03T20:37:46+00:00",
   "algorithm": "SHA-256",
-  "fileCount": 363,
+  "fileCount": 367,
   "files": [
     {
       "path": ".github/workflows/ci.yml",
       "bytes": 1312,
       "sha256": "170f1ced4a80a5188fef917684ef1d39bf4bc64301012f428eabcf0c71b57b57"
+    },
+    {
+      "path": ".github/workflows/release-tooling.yml",
+      "bytes": 1254,
+      "sha256": "50c866c0c6cd08fafd7ba998ff2504d0a22260d79f88def3934aa840a4db71f0"
     },
     {
       "path": ".gitignore",
@@ -17,8 +22,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 7764,
-      "sha256": "92aa6d6574d2d83ba3e9ce2b1fc12955c79b3294377397a9583b8d9ef11133dc"
+      "bytes": 7906,
+      "sha256": "0a39735e273fdfc2dffcb5d4df88a294fb224cf87356fc93c0c7a860289954bf"
     },
     {
       "path": "DELIVERY_FIX.md",
@@ -47,13 +52,13 @@
     },
     {
       "path": "PACKAGE_CONTENTS.txt",
-      "bytes": 23392,
-      "sha256": "657e5f8aabc36b6ef51e5166a127696520618d2ff11f56a11f06f6b427ab0da0"
+      "bytes": 23560,
+      "sha256": "0aaae6095b2ba4b8ec7cc76310d79c89a2e8bdfb2aecae03913665bfe3299223"
     },
     {
       "path": "README.md",
-      "bytes": 2245,
-      "sha256": "c963f406f2d6a2ae95b4457f1b5c3b01c08888400b9da6205fb54cd1fc74fc2e"
+      "bytes": 2638,
+      "sha256": "3dad9669e54a2dc4a5ad259b7d2499d55ac1e3a99a6518c22ae467253084f2d1"
     },
     {
       "path": "README_FIRST.txt",
@@ -62,8 +67,8 @@
     },
     {
       "path": "START_HERE.md",
-      "bytes": 12424,
-      "sha256": "8e61ec8dfc8788ba9604d7ef3574644bcd3bf292d15f202cffa1a9c2cf19f1a6"
+      "bytes": 13009,
+      "sha256": "892eca35c683d24e4159e0c3fa02bf469f5bc91df02eb14e4b1442216a3f9b46"
     },
     {
       "path": "VERIFY_PACKAGE.command",
@@ -527,13 +532,18 @@
     },
     {
       "path": "docs/PYTHON_CONTROL_PLANE.md",
-      "bytes": 11001,
-      "sha256": "43a55330982965ebca23c30e990337a669b277d91e1c0db2a22cb0988d4c1ce3"
+      "bytes": 11880,
+      "sha256": "bbc3a0f5313b513f17d92d5051d26f0bfc435da538b827db11d78b21cdcbd1ee"
     },
     {
       "path": "docs/README.md",
-      "bytes": 2526,
-      "sha256": "800d5c26c3581af67913280f8819ca1aba804911712cbb68c3f6208f3e24ab12"
+      "bytes": 2657,
+      "sha256": "0087f4a581466fce42e481edb3724cb386f6125ddb49a235954c101636396fd9"
+    },
+    {
+      "path": "docs/RELEASE_RUNBOOK.md",
+      "bytes": 9169,
+      "sha256": "7c74794c38ccee8d642dd03b243d361016b25ea108404730088c7b0e9290adc4"
     },
     {
       "path": "docs/SECURITY_GOVERNANCE.md",
@@ -1686,6 +1696,11 @@
       "sha256": "452fce42619bc857d5ebabdee2fd7ba68a5c5140cd6329c3a2064979ed3b7de5"
     },
     {
+      "path": "scripts/bump-version.py",
+      "bytes": 6424,
+      "sha256": "06cc82cdee438528edb203e5c7e2f8899a9be78476ffff486e73c42d66ead368"
+    },
+    {
       "path": "scripts/create-plugin-zip.py",
       "bytes": 1423,
       "sha256": "77e4762a16d0b22458588d4f5c10548587a7a1f8350492a22e2976aff2dc66f9"
@@ -1756,6 +1771,11 @@
       "sha256": "55c8a382e18fc91db9e66bd77259a3474121cf60f0da8ba37dd58f67649dd495"
     },
     {
+      "path": "scripts/run-native-target-gate.sh",
+      "bytes": 7576,
+      "sha256": "736a18c5a9811d71872f5d6b9c9240810b744ecba6bcccf4bfca9e15715da3ff"
+    },
+    {
       "path": "scripts/smoke-test-install.sh",
       "bytes": 8813,
       "sha256": "b9ed684340964a92e56c360d1016ba9ea9a6f23a8e281667ae7612db4d0850c9"
@@ -1802,8 +1822,8 @@
     },
     {
       "path": "scripts/validate-config.py",
-      "bytes": 58769,
-      "sha256": "c4b5381d494046c59a952a4a3df645f8b688f8745e637f59848de1a21ad6a2b6"
+      "bytes": 58910,
+      "sha256": "4c35e64ea2d0d40ebace97afd8da9fc5c7ebf13916837da18088c852f37cb276"
     },
     {
       "path": "scripts/validate-workflows.mjs",

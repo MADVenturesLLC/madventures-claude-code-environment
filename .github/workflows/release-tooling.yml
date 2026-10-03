@@ -1,0 +1,38 @@
+# Release tooling dry-check.
+#
+# The real release gates are the two NATIVE target-gate runs (one host per
+# architecture, never simulated) and the frozen build — they cannot faithfully
+# run on hosted runners. This workflow keeps the tooling itself exercised on
+# every PR that touches it: the gate definition's host-neutral self-check,
+# runner syntax, the version-sweep inventory, and the fast validators.
+name: Release tooling
+
+on:
+  pull_request:
+    paths:
+      - "scripts/**"
+      - ".github/workflows/**"
+      - "releases/**"
+      - "python-control-plane/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  dry-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      # Host-neutral dry validation of the gate definition and evidence writer.
+      - name: Target-gate self-check
+        run: python3 scripts/audit9-target-gate.py --self-check
+      - name: Native gate runner syntax
+        run: bash -n scripts/run-native-target-gate.sh
+      - name: Version sweep inventory
+        run: python3 scripts/bump-version.py --list
+      - name: Release validators (fast)
+        run: python3 scripts/quick-validate.py
