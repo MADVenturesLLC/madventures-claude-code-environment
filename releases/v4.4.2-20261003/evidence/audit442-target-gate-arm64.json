@@ -3,14 +3,14 @@
   "artifactSha256": "121723bd2b9ae4bd3e20a79666e4504980a42ec6861df1541ce2d241f8526f55",
   "evidenceClass": "release-target",
   "gate": "audit9-target-gate",
-  "generatedAt": "2026-10-03T13:54:46.842534+00:00",
+  "generatedAt": "2026-10-03T14:11:09.950727+00:00",
   "installedInventory": {
     "annotated-types": "0.8.0",
     "anyio": "4.15.1",
     "attrs": "26.1.0",
     "cffi": "2.1.1",
     "click": "8.5.0",
-    "cryptography": "50.0.2",
+    "cryptography": "48.0.1",
     "h11": "0.16.0",
     "httpcore2": "2.13.1",
     "httpx2": "2.13.1",
@@ -34,20 +34,20 @@
     "typing-inspection": "0.4.4",
     "uvicorn": "0.54.0"
   },
-  "lockFile": "/Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home/wheelhouse/requirements-cp314-macos-arm64.lock",
+  "lockFile": "/Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home/wheelhouse/requirements-cp314-macos-arm64.lock",
   "machine": "MikeMacBook.local",
   "platformMachine": "arm64",
   "pythonImplementation": "CPython",
   "pythonVersion": "3.14.6",
-  "release": "/Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home/mcp-releases/mcp-2.0.0-4.4.2-6fa1a76bc1c9",
+  "release": "/Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home/mcp-releases/mcp-2.0.0-4.4.2-d5b263e3ebdd",
   "releaseEvidence": true,
   "schemaVersion": 1,
   "sources": [
     {
       "declared_manifest_sha256": null,
       "hash_provenance": "computed",
-      "path": "/Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home/wheelhouse/requirements-cp314-macos-arm64.lock",
-      "source_sha256": "52e4ea9ed5bb3840991a26a7ead8599ccf2bf4e8694dc07f0c152a693b54806b",
+      "path": "/Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home/wheelhouse/requirements-cp314-macos-arm64.lock",
+      "source_sha256": "6f7df649ca77d034800617546998c4ea84846c305c3b86978d85b7ec09bd960e",
       "target_match": "no_target",
       "verified": false
     },
@@ -69,7 +69,7 @@
         "python-control-plane/run-tests.py"
       ],
       "exitCode": 0,
-      "stderrTail": "_plan_recommended_and_python_validated (test_workflow.WorkflowTests.test_builder_selection_is_plan_recommended_and_python_validated) ... ok\ntest_dry_run_validates_without_writes_or_agent_call (test_workflow.WorkflowTests.test_dry_run_validates_without_writes_or_agent_call) ... ok\ntest_failed_fix_writes_recovery_handoff (test_workflow.WorkflowTests.test_failed_fix_writes_recovery_handoff) ... ok\ntest_fix_recovery_ceiling_is_three_attempts (test_workflow.WorkflowTests.test_fix_recovery_ceiling_is_three_attempts) ... ok\ntest_merged_audit_profile_preserves_specialized_contract (test_workflow.WorkflowTests.test_merged_audit_profile_preserves_specialized_contract) ... ok\ntest_plan_writes_complete_subscription_cli_evidence_bundle (test_workflow.WorkflowTests.test_plan_writes_complete_subscription_cli_evidence_bundle) ... ok\ntest_route_model_override_must_stay_inside_governed_envelope (test_workflow.WorkflowTests.test_route_model_override_must_stay_inside_governed_envelope) ... ok\ntest_sdk_backend_cannot_be_used_with_subscription_mode (test_workflow.WorkflowTests.test_sdk_backend_cannot_be_used_with_subscription_mode) ... ok\ntest_successful_fix_writes_handoff_and_acceptance_contracts (test_workflow.WorkflowTests.test_successful_fix_writes_handoff_and_acceptance_contracts) ... ok\ntest_tier1_is_a_distinct_exact_sha_review_route (test_workflow.WorkflowTests.test_tier1_is_a_distinct_exact_sha_review_route) ... ok\ntest_tier2_reviewer_excludes_all_prior_participants (test_workflow.WorkflowTests.test_tier2_reviewer_excludes_all_prior_participants) ... ok\ntest_unmanifested_execution_record_cannot_establish_participation (test_workflow.WorkflowTests.test_unmanifested_execution_record_cannot_establish_participation) ... ok\ntest_verify_and_tier2_require_python_evidence_and_independence (test_workflow.WorkflowTests.test_verify_and_tier2_require_python_evidence_and_independence) ... ok\n\n----------------------------------------------------------------------\nRan 334 tests in 210.159s\n\nOK\n",
+      "stderrTail": "_plan_recommended_and_python_validated (test_workflow.WorkflowTests.test_builder_selection_is_plan_recommended_and_python_validated) ... ok\ntest_dry_run_validates_without_writes_or_agent_call (test_workflow.WorkflowTests.test_dry_run_validates_without_writes_or_agent_call) ... ok\ntest_failed_fix_writes_recovery_handoff (test_workflow.WorkflowTests.test_failed_fix_writes_recovery_handoff) ... ok\ntest_fix_recovery_ceiling_is_three_attempts (test_workflow.WorkflowTests.test_fix_recovery_ceiling_is_three_attempts) ... ok\ntest_merged_audit_profile_preserves_specialized_contract (test_workflow.WorkflowTests.test_merged_audit_profile_preserves_specialized_contract) ... ok\ntest_plan_writes_complete_subscription_cli_evidence_bundle (test_workflow.WorkflowTests.test_plan_writes_complete_subscription_cli_evidence_bundle) ... ok\ntest_route_model_override_must_stay_inside_governed_envelope (test_workflow.WorkflowTests.test_route_model_override_must_stay_inside_governed_envelope) ... ok\ntest_sdk_backend_cannot_be_used_with_subscription_mode (test_workflow.WorkflowTests.test_sdk_backend_cannot_be_used_with_subscription_mode) ... ok\ntest_successful_fix_writes_handoff_and_acceptance_contracts (test_workflow.WorkflowTests.test_successful_fix_writes_handoff_and_acceptance_contracts) ... ok\ntest_tier1_is_a_distinct_exact_sha_review_route (test_workflow.WorkflowTests.test_tier1_is_a_distinct_exact_sha_review_route) ... ok\ntest_tier2_reviewer_excludes_all_prior_participants (test_workflow.WorkflowTests.test_tier2_reviewer_excludes_all_prior_participants) ... ok\ntest_unmanifested_execution_record_cannot_establish_participation (test_workflow.WorkflowTests.test_unmanifested_execution_record_cannot_establish_participation) ... ok\ntest_verify_and_tier2_require_python_evidence_and_independence (test_workflow.WorkflowTests.test_verify_and_tier2_require_python_evidence_and_independence) ... ok\n\n----------------------------------------------------------------------\nRan 334 tests in 246.271s\n\nOK\n",
       "stdoutTail": "",
       "step": "local-harness"
     },
@@ -78,13 +78,13 @@
         "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
         "scripts/mcp-wheelhouse.py",
         "--wheelhouse",
-        "/Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home/wheelhouse",
+        "/Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home/wheelhouse",
         "--arch",
         "arm64"
       ],
       "exitCode": 0,
       "stderrTail": "",
-      "stdoutTail": "11_0_arm64.whl\nSaved /Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home/wheelhouse/cffi-2.1.1-cp314-cp314-macosx_11_0_arm64.whl\nSaved /Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home/wheelhouse/python_multipart-0.0.32-py3-none-any.whl\nSaved /Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home/wheelhouse/referencing-0.37.0-py3-none-any.whl\nSaved /Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home/wheelhouse/rpds_py-2026.6.3-cp314-cp314-macosx_11_0_arm64.whl\nSaved /Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home/wheelhouse/sse_starlette-3.5.0-py3-none-any.whl\nSaved /Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home/wheelhouse/starlette-1.7.0-py3-none-any.whl\nSaved /Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home/wheelhouse/truststore-0.10.4-py3-none-any.whl\nSaved /Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home/wheelhouse/typing_extensions-4.16.0-py3-none-any.whl\nSaved /Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home/wheelhouse/typing_inspection-0.4.4-py3-none-any.whl\nSaved /Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home/wheelhouse/uvicorn-0.54.0-py3-none-any.whl\nSaved /Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home/wheelhouse/click-8.5.0-py3-none-any.whl\nSaved /Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home/wheelhouse/pycparser-3.0-py3-none-any.whl\nSuccessfully downloaded mcp mcp-types anyio httpx2 httpcore2 h11 idna jsonschema attrs jsonschema-specifications opentelemetry-api pydantic pydantic-core annotated-types pyjwt cryptography cffi python-multipart referencing rpds-py sse-starlette starlette truststore typing-extensions typing-inspection uvicorn click pycparser\n/Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home/wheelhouse/requirements-cp314-macos-arm64.lock\n/Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home/wheelhouse/WHEELHOUSE_MANIFEST.json\nwheelhouse sealed: 28 wheels for cp314-macos-arm64\n",
+      "stdoutTail": "rm64.whl\nSaved /Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home/wheelhouse/python_multipart-0.0.32-py3-none-any.whl\nSaved /Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home/wheelhouse/referencing-0.37.0-py3-none-any.whl\nSaved /Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home/wheelhouse/rpds_py-2026.6.3-cp314-cp314-macosx_11_0_arm64.whl\nSaved /Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home/wheelhouse/sse_starlette-3.5.0-py3-none-any.whl\nSaved /Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home/wheelhouse/starlette-1.7.0-py3-none-any.whl\nSaved /Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home/wheelhouse/truststore-0.10.4-py3-none-any.whl\nSaved /Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home/wheelhouse/typing_extensions-4.16.0-py3-none-any.whl\nSaved /Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home/wheelhouse/typing_inspection-0.4.4-py3-none-any.whl\nSaved /Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home/wheelhouse/uvicorn-0.54.0-py3-none-any.whl\nSaved /Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home/wheelhouse/click-8.5.0-py3-none-any.whl\nSaved /Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home/wheelhouse/pycparser-3.0-py3-none-any.whl\nSuccessfully downloaded mcp mcp-types anyio httpx2 httpcore2 h11 idna jsonschema attrs jsonschema-specifications opentelemetry-api pydantic pydantic-core annotated-types pyjwt cryptography cffi python-multipart referencing rpds-py sse-starlette starlette truststore typing-extensions typing-inspection uvicorn click pycparser\n/Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home/wheelhouse/requirements-cp314-macos-arm64.lock\n/Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home/wheelhouse/WHEELHOUSE_MANIFEST.json\nwheelhouse sealed: 28 wheels for cp314-macos-arm64\n",
       "step": "wheelhouse-lock-generation"
     },
     {
@@ -95,18 +95,18 @@
         "mcp",
         "install",
         "--wheelhouse",
-        "/Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home/wheelhouse",
+        "/Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home/wheelhouse",
         "--lock",
-        "/Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home/wheelhouse/requirements-cp314-macos-arm64.lock",
+        "/Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home/wheelhouse/requirements-cp314-macos-arm64.lock",
         "--arch",
         "arm64",
         "--home",
-        "/Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home",
+        "/Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home",
         "--json"
       ],
       "exitCode": 0,
       "stderrTail": "",
-      "stdoutTail": "{\n  \"identity\": \"mcp-2.0.0-4.4.2-6fa1a76bc1c9\",\n  \"release\": \"/Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home/mcp-releases/mcp-2.0.0-4.4.2-6fa1a76bc1c9\",\n  \"status\": \"staged-not-activated\"\n}\n",
+      "stdoutTail": "{\n  \"identity\": \"mcp-2.0.0-4.4.2-d5b263e3ebdd\",\n  \"release\": \"/Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home/mcp-releases/mcp-2.0.0-4.4.2-d5b263e3ebdd\",\n  \"status\": \"staged-not-activated\"\n}\n",
       "step": "offline-release-install"
     },
     {
@@ -117,14 +117,14 @@
         "mcp",
         "self-test",
         "--release",
-        "/Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home/mcp-releases/mcp-2.0.0-4.4.2-6fa1a76bc1c9",
+        "/Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home/mcp-releases/mcp-2.0.0-4.4.2-d5b263e3ebdd",
         "--home",
-        "/Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home",
+        "/Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home",
         "--json"
       ],
       "exitCode": 0,
       "stderrTail": "",
-      "stdoutTail": "{\n  \"release\": \"mcp-2.0.0-4.4.2-6fa1a76bc1c9\",\n  \"status\": \"staged-self-test-ok\"\n}\n",
+      "stdoutTail": "{\n  \"release\": \"mcp-2.0.0-4.4.2-d5b263e3ebdd\",\n  \"status\": \"staged-self-test-ok\"\n}\n",
       "step": "staged-launcher-self-test"
     },
     {
@@ -135,14 +135,14 @@
         "mcp",
         "enable",
         "--release",
-        "/Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home/mcp-releases/mcp-2.0.0-4.4.2-6fa1a76bc1c9",
+        "/Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home/mcp-releases/mcp-2.0.0-4.4.2-d5b263e3ebdd",
         "--home",
-        "/Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home",
+        "/Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home",
         "--json"
       ],
       "exitCode": 0,
       "stderrTail": "",
-      "stdoutTail": "{\n  \"identity\": \"mcp-2.0.0-4.4.2-6fa1a76bc1c9\",\n  \"status\": \"enabled\"\n}\n",
+      "stdoutTail": "{\n  \"identity\": \"mcp-2.0.0-4.4.2-d5b263e3ebdd\",\n  \"status\": \"enabled\"\n}\n",
       "step": "atomic-enable"
     },
     {
@@ -150,8 +150,8 @@
         "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
         "-c",
         "\nimport json, sys\nfrom pathlib import Path\nsys.path.insert(0, str(Path(sys.argv[1]) / \"app\"))\nfrom madclaude.mcp_server import ServerContext, handle_jsonrpc\ncontext = ServerContext(home=Path(sys.argv[2]), release_dir=Path(sys.argv[1]))\ninit = handle_jsonrpc({\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"initialize\"}, context)\nlisted = handle_jsonrpc({\"jsonrpc\": \"2.0\", \"id\": 2, \"method\": \"tools/list\"}, context)\ntools = [tool[\"name\"] for tool in listed[\"result\"][\"tools\"]]\nexpected = [\"control_plane_status\", \"routes_list\", \"evidence_index\", \"evidence_read\", \"request_verification\"]\nif tools != expected:\n    raise SystemExit(f\"protocol roundtrip FAILED: tools list mismatch: {tools!r}\")\nif init[\"result\"][\"serverInfo\"][\"authority\"] != \"non-authoritative\":\n    raise SystemExit(f\"protocol roundtrip FAILED: server authority is not non-authoritative: {init!r}\")\ncalled = handle_jsonrpc(\n    {\"jsonrpc\": \"2.0\", \"id\": 3, \"method\": \"tools/call\",\n     \"params\": {\"name\": \"control_plane_status\", \"arguments\": {}}},\n    context,\n)\nif called[\"result\"][\"structuredContent\"][\"authority\"] != \"non-authoritative\":\n    raise SystemExit(f\"protocol roundtrip FAILED: tools/call authority is not non-authoritative: {called!r}\")\nprint(\"protocol roundtrip ok: initialize/tools-list/tools-call with non-authoritative authority\")\n",
-        "/Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home/mcp-releases/mcp-2.0.0-4.4.2-6fa1a76bc1c9",
-        "/Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home"
+        "/Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home/mcp-releases/mcp-2.0.0-4.4.2-d5b263e3ebdd",
+        "/Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home"
       ],
       "exitCode": 0,
       "stderrTail": "",
@@ -163,8 +163,8 @@
         "/Library/Frameworks/Python.framework/Versions/3.14/bin/python3",
         "-c",
         "\nimport json, selectors, subprocess, sys, time\nfrom pathlib import Path\n\nhome = Path(sys.argv[1])\nrelease = Path(sys.argv[2])\nmode = sys.argv[3]\nvenv_python = release / \"venv\" / \"bin\" / \"python\"\n\ncheck = subprocess.run(\n    [str(venv_python), \"-c\", \"import importlib.util; print(importlib.util.find_spec('mcp.server.mcpserver') is not None)\"],\n    capture_output=True, text=True, check=False,\n)\nif check.stdout.strip() != \"True\":\n    if mode == \"allow-fabricated\":\n        print(\"fastmcp-stdio: SKIPPED (TEST ONLY, non-release evidence) \u2014 fabricated wheelhouse without \"\n              \"the real mcp SDK (no mcp.server.mcpserver)\")\n        raise SystemExit(0)\n    print(\"fastmcp-stdio: FAILED \u2014 the real mcp==2.0.0 SDK stdio roundtrip cannot run against this \"\n          \"wheelhouse; release-target evidence requires it (fail closed, no false green)\", file=sys.stderr)\n    raise SystemExit(2)\n\nwrapper = home / \"bin\" / \"madclaude-mcp-server\"\nproc = subprocess.Popen(\n    [\"/bin/sh\", str(wrapper)], stdin=subprocess.PIPE, stdout=subprocess.PIPE,\n    stderr=subprocess.PIPE, text=True, bufsize=1,\n)\nselector = selectors.DefaultSelector()\nselector.register(proc.stdout, selectors.EVENT_READ)\n\ndef send(payload):\n    proc.stdin.write(json.dumps(payload) + \"\\n\")\n    proc.stdin.flush()\n\ndef recv(timeout=60):\n    deadline = time.monotonic() + timeout\n    while time.monotonic() < deadline:\n        events = selector.select(deadline - time.monotonic())\n        if events:\n            line = proc.stdout.readline()\n            if line:\n                return json.loads(line)\n    raise SystemExit(\"fastmcp-stdio: timed out waiting for the server\")\n\ntry:\n    send({\"jsonrpc\": \"2.0\", \"id\": 1, \"method\": \"initialize\",\n          \"params\": {\"protocolVersion\": \"2025-06-18\", \"capabilities\": {},\n                     \"clientInfo\": {\"name\": \"audit9-gate\", \"version\": \"0\"}}})\n    init = recv()\n    if init.get(\"result\", {}).get(\"serverInfo\", {}).get(\"name\") != \"madclaude-local-control-plane\":\n        raise SystemExit(f\"fastmcp-stdio FAILED: unexpected serverInfo: {init!r}\")\n    send({\"jsonrpc\": \"2.0\", \"method\": \"notifications/initialized\"})\n    send({\"jsonrpc\": \"2.0\", \"id\": 2, \"method\": \"tools/list\"})\n    listed = recv()\n    tools = sorted(tool[\"name\"] for tool in listed[\"result\"][\"tools\"])\n    expected_tools = sorted([\"control_plane_status\", \"routes_list\", \"evidence_index\",\n                             \"evidence_read\", \"request_verification\"])\n    if tools != expected_tools:\n        raise SystemExit(f\"fastmcp-stdio FAILED: tools list mismatch: {tools!r}\")\n    send({\"jsonrpc\": \"2.0\", \"id\": 3, \"method\": \"tools/call\",\n          \"params\": {\"name\": \"control_plane_status\", \"arguments\": {}}})\n    called = recv()\n    content = called[\"result\"][\"structuredContent\"]\n    if content[\"authority\"] != \"non-authoritative\":\n        raise SystemExit(f\"fastmcp-stdio FAILED: authority is not non-authoritative: {content!r}\")\n    print(\"real-mcp-stdio ok: real mcp 2.0.0 SDK stdio roundtrip through the stable wrapper\")\nfinally:\n    proc.terminate()\n    try:\n        proc.wait(timeout=10)\n    except subprocess.TimeoutExpired:\n        proc.kill()\n",
-        "/Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home",
-        "/Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home/mcp-releases/mcp-2.0.0-4.4.2-6fa1a76bc1c9",
+        "/Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home",
+        "/Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home/mcp-releases/mcp-2.0.0-4.4.2-d5b263e3ebdd",
         "require-real-sdk"
       ],
       "exitCode": 0,
@@ -180,12 +180,12 @@
         "mcp",
         "disable",
         "--home",
-        "/Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home",
+        "/Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home",
         "--json"
       ],
       "exitCode": 0,
       "stderrTail": "",
-      "stdoutTail": "{\n  \"status\": \"disabled\",\n  \"wrapper\": \"/Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home/bin/madclaude-mcp-server\"\n}\n",
+      "stdoutTail": "{\n  \"status\": \"disabled\",\n  \"wrapper\": \"/Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home/bin/madclaude-mcp-server\"\n}\n",
       "step": "verb-cycle-disable"
     },
     {
@@ -196,12 +196,12 @@
         "mcp",
         "re-enable",
         "--home",
-        "/Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home",
+        "/Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home",
         "--json"
       ],
       "exitCode": 0,
       "stderrTail": "",
-      "stdoutTail": "{\n  \"identity\": \"mcp-2.0.0-4.4.2-6fa1a76bc1c9\",\n  \"status\": \"re-enabled\"\n}\n",
+      "stdoutTail": "{\n  \"identity\": \"mcp-2.0.0-4.4.2-d5b263e3ebdd\",\n  \"status\": \"re-enabled\"\n}\n",
       "step": "verb-cycle-re-enable"
     },
     {
@@ -213,12 +213,12 @@
         "status",
         "--deep",
         "--home",
-        "/Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home",
+        "/Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home",
         "--json"
       ],
       "exitCode": 0,
       "stderrTail": "",
-      "stdoutTail": "{\n  \"drift\": [],\n  \"enabled\": true,\n  \"identity\": \"mcp-2.0.0-4.4.2-6fa1a76bc1c9\",\n  \"ownedReleases\": [\n    \"mcp-2.0.0-4.4.2-6fa1a76bc1c9\"\n  ],\n  \"prelaunch\": \"verified\",\n  \"recordLevel\": \"verified\",\n  \"state\": \"enabled\",\n  \"wrapper\": \"/Users/michaeldaley/.hermes/cache/scratch/audit442-arm64-home/bin/madclaude-mcp-server\",\n  \"wrapperPresent\": true\n}\n",
+      "stdoutTail": "{\n  \"drift\": [],\n  \"enabled\": true,\n  \"identity\": \"mcp-2.0.0-4.4.2-d5b263e3ebdd\",\n  \"ownedReleases\": [\n    \"mcp-2.0.0-4.4.2-d5b263e3ebdd\"\n  ],\n  \"prelaunch\": \"verified\",\n  \"recordLevel\": \"verified\",\n  \"state\": \"enabled\",\n  \"wrapper\": \"/Users/michaeldaley/MADVenturesOPs/releases/.work-4.4.2/arm64-gate-home/bin/madclaude-mcp-server\",\n  \"wrapperPresent\": true\n}\n",
       "step": "verb-cycle-status"
     }
   ]

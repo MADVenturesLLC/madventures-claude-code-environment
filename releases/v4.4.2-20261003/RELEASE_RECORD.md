@@ -18,8 +18,8 @@
 Approval is external to this package (governance boundary 6: no self-granted approval). The exact tree, artifact identities, validation results, and open gates below are the inputs to the Founder's decision.
 
 **Open gates a Founder decision should address (see §4):**
-- Native arm64 target gate: **RE-RUN AND PASSED for this cut** — `evidence/audit442-target-gate-arm64.json` (SHA-256 `c14e1a5ec9062f9d4c953ccc641e61ceedf5a54aae98ee1627f58c871e42db53`); all 10 steps exit 0; artifact SHA matches the filed ZIP.
-- Native x86_64 target gate: **NOT YET RE-RUN** — the harness records `platform.machine()` of the running interpreter and the Audit 9 standard forbids architecture simulation; the Audit 9 x86_64 evidence was produced natively on `Michaels-iMac.local`. The `RUN-X86_64-GATE-ON-IMAC.sh` script in this root reproduces it on that machine.
+- Native arm64 target gate: **RE-RUN AND PASSED for this cut, pinned** — `evidence/audit442-target-gate-arm64.json` (SHA-256 `eb58baf96c75d84adb40729a0fdec20185976645b1b7fab8300b4a0624739458`); all 10 steps exit 0; artifact SHA matches the filed ZIP; wheelhouse resolved under `evidence/wheelhouse-constraints-cp314-macos.txt` (cryptography pinned to 48.0.1 — macOS universal2 — because 50.0.2 has no x86_64 build and the merge gate fails closed on cross-target divergence).
+- Native x86_64 target gate: **NOT YET RE-RUN** — the harness records `platform.machine()` of the running interpreter and the Audit 9 standard forbids architecture simulation; the Audit 9 x86_64 evidence was produced natively on `Michaels-iMac.local`. The `RUN-X86_64-GATE-ON-IMAC.sh` script on branch `release/4.4.2-gates` reproduces it on that machine, with the shared constraints file applied (both runs must resolve an identical distribution set; unpinned runs diverge on `cryptography` and the merge fails closed).
 - The merged wheelhouse was built for Audit 9 and has **not** been rebuilt for this cut (pending the x86_64 gate, which produces its own per-target wheelhouse; the deterministic merge then runs on the arm64 host).
 - The MCP release-install surface changed in the A10 series (new `mcp_lifecycle.py`, `mcp_server.py`); the arm64 gate re-proves it end-to-end above; x86_64 proof pending with its gate.
 
@@ -77,13 +77,14 @@ Known host quirk (not a package defect): when a shell carries `ANTHROPIC_AUTH_TO
 | Field | Value |
 |---|---|
 | Evidence file | `evidence/audit442-target-gate-arm64.json` |
-| Evidence SHA-256 | `c14e1a5ec9062f9d4c953ccc641e61ceedf5a54aae98ee1627f58c871e42db53` |
+| Evidence SHA-256 | `eb58baf96c75d84adb40729a0fdec20185976645b1b7fab8300b4a0624739458` |
 | Machine / arch | `MikeMacBook.local` / `arm64` (native, from the running interpreter) |
 | Python | CPython `3.14.6` |
 | Artifact SHA recorded | `121723bd2b9ae4bd3e20a79666e4504980a42ec6861df1541ce2d241f8526f55` (matches the filed ZIP) |
 | Evidence class | `release-target` / `releaseEvidence: true` |
 | Steps | all **10/10 exit 0** — local-harness, wheelhouse-lock-generation, offline-release-install, staged-launcher-self-test, atomic-enable, protocol-roundtrip, fastmcp-stdio-roundtrip, verb-cycle-disable, verb-cycle-re-enable, verb-cycle-status |
-| Installed inventory | 28 distributions incl. `mcp==2.0.0` |
+| Installed inventory | 28 distributions incl. `mcp==2.0.0`, `cryptography==48.0.1` |
+| Pins | `evidence/wheelhouse-constraints-cp314-macos.txt` (both target runs) |
 
 ---
 
