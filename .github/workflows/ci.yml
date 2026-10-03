@@ -23,6 +23,13 @@ jobs:
       # only exist in release validation — not a clean checkout.
       - name: Installed suite
         run: python3 -B python-control-plane/run-tests.py --installed
+      # Mirror parity + package integrity: quick-validate.py compares the
+      # VISIBLE_PROJECT_TEMPLATE mirror against project/.claude (file list +
+      # digests) and PACKAGE_CONTENTS.txt against the generator-eligible tree.
+      # Without this gate a PR can edit the hidden payload, pass the test
+      # suites, and land mirror/index drift on main.
+      - name: Package and mirror integrity
+        run: python3 scripts/quick-validate.py
       - name: Plugin parity
         env:
           PYTHONPATH: python-control-plane/src:python-control-plane/tests

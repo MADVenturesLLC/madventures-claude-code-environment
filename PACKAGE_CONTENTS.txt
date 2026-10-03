@@ -17,7 +17,7 @@ or inspect the generated VISIBLE_PROJECT_TEMPLATE directory.
 
 FILE INDEX
 ----------
-       865  .github/workflows/ci.yml
+      1312  .github/workflows/ci.yml
        170  .gitignore
       7234  CHANGELOG.md
        959  DELIVERY_FIX.md

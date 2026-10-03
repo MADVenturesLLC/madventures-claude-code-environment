@@ -1,14 +1,14 @@
 {
   "package": "MADVentures-Claude-Code-Environment-v4.4.1",
   "version": "4.4.1",
-  "generatedAt": "2026-10-03T12:49:35+00:00",
+  "generatedAt": "2026-10-03T12:53:53+00:00",
   "algorithm": "SHA-256",
   "fileCount": 363,
   "files": [
     {
       "path": ".github/workflows/ci.yml",
-      "bytes": 865,
-      "sha256": "3e169476b91e2bc789b639965c64529b468a16a118e0f002c47ac8b0f242da4d"
+      "bytes": 1312,
+      "sha256": "170f1ced4a80a5188fef917684ef1d39bf4bc64301012f428eabcf0c71b57b57"
     },
     {
       "path": ".gitignore",
@@ -48,7 +48,7 @@
     {
       "path": "PACKAGE_CONTENTS.txt",
       "bytes": 23392,
-      "sha256": "e52ddaf3ddd18c76ab2d51a04af170b41f71186a2e76812906e0bc9a3d056246"
+      "sha256": "6562ff76405c2e3dc97488f932902853bf03874a0a2fde76b739136d95da62b8"
     },
     {
       "path": "README.md",
