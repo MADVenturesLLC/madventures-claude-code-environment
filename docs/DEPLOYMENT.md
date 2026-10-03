@@ -44,9 +44,9 @@ bash scripts/build-release.sh
 Default outputs:
 
 ```text
-../MADVentures-Claude-Code-Environment-v4.4.1.zip
-../MADVentures-Claude-Code-Environment-v4.4.1.tar.gz
-../MADVentures-FounderOS-Claude-Code-Plugin-v4.4.1.zip
+../MADVentures-Claude-Code-Environment-v4.4.2.zip
+../MADVentures-Claude-Code-Environment-v4.4.2.tar.gz
+../MADVentures-FounderOS-Claude-Code-Plugin-v4.4.2.zip
 ```
 
 Custom ZIP, plugin, and TAR.GZ output paths can be supplied as the first, second, and third arguments:
@@ -426,7 +426,7 @@ Verify:
 - 20 agents appear;
 - 31 skills appear;
 - 8 scoped rule files exist;
-- `.claude/control-plane/madclaude.py --version` reports `4.4.1`;
+- `.claude/control-plane/madclaude.py --version` reports `4.4.2`;
 - `madclaude auth-check` proves the intended subscription lane without exposing credentials;
 - the control-plane test suite passes without a live Claude call;
 - zero executable JavaScript workflows are installed;
@@ -471,8 +471,8 @@ The release builder now fails closed if a packaged file changes after manifest g
 
 ```bash
 python3 scripts/verify-release.py \
-  /path/to/MADVentures-Claude-Code-Environment-v4.4.1.zip \
-  /path/to/MADVentures-FounderOS-Claude-Code-Plugin-v4.4.1.zip
+  /path/to/MADVentures-Claude-Code-Environment-v4.4.2.zip \
+  /path/to/MADVentures-FounderOS-Claude-Code-Plugin-v4.4.2.zip
 ```
 
 The build also emits a `.sha256` sidecar beside each ZIP.

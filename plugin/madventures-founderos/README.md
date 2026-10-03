@@ -1,4 +1,4 @@
-# MAD Ventures FounderOS portable plugin v4.4.1
+# MAD Ventures FounderOS portable plugin v4.4.2
 
 This plugin is the portable, namespaced distribution of the MAD Ventures Claude Code Operating Environment.
 

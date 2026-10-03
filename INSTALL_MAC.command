@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")" && pwd -P)"
-LOG="$ROOT/install-v4.4.1.log"
+LOG="$ROOT/install-v4.4.2.log"
 
 pause_on_exit() {
   status=$?
@@ -22,7 +22,7 @@ exec > >(tee -a "$LOG") 2>&1
 clear || true
 cat <<'BANNER'
 ============================================================
- MAD Ventures Claude Code Operating Environment V4.4.1
+ MAD Ventures Claude Code Operating Environment V4.4.2
  Finder-visible guided installer for macOS
 ============================================================
 

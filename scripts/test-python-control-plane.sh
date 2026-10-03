@@ -33,7 +33,7 @@ for path in files:
 print(f'PYTHON SOURCE COMPILE PASSED: {len(files)} files')
 PY
 
-python3 "$CONTROL/bin/madclaude.py" --version | grep -Fq '4.4.1' || fail 'version self-check'
+python3 "$CONTROL/bin/madclaude.py" --version | grep -Fq '4.4.2' || fail 'version self-check'
 python3 "$CONTROL/bin/madclaude.py" routes --json > "$TMP/routes.json"
 python3 - "$TMP/routes.json" <<'PY'
 import json, sys
@@ -74,6 +74,9 @@ cat > "$fake" <<'EOF_FAKE'
 #!/usr/bin/env python3
 import json, os, pathlib, sys
 args=sys.argv[1:]
+if args[:1] == ['--version']:
+    print('2.1.228 (Claude Code)')
+    raise SystemExit(0)
 if args[:2] == ['auth', 'status']:
     print(json.dumps({
         'loggedIn': True,
@@ -155,13 +158,13 @@ MADCLAUDE_HOME="$install_home" MADCLAUDE_BIN_DIR="$bin_dir" \
 assert_file "$install_home/app/bin/madclaude.py"
 assert_file "$install_home/venv/bin/python"
 assert_file "$bin_dir/madclaude"
-"$bin_dir/madclaude" --version | grep -Fq '4.4.1' || fail 'installed wrapper self-check'
+"$bin_dir/madclaude" --version | grep -Fq '4.4.2' || fail 'installed wrapper self-check'
 "$bin_dir/madclaude" routes --json >/dev/null || fail 'installed wrapper route registry'
 # Regression: the launcher must live under bin/ in every deployed layout so it
 # cannot shadow the madclaude package when commands run from that directory.
 # A root-level deployed madclaude.py recreates that defect and must never appear.
 [[ ! -e "$install_home/app/madclaude.py" ]] || fail 'deployed root-level madclaude.py reintroduces shadow risk'
-"$install_home/venv/bin/python" "$install_home/app/bin/madclaude.py" --version | grep -Fq '4.4.1' \
+"$install_home/venv/bin/python" "$install_home/app/bin/madclaude.py" --version | grep -Fq '4.4.2' \
   || fail 'bin/madclaude.py launcher self-check'
 "$install_home/venv/bin/python" "$install_home/app/bin/madclaude.py" routes --json >/dev/null \
   || fail 'bin/madclaude.py launcher route registry'

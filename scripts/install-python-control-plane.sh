@@ -15,7 +15,7 @@ SDK_VERSION="0.2.131"
 
 usage() {
   cat <<'USAGE'
-Install MAD Ventures Python Claude Control Plane 4.4.1
+Install MAD Ventures Python Claude Control Plane 4.4.2
 
 Usage:
   ./scripts/install-python-control-plane.sh [options]

@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "madventures-founderos",
   "displayName": "MAD Ventures FounderOS",
-  "version": "4.4.1",
+  "version": "4.4.2",
   "description": "Portable FounderOS Claude Code skills, subagents, and guarded hooks for MAD Ventures engineering.",
   "author": {
     "name": "MAD Ventures Holdings LLC"

@@ -11,7 +11,7 @@ import zipfile
 from pathlib import Path, PurePosixPath
 
 PACKAGE_ROOT = Path(__file__).resolve().parents[1]
-PACKAGE_NAME = 'MADVentures-Claude-Code-Environment-v4.4.1'
+PACKAGE_NAME = 'MADVentures-Claude-Code-Environment-v4.4.2'
 VERSION = (PACKAGE_ROOT / "VERSION").read_text(encoding="utf-8").strip()
 PLUGIN_ROOT = "madventures-founderos"
 EXPECTED_PLUGIN_COUNTS = {"agents": 19, "skills": 31, "workflows": 0}

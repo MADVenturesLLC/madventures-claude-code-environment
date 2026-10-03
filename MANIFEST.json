@@ -1,7 +1,7 @@
 {
-  "package": "MADVentures-Claude-Code-Environment-v4.4.1",
-  "version": "4.4.1",
-  "generatedAt": "2026-10-03T12:53:53+00:00",
+  "package": "MADVentures-Claude-Code-Environment-v4.4.2",
+  "version": "4.4.2",
+  "generatedAt": "2026-10-03T13:57:07+00:00",
   "algorithm": "SHA-256",
   "fileCount": 363,
   "files": [
@@ -17,8 +17,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 7234,
-      "sha256": "565f32c59ebe2b44abf0943713a66222aa6527e8455fbf6e61d24d603b176489"
+      "bytes": 7764,
+      "sha256": "92aa6d6574d2d83ba3e9ce2b1fc12955c79b3294377397a9583b8d9ef11133dc"
     },
     {
       "path": "DELIVERY_FIX.md",
@@ -28,7 +28,7 @@
     {
       "path": "INSTALL_MAC.command",
       "bytes": 2655,
-      "sha256": "e495f8c415c86c4468d58bb5215606cd6dfcf41c4d7afeb22b5a44bf4266ae7d"
+      "sha256": "6a13ace38871f0a2ba14a1069eee54e5fc61f758a1ad64b6060b267706e521aa"
     },
     {
       "path": "INSTALL_WINDOWS.ps1",
@@ -48,12 +48,12 @@
     {
       "path": "PACKAGE_CONTENTS.txt",
       "bytes": 23392,
-      "sha256": "6562ff76405c2e3dc97488f932902853bf03874a0a2fde76b739136d95da62b8"
+      "sha256": "657e5f8aabc36b6ef51e5166a127696520618d2ff11f56a11f06f6b427ab0da0"
     },
     {
       "path": "README.md",
-      "bytes": 1932,
-      "sha256": "47a87d621190d3fc3c1b8a19570561f15ec6ac3fbeb71cc5a79ec4ae95cdbd29"
+      "bytes": 2245,
+      "sha256": "c963f406f2d6a2ae95b4457f1b5c3b01c08888400b9da6205fb54cd1fc74fc2e"
     },
     {
       "path": "README_FIRST.txt",
@@ -63,7 +63,7 @@
     {
       "path": "START_HERE.md",
       "bytes": 12424,
-      "sha256": "6b287494550d828831a46b75a016362c63480cec12800336b9cb1d6e4b255dec"
+      "sha256": "8e61ec8dfc8788ba9604d7ef3574644bcd3bf292d15f202cffa1a9c2cf19f1a6"
     },
     {
       "path": "VERIFY_PACKAGE.command",
@@ -73,7 +73,7 @@
     {
       "path": "VERSION",
       "bytes": 6,
-      "sha256": "3f0762a9e5531383c10a801cc8dcb2fe899b6a3aa6717591863b852a87aa252f"
+      "sha256": "03c954b0c9010fdec5d96ab7674612550ea115c737502d4b39feb8663a9e86f6"
     },
     {
       "path": "VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/FOUNDEROS.md",
@@ -443,7 +443,7 @@
     {
       "path": "cloud/setup.sh",
       "bytes": 1740,
-      "sha256": "d1495f31d4278eab14b8560e479c3e3962d9273749121fc93f19eabb91961d8b"
+      "sha256": "f5caa9c38bcc679eafadcd139b4900a783e76f18ea2f75187020c442639c47a7"
     },
     {
       "path": "docs/ARCHITECTURE.md",
@@ -478,7 +478,7 @@
     {
       "path": "docs/DEPLOYMENT.md",
       "bytes": 21467,
-      "sha256": "9478d99630faf4acd12ede1dd4cad0e30f49db99293e3066abe468063db221d3"
+      "sha256": "05d129bc365c086dd747078288d33bd3b5341886eb3a6dbffb98c6e520c2f819"
     },
     {
       "path": "docs/DYNAMIC_WORKFLOWS.md",
@@ -553,12 +553,12 @@
     {
       "path": "docs/UPGRADE_FROM_V4.md",
       "bytes": 7343,
-      "sha256": "198ee89850303849b95529912fe028392f848ab0d321191249c7aa41a1fe4d16"
+      "sha256": "a59f8852b0353487cf06825d1fb90afef59e34cd7d50a72c81a2dabcd2af1b10"
     },
     {
       "path": "docs/VALIDATION_REPORT.md",
-      "bytes": 5626,
-      "sha256": "69890c400ea7ea782a85d6c4b68b5afe1e707b0119b535b469f2083c1230d049"
+      "bytes": 5628,
+      "sha256": "3371a719f2ba45fdbee2f0f3c9c7d88cf4bfac59c4997e6372057ed8df341e35"
     },
     {
       "path": "docs/audit10-a10a-tool-surface-inventory.md",
@@ -618,7 +618,7 @@
     {
       "path": "plugin/madventures-founderos/.claude-plugin/plugin.json",
       "bytes": 466,
-      "sha256": "dea8a0c3295c1e94bb04e090d204597e8b018442e64387c96f199e8dd5447c4e"
+      "sha256": "4c6845f75b5d97d92c833262612e00c014ea6dfd50960353758ed7d2bc517eda"
     },
     {
       "path": "plugin/madventures-founderos/NOTICE.md",
@@ -628,7 +628,7 @@
     {
       "path": "plugin/madventures-founderos/README.md",
       "bytes": 1889,
-      "sha256": "a5d2f9e9ac39102e45f08db64622c18270fd1313b6004e31095f303fa32a4d67"
+      "sha256": "e4ade04138ef42015be91bcc2cbdd23f5ff687312cff51d145880aac0a1d74dc"
     },
     {
       "path": "plugin/madventures-founderos/agents/adversarial-verifier.md",
@@ -793,7 +793,7 @@
     {
       "path": "plugin/madventures-founderos/python-control-plane/src/madclaude/version.py",
       "bytes": 22,
-      "sha256": "be8fe7b474f5b2a532a1bc5d46f5c9e7e0049370898c52a7d9378e7d4bb72279"
+      "sha256": "bb9336c41655642202129eba134fdddb13d64301ffc884fd8118d751af3d4037"
     },
     {
       "path": "plugin/madventures-founderos/skills/attribution-check/SKILL.md",
@@ -1333,7 +1333,7 @@
     {
       "path": "python-control-plane/README.md",
       "bytes": 4957,
-      "sha256": "57ac2ee4d6c4caf27bebf7f3e3b705ffe53f18a2aef96c996f92ee9e62c9827c"
+      "sha256": "3ba7ea52385247decd29e3e36e497d1d2f856839140f17f356bd2e870c85595b"
     },
     {
       "path": "python-control-plane/WORKFLOW_MIGRATION.json",
@@ -1348,7 +1348,7 @@
     {
       "path": "python-control-plane/pyproject.toml",
       "bytes": 1088,
-      "sha256": "27a02aeb321c73a6bd4d905816c7f32546c5d3c5292225be50ce964349a14e2f"
+      "sha256": "44cabd86054da283bac1eec38120d77ab490a2a022b2e924a29d9e8b61ecdd05"
     },
     {
       "path": "python-control-plane/run-tests.py",
@@ -1528,7 +1528,7 @@
     {
       "path": "python-control-plane/src/madclaude/version.py",
       "bytes": 22,
-      "sha256": "be8fe7b474f5b2a532a1bc5d46f5c9e7e0049370898c52a7d9378e7d4bb72279"
+      "sha256": "bb9336c41655642202129eba134fdddb13d64301ffc884fd8118d751af3d4037"
     },
     {
       "path": "python-control-plane/src/madclaude/workflows.py",
@@ -1698,7 +1698,7 @@
     {
       "path": "scripts/create-zip.py",
       "bytes": 1242,
-      "sha256": "8d7d1377534e2b73f47d7965b7e21bed5ef5374610a19ee114091acb56817dc8"
+      "sha256": "280f26e64b4f0d9e9d4979e7103e8919beaa80f70767bd194735d0b48bb85ad2"
     },
     {
       "path": "scripts/environment-lifecycle.py",
@@ -1713,7 +1713,7 @@
     {
       "path": "scripts/generate-manifest.py",
       "bytes": 2297,
-      "sha256": "1a786cb4dde289d145737b70aeeccc8dd379dc204f723efacb8a1b0c769ccdbc"
+      "sha256": "b4f3f535a601be51773e7f035189e09bfa262725b270b081c7f3a2ee6232267f"
     },
     {
       "path": "scripts/install-plugin.ps1",
@@ -1733,7 +1733,7 @@
     {
       "path": "scripts/install-python-control-plane.sh",
       "bytes": 6937,
-      "sha256": "8c63ab2167fdb639a8798251c6dd7e556ad1adf230fe9541652398f23e56d724"
+      "sha256": "679e7a15251b9852f54b927a8b7fc4cc4a74ad65b7bc407c1332408abd832c37"
     },
     {
       "path": "scripts/install.ps1",
@@ -1758,7 +1758,7 @@
     {
       "path": "scripts/smoke-test-install.sh",
       "bytes": 8813,
-      "sha256": "b1e9db466b602791794339bce225fbddce1f94699cb2bf56d8c80b0151ea7257"
+      "sha256": "b9ed684340964a92e56c360d1016ba9ea9a6f23a8e281667ae7612db4d0850c9"
     },
     {
       "path": "scripts/start-claude-route.ps1",
@@ -1787,8 +1787,8 @@
     },
     {
       "path": "scripts/test-python-control-plane.sh",
-      "bytes": 9328,
-      "sha256": "d968ce25e0fa958c21dc30425bc990dbe403815895b923c557537e514a473254"
+      "bytes": 9417,
+      "sha256": "57e44ab1da88e6a262ebee6890e06988d9c52a0b7d4cf098a13c363973a35239"
     },
     {
       "path": "scripts/test-release-archives.py",
@@ -1803,7 +1803,7 @@
     {
       "path": "scripts/validate-config.py",
       "bytes": 58769,
-      "sha256": "102bc51515ebe60d7423776e4423fcde8db8184640712e30976fa96cc39acd0d"
+      "sha256": "c4b5381d494046c59a952a4a3df645f8b688f8745e637f59848de1a21ad6a2b6"
     },
     {
       "path": "scripts/validate-workflows.mjs",
@@ -1813,7 +1813,7 @@
     {
       "path": "scripts/verify-release.py",
       "bytes": 10581,
-      "sha256": "f2df24b8e2a3aca2e38bb03449f4cdf439a78cce364244b650aebdebc0a7392a"
+      "sha256": "e91e421a088381e1e73c34cdf3c65c575d63ee356c02a73e0d392ee89a3468ea"
     },
     {
       "path": "workspace/.claude/MADVENTURES_WORKSPACE.md",
