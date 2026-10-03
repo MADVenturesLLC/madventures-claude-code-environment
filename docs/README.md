@@ -24,6 +24,7 @@ sequence.
 | [DEPLOYMENT.md](DEPLOYMENT.md) | Deployment guidance |
 | [PLUGIN_DEPLOYMENT.md](PLUGIN_DEPLOYMENT.md) | Portable plugin packaging, distribution, and installation |
 | [OPERATIONAL_PLAYBOOK.md](OPERATIONAL_PLAYBOOK.md) | Day-to-day operating sequences |
+| [RELEASE_RUNBOOK.md](RELEASE_RUNBOOK.md) | Cutting a release: version sweep, native gates, wheelhouse merge, approval carry-in |
 | [PERFORMANCE_AND_TROUBLESHOOTING.md](PERFORMANCE_AND_TROUBLESHOOTING.md) | Performance and troubleshooting |
 | [OFFICIAL_SOURCE_AUDIT.md](OFFICIAL_SOURCE_AUDIT.md) | Documentation-baseline audit trail |
 | [UPGRADE_FROM_V4.md](UPGRADE_FROM_V4.md) | Upgrading from earlier V4 environments |

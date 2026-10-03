@@ -140,6 +140,21 @@ Repository-local alternative:
 python3 .claude/control-plane/madclaude.py auth-check --repo .
 ```
 
+> **Clean-lane note.** If your shell session or settings files carry any watched credential
+> or routing variable (the fail-closed list in
+> [docs/AUTHENTICATION_AND_BILLING.md](docs/AUTHENTICATION_AND_BILLING.md)), the preflight
+> reports the subscription lane as unsafe — by design. Run the control plane on a dedicated
+> clean config dir instead (it needs its own one-time `claude auth login`; credentials do
+> not transfer from `~/.claude` by copying), stripping the full watched set:
+>
+> ```bash
+> env -u ANTHROPIC_API_KEY -u ANTHROPIC_AUTH_TOKEN \
+>     -u CLAUDE_CODE_OAUTH_TOKEN -u CLAUDE_CODE_OAUTH_REFRESH_TOKEN -u CLAUDE_CODE_OAUTH_SCOPES \
+>     -u CLAUDE_CODE_USE_BEDROCK -u CLAUDE_CODE_USE_VERTEX -u CLAUDE_CODE_USE_FOUNDRY -u CLAUDE_CODE_USE_ANTHROPIC_AWS \
+>     -u ANTHROPIC_BASE_URL -u ANTHROPIC_BEDROCK_BASE_URL -u ANTHROPIC_VERTEX_BASE_URL -u ANTHROPIC_FOUNDRY_BASE_URL -u ANTHROPIC_CUSTOM_HEADERS \
+>   CLAUDE_CONFIG_DIR=$HOME/.claude-control-plane madclaude auth-check --repo .
+> ```
+
 The governed default is Python orchestrating native `claude -p`:
 
 ```text

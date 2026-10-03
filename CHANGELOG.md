@@ -1,17 +1,19 @@
 # Changelog
 
-## 4.4.2 — PENDING FOUNDER APPROVAL (record filed; approval not yet issued)
+## 4.4.2 — 2026-10-03 (Founder-approved)
 
 Everything merged on `main` after the Founder-approved Audit 9 artifacts
-(`4352dd2`), packaged as the next release candidate. The release record
-**is filed** at `releases/v4.4.2-20261003/RELEASE_RECORD.md` with the frozen
-tree identity, artifact SHA-256 values, and the open gates; it is **prepared
-and pending Founder approval**, not an approved release.
+(`4352dd2`), packaged as the 4.4.2 release. The release record at
+`releases/v4.4.2-20261003/RELEASE_RECORD.md` was **approved by the Founder on
+2026-10-03** (Status line `Approved`), with all Audit 9 gate classes re-run and
+passed for this cut: native arm64 and x86_64 target gates (one host per
+architecture, pinned via the shared constraints file), the merged wheelhouse
+rebuild, and the MCP release-install re-proof on both architectures.
 
-Approval procedure note: the Founder edits this record's Status line at
-approval time; that edit changes the record's hash, so
-`releases/v4.4.2-20261003/SHA256SUMS.txt` must be regenerated after approval
-(it currently hashes the record as filed).
+Approval note: the approval edit changed the record's hash, so
+`releases/v4.4.2-20261003/SHA256SUMS.txt` was regenerated for the approved
+revision; the byte-exact approved copy is preserved at
+`releases/v4.4.2-20261003/evidence/founder-approval/`.
 
 ### Runtime and governance hardening (A10 series)
 - A10-A: secret-pattern registry, supported-tool matrix, baseline
@@ -35,8 +37,9 @@ approval time; that edit changes the record's hash, so
   pointer stubs; `docs/README.md` indexes every reference document.
 
 ### Release status
-- The three Audit 9 artifact SHA-256 values remain the last Founder-approved
-  installable set until this release is approved and its record issued.
+- The v4.4.2 artifact SHA-256 values (release record §2) are the current
+  Founder-approved installable set; the Audit 9 three remain the prior
+  approved baseline.
 
 ## 4.4.1 — 2026-08-06
 
