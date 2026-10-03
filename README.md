@@ -2,6 +2,7 @@
 
 **Version:** 4.4.1  
 **Audit 9 status:** Founder-approved release baseline  
+**Main since Audit 9:** post-release hardening (A10-A secret-pattern registry + deny-unknown baseline, A10-C runtime-state enforcement, A10-D schema extras + tier classifier, lean CI gates, env-identity statusline, release build-tooling fixes) is merged on `main` **without a new release record yet** — see the "Release status" note below.
 
 ## Approved artifact SHAs (Audit 9)
 
@@ -13,10 +14,14 @@
 
 ## Layout
 
-- Repository root = unpacked approved environment package (v4.4.1)
+- Repository root = the environment source of truth (v4.4.1 package plus post-Audit-9 hardening merged on `main`)
 - `releases/Audit9-v4.4.1-20260809/` = permanent Audit 9 release record, artifacts, merged wheelhouse, and native gate evidence
 
 See `releases/Audit9-v4.4.1-20260809/AUDIT9_RELEASE_RECORD.md` for Founder approval, test totals, and governance boundaries.
+
+## Release status
+
+The **Founder-approved installable artifacts remain the Audit 9 three** (SHAs above). The code on `main` past `4352dd2` is approved-by-PR hardening that has **no release record or repackaged artifact yet**; a fresh clone is not the approved artifact. Cutting the next release record (4.4.2/5.x) is a pending Founder action, tracked in the CHANGELOG backlog below.
 
 ## Install
 

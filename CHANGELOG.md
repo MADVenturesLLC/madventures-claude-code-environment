@@ -1,5 +1,30 @@
 # Changelog
 
+## Unreleased (main since Audit 9 — no release record yet)
+
+Backlog consolidated here for record honesty: these changes are merged on
+`main` past the Founder-approved Audit 9 artifacts but are NOT part of any
+approved release record or repackaged artifact. Cutting the next release
+(record + artifacts + Founder approval) remains a pending Founder action.
+
+Post-Audit-9 hardening already merged (A10 series, CI, statusline, build
+tooling): see `git log 4352dd2..main` — A10-A secret-pattern registry and
+deny-unknown baseline, A10-C runtime-state enforcement (escalation journal,
+ceilings, terminal deny), A10-D schema extras and mechanical tier classifier,
+lean CI merge gates (installed suite + plugin parity), MAD_OS env-identity
+statusline marker, and release build-tooling fixes.
+
+This entry's additions (entry-file consolidation and docs index):
+
+- Reduced `README_FIRST.txt` and `OPEN_ME_FIRST.md` to pointer stubs; README.md
+  and START_HERE.md are the only canonical entry points. Content that existed
+  only in the duplicates remains reachable from README.md / START_HERE.md and
+  the CHANGELOG history.
+- Added `docs/README.md` — an index of every shipped reference document.
+- README.md now states the release-status truth explicitly: approved
+  installable artifacts are the Audit 9 three; `main` past `4352dd2` has no
+  release record yet; a fresh clone is not the approved artifact.
+
 ## 4.4.1 — 2026-08-06
 
 ### Delivery correction
