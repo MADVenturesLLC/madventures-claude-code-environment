@@ -31,6 +31,28 @@ if [ ! -d "$REPO/.git" ]; then
 fi
 
 cd "$REPO"
+
+# --- Guard 1: native Intel hardware only (no emulation). The gate records
+# platform.machine() of the running interpreter and the release standard
+# forbids architecture simulation. If this is ever run on an Apple Silicon
+# Mac (or under Rosetta), stop here instead of producing mislabeled evidence.
+ARCH="$(python3 -c 'import platform; print(platform.machine())')"
+TRANSLATED="$(sysctl -n sysctl.proc_translated 2>/dev/null || echo 0)"
+if [ "$ARCH" != "x86_64" ] || [ "$TRANSLATED" = "1" ]; then
+  echo "REFUSING TO RUN: the native x86_64 gate requires real Intel hardware."
+  echo "This host reports arch=$ARCH (rosetta_translated=$TRANSLATED)."
+  echo "Run this script on Michaels-iMac.local, not the Apple Silicon MacBook."
+  exit 2
+fi
+
+# --- Guard 2: never touch a clone with uncommitted changes.
+if [ -n "$(git status --porcelain)" ]; then
+  echo "REFUSING TO RUN: this clone has uncommitted changes:"
+  git status --short
+  echo "Commit, stash, or discard them deliberately, then rerun."
+  exit 3
+fi
+
 git fetch origin release/4.4.2-gates
 git checkout -B release/4.4.2-gates origin/release/4.4.2-gates
 
