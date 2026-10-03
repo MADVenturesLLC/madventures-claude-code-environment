@@ -1,9 +1,9 @@
 {
   "package": "MADVentures-Claude-Code-Environment-v4.4.1",
   "version": "4.4.1",
-  "generatedAt": "2026-10-03T12:39:36+00:00",
+  "generatedAt": "2026-10-03T12:44:23+00:00",
   "algorithm": "SHA-256",
-  "fileCount": 362,
+  "fileCount": 363,
   "files": [
     {
       "path": ".github/workflows/ci.yml",
@@ -17,8 +17,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 5829,
-      "sha256": "2deb97c331a38f1c53125f3886a6cb798cfb3c97d191d6ef0a8f3995af463ce1"
+      "bytes": 7234,
+      "sha256": "565f32c59ebe2b44abf0943713a66222aa6527e8455fbf6e61d24d603b176489"
     },
     {
       "path": "DELIVERY_FIX.md",
@@ -42,23 +42,23 @@
     },
     {
       "path": "OPEN_ME_FIRST.md",
-      "bytes": 1636,
-      "sha256": "b3944664eb3626cb6f93b94b26641bcc565620b2a0f320318ef4c17f6c4e2923"
+      "bytes": 596,
+      "sha256": "6c661e367230d6172aa3af75301a35dd24b506ca989b0342c6d44faef7a17f65"
     },
     {
       "path": "PACKAGE_CONTENTS.txt",
-      "bytes": 23365,
-      "sha256": "cbe6f659cb6f0cf62e45ca2ef70deb1c07fd97dc99d278c93c0d8a6ee13f82c4"
+      "bytes": 23392,
+      "sha256": "965223422be2170d138d443a5ff167dd60750496521f83f23e6eb290298a1c9d"
     },
     {
       "path": "README.md",
-      "bytes": 1159,
-      "sha256": "9497d3dc5968d3d5f263fd045be82012979deb71cee11f465a9769209af8a951"
+      "bytes": 1932,
+      "sha256": "47a87d621190d3fc3c1b8a19570561f15ec6ac3fbeb71cc5a79ec4ae95cdbd29"
     },
     {
       "path": "README_FIRST.txt",
-      "bytes": 2637,
-      "sha256": "1d88718e9ff9277b55a7216f9cdf0e00a40f4148afcf61a6af517ea08736b993"
+      "bytes": 479,
+      "sha256": "cd16426c6701d1410313420d923919924f3772fe03f3194f844c096c6cba6735"
     },
     {
       "path": "START_HERE.md",
@@ -529,6 +529,11 @@
       "path": "docs/PYTHON_CONTROL_PLANE.md",
       "bytes": 11001,
       "sha256": "43a55330982965ebca23c30e990337a669b277d91e1c0db2a22cb0988d4c1ce3"
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 2267,
+      "sha256": "8dc1c4eb6f2ff8cedc09b07c6d046789a8162763346b49006bd49d09fd107c46"
     },
     {
       "path": "docs/SECURITY_GOVERNANCE.md",
