@@ -1,4 +1,4 @@
-# START HERE — MAD Ventures Claude Code Operating Environment v4.4.1
+# START HERE — MAD Ventures Claude Code Operating Environment v4.4.2
 
 This is the shortest complete path from a downloaded ZIP to a governed MAD Ventures / FounderOS Claude Code session.
 

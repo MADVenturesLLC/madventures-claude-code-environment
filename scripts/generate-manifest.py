@@ -8,7 +8,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PACKAGE_NAME = 'MADVentures-Claude-Code-Environment-v4.4.1'
+PACKAGE_NAME = 'MADVentures-Claude-Code-Environment-v4.4.2'
 EXCLUDED_NAMES = {"MANIFEST.json", "SHA256SUMS.txt"}
 # "evidence" excludes runtime denial/approval byproducts written to ./claude/evidence
 # by test runs (never package content); project/.claude has no evidence dir.

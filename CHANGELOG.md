@@ -1,29 +1,36 @@
 # Changelog
 
-## Unreleased (main since Audit 9 — no release record yet)
+## 4.4.2 — PENDING FOUNDER APPROVAL (release record not yet issued)
 
-Backlog consolidated here for record honesty: these changes are merged on
-`main` past the Founder-approved Audit 9 artifacts but are NOT part of any
-approved release record or repackaged artifact. Cutting the next release
-(record + artifacts + Founder approval) remains a pending Founder action.
+Everything merged on `main` after the Founder-approved Audit 9 artifacts
+(`4352dd2`), packaged as the next release candidate. Release contents are
+frozen at build time; the release record will list the exact tree and
+artifact SHA-256 values.
 
-Post-Audit-9 hardening already merged (A10 series, CI, statusline, build
-tooling): see `git log 4352dd2..main` — A10-A secret-pattern registry and
-deny-unknown baseline, A10-C runtime-state enforcement (escalation journal,
-ceilings, terminal deny), A10-D schema extras and mechanical tier classifier,
-lean CI merge gates (installed suite + plugin parity), MAD_OS env-identity
-statusline marker, and release build-tooling fixes.
+### Runtime and governance hardening (A10 series)
+- A10-A: secret-pattern registry, supported-tool matrix, baseline
+  deny-unknown policy.
+- A10-C: runtime-state enforcement — escalation journal, ceilings,
+  terminal deny.
+- A10-D: schema extras and mechanical tier classifier.
+- MAD_OS environment-identity marker on the status line.
 
-This entry's additions (entry-file consolidation and docs index):
+### CI and delivery integrity
+- Lean CI merge gates: installed test suite (asserted module/test counts)
+  plus source/plugin byte parity.
+- `quick-validate.py` runs on every PR: visible-mirror parity, exact
+  delivery index, manifest/SHA integrity.
+- CLI version floor enforced at auth preflight: runs below the documented
+  `2.1.223` minimum fail closed; unparseable version strings fail closed.
+- Version-identity tripwire test: `VERSION`, `pyproject.toml`,
+  `plugin.json`, and both `madclaude/version.py` copies must agree.
+- Entry-point consolidation: `README.md` and `START_HERE.md` are the only
+  canonical entry documents; `README_FIRST.txt` / `OPEN_ME_FIRST.md` are
+  pointer stubs; `docs/README.md` indexes every reference document.
 
-- Reduced `README_FIRST.txt` and `OPEN_ME_FIRST.md` to pointer stubs; README.md
-  and START_HERE.md are the only canonical entry points. Content that existed
-  only in the duplicates remains reachable from README.md / START_HERE.md and
-  the CHANGELOG history.
-- Added `docs/README.md` — an index of every shipped reference document.
-- README.md now states the release-status truth explicitly: approved
-  installable artifacts are the Audit 9 three; `main` past `4352dd2` has no
-  release record yet; a fresh clone is not the approved artifact.
+### Release status
+- The three Audit 9 artifact SHA-256 values remain the last Founder-approved
+  installable set until this release is approved and its record issued.
 
 ## 4.4.1 — 2026-08-06
 

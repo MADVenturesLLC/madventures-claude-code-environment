@@ -20,7 +20,7 @@ from pathlib import Path
 from typing import Iterable
 
 ROOT = Path(__file__).resolve().parents[1]
-PACKAGE_NAME = 'MADVentures-Claude-Code-Environment-v4.4.1'
+PACKAGE_NAME = 'MADVentures-Claude-Code-Environment-v4.4.2'
 PROJECT = ROOT / "project"
 CLAUDE = PROJECT / ".claude"
 PLUGIN = ROOT / "plugin" / "madventures-founderos"
@@ -621,7 +621,7 @@ def validate_cloud_assets() -> None:
         fail("cloud SessionStart script is missing remote and opt-in guards")
     else:
         ok("cloud SessionStart dependency installation is remote-scoped and opt-in")
-    if "MADVENTURES_CLOUD_ENVIRONMENT_VERSION=4.4.1" not in setup:
+    if "MADVENTURES_CLOUD_ENVIRONMENT_VERSION=4.4.2" not in setup:
         fail("cloud setup script version marker is stale")
     banned_env = {"ANTHROPIC_API_KEY", "GITHUB_PERSONAL_ACCESS_TOKEN", "GH_TOKEN", "DATABASE_URL", "AWS_SECRET_ACCESS_KEY"}
     declared = {
@@ -647,10 +647,10 @@ def validate_cloud_assets() -> None:
 
 def validate_version_and_docs() -> None:
     version = (ROOT / "VERSION").read_text(encoding="utf-8").strip() if (ROOT / "VERSION").exists() else ""
-    if version != "4.4.1":
-        fail(f"VERSION must be 4.4.1, found '{version}'")
+    if version != "4.4.2":
+        fail(f"VERSION must be 4.4.2, found '{version}'")
     else:
-        ok("package version is 4.4.1")
+        ok("package version is 4.4.2")
     required_docs = {
         "README.md", "START_HERE.md", "CHANGELOG.md", "docs/ARCHITECTURE.md", "docs/DEPLOYMENT.md",
         "docs/DYNAMIC_WORKFLOWS.md", "docs/SUBAGENT_REGISTRY.md", "docs/MODEL_ROUTING.md",
@@ -889,12 +889,12 @@ def validate_python_control_plane(*, run_integration: bool = True) -> None:
             "dependencies": dependencies,
         }
         optional_data = {"sdk": sdk_dependencies}
-    version_ok = project_data.get("version") == "4.4.1"
+    version_ok = project_data.get("version") == "4.4.2"
     dependencies = project_data.get("dependencies")
     sdk_dependencies = optional_data.get("sdk")
     requires_python = str(project_data.get("requires-python") or "")
     if not version_ok:
-        fail("Python control-plane package version is not 4.4.1")
+        fail("Python control-plane package version is not 4.4.2")
     if dependencies != []:
         fail(f"subscription-first Python control plane must have no mandatory dependencies; got {dependencies!r}")
     if sdk_dependencies != ["claude-agent-sdk==0.2.131"]:

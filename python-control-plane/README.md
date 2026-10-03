@@ -1,4 +1,4 @@
-# MAD Ventures Claude control plane 4.4.1
+# MAD Ventures Claude control plane 4.4.2
 
 A transparent, subscription-first Python control plane for governed FounderOS and MAD Ventures
 engineering workflows.

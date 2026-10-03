@@ -1,6 +1,6 @@
 # MADVentures Claude Code Environment
 
-**Version:** 4.4.1  
+**Version:** 4.4.2  
 **Audit 9 status:** Founder-approved release baseline  
 **Main since Audit 9:** post-release hardening (A10-A secret-pattern registry + deny-unknown baseline, A10-C runtime-state enforcement, A10-D schema extras + tier classifier, lean CI gates, env-identity statusline, release build-tooling fixes) is merged on `main` **without a new release record yet** — see the "Release status" note below.
 
@@ -14,7 +14,7 @@
 
 ## Layout
 
-- Repository root = the environment source of truth (v4.4.1 package plus post-Audit-9 hardening merged on `main`)
+- Repository root = the environment source tree for v4.4.2 (release candidate; the last Founder-approved installable baseline is the Audit 9 artifact set below)
 - `releases/Audit9-v4.4.1-20260809/` = permanent Audit 9 release record, artifacts, merged wheelhouse, and native gate evidence
 
 See `releases/Audit9-v4.4.1-20260809/AUDIT9_RELEASE_RECORD.md` for Founder approval, test totals, and governance boundaries.

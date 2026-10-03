@@ -7,7 +7,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PACKAGE_NAME = 'MADVentures-Claude-Code-Environment-v4.4.1'
+PACKAGE_NAME = 'MADVentures-Claude-Code-Environment-v4.4.2'
 EXCLUDED_PARTS = {"__pycache__", ".pytest_cache", ".DS_Store", "releases", ".git", "evidence"}
 
 parser = argparse.ArgumentParser()

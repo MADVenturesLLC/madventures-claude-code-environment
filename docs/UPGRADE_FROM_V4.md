@@ -116,7 +116,7 @@ Then:
 ### macOS, Linux, WSL
 
 ```bash
-cd /path/to/MADVentures-Claude-Code-Environment-v4.4.1
+cd /path/to/MADVentures-Claude-Code-Environment-v4.4.2
 python3 scripts/validate-config.py
 ./scripts/install.sh /absolute/path/to/repository --profile auto
 ```
@@ -124,7 +124,7 @@ python3 scripts/validate-config.py
 ### Windows PowerShell
 
 ```powershell
-Set-Location C:\path\to\MADVentures-Claude-Code-Environment-v4.4.1
+Set-Location C:\path\to\MADVentures-Claude-Code-Environment-v4.4.2
 python .\scripts\validate-config.py
 .\scripts\install.ps1 -ProjectPath 'C:\path\to\repository' -Profile auto
 ```

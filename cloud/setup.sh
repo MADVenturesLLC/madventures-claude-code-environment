@@ -21,7 +21,7 @@ rm -rf /var/lib/apt/lists/* || true
 
 install -d -m 0755 /opt/madventures
 cat > /opt/madventures/cloud-environment.env <<'STATE'
-MADVENTURES_CLOUD_ENVIRONMENT_VERSION=4.4.1
+MADVENTURES_CLOUD_ENVIRONMENT_VERSION=4.4.2
 STATE
 
 cat > /usr/local/bin/mad-cloud-doctor <<'DOCTOR'

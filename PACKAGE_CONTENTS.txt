@@ -1,7 +1,7 @@
 MAD VENTURES CLAUDE CODE OPERATING ENVIRONMENT — PACKAGE CONTENTS
 ========================================================================
 
-Version: 4.4.1
+Version: 4.4.2
 Indexed files (excluding generated manifest/checksum/index): 362
 Core project agents: 20
 Core project skills: 31
@@ -19,13 +19,13 @@ FILE INDEX
 ----------
       1312  .github/workflows/ci.yml
        170  .gitignore
-      7234  CHANGELOG.md
+      7394  CHANGELOG.md
        959  DELIVERY_FIX.md
       2655  INSTALL_MAC.command
       1765  INSTALL_WINDOWS.ps1
        513  NOTICE.md
        596  OPEN_ME_FIRST.md
-      1932  README.md
+      1979  README.md
        479  README_FIRST.txt
      12424  START_HERE.md
        307  VERIFY_PACKAGE.command

@@ -52,7 +52,7 @@ assert_eq "$(find "$repo1/.claude/agents" -type f -name '*.md' | wc -l | tr -d '
 assert_eq "$(find "$repo1/.claude/skills" -type f -name 'SKILL.md' | wc -l | tr -d ' ')" "31" "skill count"
 assert_eq "$(find "$repo1/.claude/workflows" -type f -name '*.js' | wc -l | tr -d ' ')" "0" "executable workflow count"
 assert_eq "$(find "$repo1/.claude/rules" -type f -name '*.md' | wc -l | tr -d ' ')" "8" "rule count"
-python3 "$repo1/.claude/control-plane/bin/madclaude.py" --version | grep -Fq '4.4.1' || fail "installed control-plane version"
+python3 "$repo1/.claude/control-plane/bin/madclaude.py" --version | grep -Fq '4.4.2' || fail "installed control-plane version"
 python3 "$repo1/.claude/control-plane/bin/madclaude.py" routes --json >/dev/null || fail "installed control-plane route registry"
 # The canonical control-plane suite runs immediately before this installer smoke test in build-release.sh.
 # Here we prove the installed copy starts and exposes the expected registry without rerunning the full suite.
