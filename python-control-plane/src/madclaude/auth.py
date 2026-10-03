@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import shutil
 import subprocess
 from dataclasses import asdict, dataclass, field, replace
@@ -31,6 +32,11 @@ ROUTING_ENV_VARS = (
 )
 SUBSCRIPTION_TYPES = {"pro", "max", "team", "enterprise"}
 
+# Validated documentation/security baseline for this package (README, START_HERE,
+# docs/CLI_DEBUG_REFERENCE.md). The fail-closed preflight refuses to run routes
+# on a CLI older than the version this package was audited against.
+MINIMUM_CLAUDE_CODE_VERSION = (2, 1, 223)
+
 
 @dataclass(frozen=True)
 class AuthReport:
@@ -57,7 +63,7 @@ def _truthy(value: str | None) -> bool:
     return bool(value and value.strip().lower() not in {"0", "false", "no", "off"})
 
 
-def find_claude_cli(override: str | None = None) -> str:
+def find_claude_cli(override: str | None = None, env: Mapping[str, str] | None = None) -> str:
     candidate = override or shutil.which("claude")
     if not candidate:
         raise AuthPreflightError(
@@ -72,7 +78,57 @@ def find_claude_cli(override: str | None = None) -> str:
             "Refusing a .cmd/.bat Claude launcher. Install the native Claude Code binary or pass "
             "the absolute path to claude.exe."
         )
+    _enforce_cli_version_floor(path, env)
     return str(path.resolve())
+
+
+def _parse_claude_code_version(raw: str) -> tuple[int, int, int] | None:
+    """Extract a comparable (major, minor, patch) tuple from `claude --version` output."""
+    match = re.search(r"(\d+)\.(\d+)\.(\d+)", raw)
+    if not match:
+        return None
+    return (int(match.group(1)), int(match.group(2)), int(match.group(3)))
+
+
+def _enforce_cli_version_floor(claude_path: Path, env: Mapping[str, str] | None = None) -> None:
+    """Fail closed when the CLI is older than the package's validated baseline.
+
+    The floor mirrors the documented minimum (README, START_HERE,
+    docs/CLI_DEBUG_REFERENCE.md). An unparseable version string also fails
+    closed: the package cannot prove the CLI satisfies its audited baseline.
+    """
+    environment = dict(env or os.environ)
+    try:
+        completed = subprocess.run(
+            [str(claude_path), "--version"],
+            capture_output=True,
+            text=True,
+            check=False,
+            timeout=30,
+            env=environment,
+        )
+    except (OSError, subprocess.TimeoutExpired) as exc:
+        raise AuthPreflightError(
+            f"Could not query the Claude Code CLI version for the minimum-version gate: {exc}"
+        ) from exc
+    if completed.returncode != 0:
+        raise AuthPreflightError(
+            "Claude Code CLI --version probe failed "
+            f"(exit {completed.returncode}); cannot prove the {MINIMUM_CLAUDE_CODE_VERSION} baseline. "
+            "Update Claude Code and rerun `madclaude auth-check`."
+        )
+    version = _parse_claude_code_version(completed.stdout or "")
+    if version is None:
+        raise AuthPreflightError(
+            "Claude Code CLI --version output was not parseable; cannot prove the "
+            f"{MINIMUM_CLAUDE_CODE_VERSION} baseline. Output was: {completed.stdout[:200]!r}"
+        )
+    if version < MINIMUM_CLAUDE_CODE_VERSION:
+        raise AuthPreflightError(
+            f"Claude Code CLI version {'.'.join(map(str, version))} is below this package's "
+            f"validated minimum {MINIMUM_CLAUDE_CODE_VERSION}. Update Claude Code and rerun "
+            "`madclaude auth-check`."
+        )
 
 
 def _extract_json(text: str) -> dict[str, Any]:
@@ -226,7 +282,7 @@ def preflight_auth(
     env: Mapping[str, str] | None = None,
 ) -> AuthReport:
     environment = dict(env or os.environ)
-    cli = find_claude_cli(claude_path)
+    cli = find_claude_cli(claude_path, env=environment)
     present_api, present_subscription, present_cloud, present_routes, settings_markers = _credential_conflicts(
         repo, environment
     )

@@ -1,9 +1,9 @@
 {
   "package": "MADVentures-Claude-Code-Environment-v4.4.1",
   "version": "4.4.1",
-  "generatedAt": "2026-08-13T21:38:40+00:00",
+  "generatedAt": "2026-10-03T12:39:36+00:00",
   "algorithm": "SHA-256",
-  "fileCount": 361,
+  "fileCount": 362,
   "files": [
     {
       "path": ".github/workflows/ci.yml",
@@ -47,8 +47,8 @@
     },
     {
       "path": "PACKAGE_CONTENTS.txt",
-      "bytes": 23298,
-      "sha256": "23d30f7a4a872e43ba80e811dbe3856966729983c81832507ea683c9c77b3f58"
+      "bytes": 23365,
+      "sha256": "cbe6f659cb6f0cf62e45ca2ef70deb1c07fd97dc99d278c93c0d8a6ee13f82c4"
     },
     {
       "path": "README.md",
@@ -1347,8 +1347,8 @@
     },
     {
       "path": "python-control-plane/run-tests.py",
-      "bytes": 5198,
-      "sha256": "69ae6050a1652a26804cb530a7230b17afb56f2b6a5437574e4ce36747b86bdc"
+      "bytes": 5538,
+      "sha256": "9bf46bd6d7965fc3496d3b75ea9e2b5d4621f35fe9b17e89bbd422fcbb5ae370"
     },
     {
       "path": "python-control-plane/schemas/architecture-validation.schema.json",
@@ -1422,8 +1422,8 @@
     },
     {
       "path": "python-control-plane/src/madclaude/auth.py",
-      "bytes": 17703,
-      "sha256": "cfea64a27cab115dbd8f25f770546796b269396e67faefa390f4f43cab73f0ea"
+      "bytes": 20229,
+      "sha256": "c097a2fd55d2d44c6eafbe450483ac5cd0d47aa88666a5cc211a87ae9b534a2d"
     },
     {
       "path": "python-control-plane/src/madclaude/backend.py",
@@ -1532,8 +1532,8 @@
     },
     {
       "path": "python-control-plane/tests/support.py",
-      "bytes": 6037,
-      "sha256": "ed13465136ae7da797a5c8449c89e2fae835258c129967c4a635eab8b3b5b90e"
+      "bytes": 6224,
+      "sha256": "02813f7b3852d2a8545848b3d109081d4cc3276e2d15f44335b513a83bfdc92c"
     },
     {
       "path": "python-control-plane/tests/test_approval.py",
@@ -1547,8 +1547,8 @@
     },
     {
       "path": "python-control-plane/tests/test_auth.py",
-      "bytes": 9076,
-      "sha256": "660a91c6b117cd9cf7235e17a5c899627b1e6d75319bfb5b7337019a51a756e6"
+      "bytes": 10392,
+      "sha256": "d3cf54787e7b216a05bb1c014697b2016431cdb91c50f2243abe292cf6bd0fe7"
     },
     {
       "path": "python-control-plane/tests/test_authoritative_engine.py",
@@ -1649,6 +1649,11 @@
       "path": "python-control-plane/tests/test_term.py",
       "bytes": 6478,
       "sha256": "d481272199f8a2f3de4f64c25cba3ad65051022aae782f4efed7a96f990a4103"
+    },
+    {
+      "path": "python-control-plane/tests/test_version_consistency.py",
+      "bytes": 2631,
+      "sha256": "e791d1f932fe51da089f449d4695c04a469c955d4e5005ad2fba9e3647308c35"
     },
     {
       "path": "python-control-plane/tests/test_wheelhouse_script.py",
