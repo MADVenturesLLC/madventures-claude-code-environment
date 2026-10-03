@@ -88,6 +88,16 @@ class AuthTests(unittest.TestCase):
         with self.assertRaisesRegex(AuthPreflightError, "not parseable"):
             preflight_auth(mode="subscription", repo=self.repo, claude_path=str(opaque_cli), env=self.env)
 
+    def test_version_probe_nonzero_exit_fails_closed(self) -> None:
+        broken_cli = fake_claude(
+            Path(self.temp.name) / "claude-broken",
+            {"status": "ready"},
+            version_string="2.1.228 (Claude Code)",
+            version_exit_code=7,
+        )
+        with self.assertRaisesRegex(AuthPreflightError, "probe failed"):
+            preflight_auth(mode="subscription", repo=self.repo, claude_path=str(broken_cli), env=self.env)
+
     def test_subscription_rejects_generic_oauth_without_subscription_proof(self) -> None:
         ambiguous_cli = fake_claude(
             Path(self.temp.name) / "claude-ambiguous",

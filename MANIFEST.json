@@ -1,7 +1,7 @@
 {
   "package": "MADVentures-Claude-Code-Environment-v4.4.1",
   "version": "4.4.1",
-  "generatedAt": "2026-10-03T11:59:28+00:00",
+  "generatedAt": "2026-10-03T12:39:36+00:00",
   "algorithm": "SHA-256",
   "fileCount": 362,
   "files": [
@@ -48,7 +48,7 @@
     {
       "path": "PACKAGE_CONTENTS.txt",
       "bytes": 23365,
-      "sha256": "8c3668a25b55958e07ac0b7a0ee1bae5cef2d426d5d07cf7a66c924d3bcccf23"
+      "sha256": "cbe6f659cb6f0cf62e45ca2ef70deb1c07fd97dc99d278c93c0d8a6ee13f82c4"
     },
     {
       "path": "README.md",
@@ -1347,8 +1347,8 @@
     },
     {
       "path": "python-control-plane/run-tests.py",
-      "bytes": 5365,
-      "sha256": "6417a1b23bb512b1b3d2f2b73e9212f6b29f3671062f1d0a3519f1948de6f068"
+      "bytes": 5538,
+      "sha256": "9bf46bd6d7965fc3496d3b75ea9e2b5d4621f35fe9b17e89bbd422fcbb5ae370"
     },
     {
       "path": "python-control-plane/schemas/architecture-validation.schema.json",
@@ -1532,8 +1532,8 @@
     },
     {
       "path": "python-control-plane/tests/support.py",
-      "bytes": 6172,
-      "sha256": "fedccb05110d7d954e1b46201bb1c12f5c895c960fbf732d63e0dfeb538fbc6e"
+      "bytes": 6224,
+      "sha256": "02813f7b3852d2a8545848b3d109081d4cc3276e2d15f44335b513a83bfdc92c"
     },
     {
       "path": "python-control-plane/tests/test_approval.py",
@@ -1547,8 +1547,8 @@
     },
     {
       "path": "python-control-plane/tests/test_auth.py",
-      "bytes": 9929,
-      "sha256": "fd91095c7b30e9b92c12f600fd703df959f5472ec73ce2101f37a3d9ae19e485"
+      "bytes": 10392,
+      "sha256": "d3cf54787e7b216a05bb1c014697b2016431cdb91c50f2243abe292cf6bd0fe7"
     },
     {
       "path": "python-control-plane/tests/test_authoritative_engine.py",

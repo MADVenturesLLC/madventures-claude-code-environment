@@ -284,7 +284,7 @@ FILE INDEX
       1530  python-control-plane/WORKFLOW_MIGRATION.json
       1058  python-control-plane/bin/madclaude.py
       1088  python-control-plane/pyproject.toml
-      5365  python-control-plane/run-tests.py
+      5538  python-control-plane/run-tests.py
       2558  python-control-plane/schemas/architecture-validation.schema.json
       1597  python-control-plane/schemas/build.schema.json
        998  python-control-plane/schemas/fix-until-green.schema.json
@@ -321,10 +321,10 @@ FILE INDEX
       2969  python-control-plane/src/madclaude/verification.py
         22  python-control-plane/src/madclaude/version.py
      29058  python-control-plane/src/madclaude/workflows.py
-      6172  python-control-plane/tests/support.py
+      6224  python-control-plane/tests/support.py
       2982  python-control-plane/tests/test_approval.py
       1337  python-control-plane/tests/test_artifacts.py
-      9929  python-control-plane/tests/test_auth.py
+     10392  python-control-plane/tests/test_auth.py
        590  python-control-plane/tests/test_authoritative_engine.py
      18535  python-control-plane/tests/test_backend.py
       5723  python-control-plane/tests/test_baseline_policy_matrix.py

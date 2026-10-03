@@ -46,10 +46,9 @@ INSTALLED_MODULES = frozenset({
     "test_schemas",
     "test_secrets_patterns",
     "test_term",
-    "test_version_consistency",
     "test_workflow",
 })
-INSTALLED_MODULE_COUNT = 20
+INSTALLED_MODULE_COUNT = 19
 
 # Exact number of test cases the installed-compatible modules produce.
 # If a test is added or removed from any installed module, this must be
@@ -61,13 +60,15 @@ INSTALLED_MODULE_COUNT = 20
 # A10-D: +9 (test_escalation_state A10D class — schema fields, adaptation
 # outcome incl. redacted-target retry, classifier matrix, mechanical-tier
 # integration) = 208 -> 217.
-# Version-floor hardening: +2 (test_auth CLI-version fail-closed pair)
-# +2 (test_version_consistency identity tripwire) = 217 -> 221.
-INSTALLED_TEST_CASE_COUNT = 221
+# Version-floor hardening: +3 (test_auth CLI-version fail-closed cases:
+# below-minimum, unparseable output, non-zero --version exit) = 217 -> 220.
+# test_version_consistency is source-only: it asserts package-root identity
+# surfaces (VERSION, plugin/) that do not exist in the installed layout.
+INSTALLED_TEST_CASE_COUNT = 220
 
-# The six source-only modules: they require package-root resources
-# (scripts/, plugin/, MANIFEST.json) or transitively import a module that
-# does.  They run only during source-tree and archive validation, never
+# The seven source-only modules: they require package-root resources
+# (scripts/, plugin/, MANIFEST.json, VERSION) or transitively import a module
+# that does.  They run only during source-tree and archive validation, never
 # during installed-layout validation.  They are not skipped — they are not
 # selected.
 KNOWN_SOURCE_ONLY = frozenset({
@@ -77,6 +78,7 @@ KNOWN_SOURCE_ONLY = frozenset({
     "test_plugin_parity",
     "test_mcp_lifecycle",
     "test_mcp_server",
+    "test_version_consistency",
 })
 
 
