@@ -84,6 +84,7 @@ def fake_claude(
     exit_code: int = 0,
     stdout: str | None = None,
     sleep_seconds: float = 0.0,
+    version_string: str = "2.1.228 (Claude Code)",
 ) -> Path:
     default_subscription = {
         "loggedIn": True,
@@ -98,6 +99,9 @@ def fake_claude(
     script = f'''#!/usr/bin/env python3
 import json, os, pathlib, sys, time
 args = sys.argv[1:]
+if args[:1] == ["--version"]:
+    print({version_string!r})
+    raise SystemExit(0)
 if args[:2] == ["auth", "status"]:
     explicit = {explicit_status!r}
     if explicit is not None:

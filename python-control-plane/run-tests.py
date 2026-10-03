@@ -46,9 +46,10 @@ INSTALLED_MODULES = frozenset({
     "test_schemas",
     "test_secrets_patterns",
     "test_term",
+    "test_version_consistency",
     "test_workflow",
 })
-INSTALLED_MODULE_COUNT = 19
+INSTALLED_MODULE_COUNT = 20
 
 # Exact number of test cases the installed-compatible modules produce.
 # If a test is added or removed from any installed module, this must be
@@ -60,7 +61,9 @@ INSTALLED_MODULE_COUNT = 19
 # A10-D: +9 (test_escalation_state A10D class — schema fields, adaptation
 # outcome incl. redacted-target retry, classifier matrix, mechanical-tier
 # integration) = 208 -> 217.
-INSTALLED_TEST_CASE_COUNT = 217
+# Version-floor hardening: +2 (test_auth CLI-version fail-closed pair)
+# +2 (test_version_consistency identity tripwire) = 217 -> 221.
+INSTALLED_TEST_CASE_COUNT = 221
 
 # The six source-only modules: they require package-root resources
 # (scripts/, plugin/, MANIFEST.json) or transitively import a module that

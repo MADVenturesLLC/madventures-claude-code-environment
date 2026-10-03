@@ -70,6 +70,24 @@ class AuthTests(unittest.TestCase):
         guarded = enforce_model_billing_policy(report, model="fable", allow_usage_credits=True)
         self.assertTrue(any("explicitly acknowledged" in item for item in guarded.warnings))
 
+    def test_cli_below_minimum_version_fails_closed(self) -> None:
+        old_cli = fake_claude(
+            Path(self.temp.name) / "claude-old",
+            {"status": "ready"},
+            version_string="1.2.3 (Claude Code)",
+        )
+        with self.assertRaisesRegex(AuthPreflightError, "below this package's"):
+            preflight_auth(mode="subscription", repo=self.repo, claude_path=str(old_cli), env=self.env)
+
+    def test_unparseable_cli_version_fails_closed(self) -> None:
+        opaque_cli = fake_claude(
+            Path(self.temp.name) / "claude-opaque",
+            {"status": "ready"},
+            version_string="not-a-version-string",
+        )
+        with self.assertRaisesRegex(AuthPreflightError, "not parseable"):
+            preflight_auth(mode="subscription", repo=self.repo, claude_path=str(opaque_cli), env=self.env)
+
     def test_subscription_rejects_generic_oauth_without_subscription_proof(self) -> None:
         ambiguous_cli = fake_claude(
             Path(self.temp.name) / "claude-ambiguous",
