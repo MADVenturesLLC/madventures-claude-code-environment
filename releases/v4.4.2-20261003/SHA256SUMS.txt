@@ -1,0 +1,7 @@
+b423a09dc73d423a934a0a044df54dac6c276e8db594b7a1abad5029797d7fbd  RELEASE_RECORD.md
+af8bfd665046d4626fe0c534c81e594906d24326e2d9defa2c713aa63a3f8dd3  artifacts/MADVentures-Claude-Code-Environment-v4.4.2.tar.gz
+c5edcad6f9dd6b32078a4adda389bb94fe91629914f9bb92fdc4ea6f3767ed59  artifacts/MADVentures-Claude-Code-Environment-v4.4.2.tar.gz.sha256
+121723bd2b9ae4bd3e20a79666e4504980a42ec6861df1541ce2d241f8526f55  artifacts/MADVentures-Claude-Code-Environment-v4.4.2.zip
+5605dd416c5c1731fee34ee2aa1ef8e6c85fb339a7da2fc96b292abfb5c4f08f  artifacts/MADVentures-Claude-Code-Environment-v4.4.2.zip.sha256
+e2c3d5c459a7e96792e0bd5c7aeec4a30d06a1dd7aacd9be043262bb3dd68326  artifacts/MADVentures-FounderOS-Claude-Code-Plugin-v4.4.2.zip
+1ecc49c2b2e22fdfc3d4a7b56ce801b7b8ba23036cdc8649036425268c31c8ab  artifacts/MADVentures-FounderOS-Claude-Code-Plugin-v4.4.2.zip.sha256
