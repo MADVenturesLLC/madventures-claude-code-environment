@@ -18,9 +18,11 @@ sequence.
 | [PARALLELISM_AND_AUTONOMY.md](PARALLELISM_AND_AUTONOMY.md) | Fan-out vs single-builder rules |
 | [SESSION_CONTEXT_CHECKPOINTS.md](SESSION_CONTEXT_CHECKPOINTS.md) | Checkpoint/context guidance |
 | [CLI_DEBUG_REFERENCE.md](CLI_DEBUG_REFERENCE.md) | Debugging the Claude Code CLI (incl. the 2.1.223 floor) |
+| [CLAUDE_CODE_FIELD_REFERENCE.md](CLAUDE_CODE_FIELD_REFERENCE.md) | Field-level Claude Code reference: settings, hooks, and configuration surfaces |
 | [CLOUD_ENVIRONMENT.md](CLOUD_ENVIRONMENT.md) | Anthropic-managed cloud VM setup |
 | [COMMAND_PALETTE.md](COMMAND_PALETTE.md) | Command palette usage |
 | [DEPLOYMENT.md](DEPLOYMENT.md) | Deployment guidance |
+| [PLUGIN_DEPLOYMENT.md](PLUGIN_DEPLOYMENT.md) | Portable plugin packaging, distribution, and installation |
 | [OPERATIONAL_PLAYBOOK.md](OPERATIONAL_PLAYBOOK.md) | Day-to-day operating sequences |
 | [PERFORMANCE_AND_TROUBLESHOOTING.md](PERFORMANCE_AND_TROUBLESHOOTING.md) | Performance and troubleshooting |
 | [OFFICIAL_SOURCE_AUDIT.md](OFFICIAL_SOURCE_AUDIT.md) | Documentation-baseline audit trail |

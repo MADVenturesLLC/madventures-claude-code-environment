@@ -1,7 +1,7 @@
 {
   "package": "MADVentures-Claude-Code-Environment-v4.4.1",
   "version": "4.4.1",
-  "generatedAt": "2026-10-03T12:44:23+00:00",
+  "generatedAt": "2026-10-03T12:49:35+00:00",
   "algorithm": "SHA-256",
   "fileCount": 363,
   "files": [
@@ -48,7 +48,7 @@
     {
       "path": "PACKAGE_CONTENTS.txt",
       "bytes": 23392,
-      "sha256": "965223422be2170d138d443a5ff167dd60750496521f83f23e6eb290298a1c9d"
+      "sha256": "e52ddaf3ddd18c76ab2d51a04af170b41f71186a2e76812906e0bc9a3d056246"
     },
     {
       "path": "README.md",
@@ -532,8 +532,8 @@
     },
     {
       "path": "docs/README.md",
-      "bytes": 2267,
-      "sha256": "8dc1c4eb6f2ff8cedc09b07c6d046789a8162763346b49006bd49d09fd107c46"
+      "bytes": 2526,
+      "sha256": "800d5c26c3581af67913280f8819ca1aba804911712cbb68c3f6208f3e24ab12"
     },
     {
       "path": "docs/SECURITY_GOVERNANCE.md",
