@@ -19,9 +19,11 @@ Approval is external to this package (governance boundary 6: no self-granted app
 
 **Open gates a Founder decision should address (see §4):**
 - Native arm64 target gate: **RE-RUN AND PASSED for this cut, pinned** — `evidence/audit442-target-gate-arm64.json` (SHA-256 `eb58baf96c75d84adb40729a0fdec20185976645b1b7fab8300b4a0624739458`); all 10 steps exit 0; artifact SHA matches the filed ZIP; wheelhouse resolved under `evidence/wheelhouse-constraints-cp314-macos.txt` (cryptography pinned to 48.0.1 — macOS universal2 — because 50.0.2 has no x86_64 build and the merge gate fails closed on cross-target divergence).
-- Native x86_64 target gate: **NOT YET RE-RUN** — the harness records `platform.machine()` of the running interpreter and the Audit 9 standard forbids architecture simulation; the Audit 9 x86_64 evidence was produced natively on `Michaels-iMac.local`. The `RUN-X86_64-GATE-ON-IMAC.sh` script on branch `release/4.4.2-gates` reproduces it on that machine, with the shared constraints file applied (both runs must resolve an identical distribution set; unpinned runs diverge on `cryptography` and the merge fails closed).
-- The merged wheelhouse was built for Audit 9 and has **not** been rebuilt for this cut (pending the x86_64 gate, which produces its own per-target wheelhouse; the deterministic merge then runs on the arm64 host).
-- The MCP release-install surface changed in the A10 series (new `mcp_lifecycle.py`, `mcp_server.py`); the arm64 gate re-proves it end-to-end above; x86_64 proof pending with its gate.
+- Native x86_64 target gate: **RE-RUN AND PASSED for this cut, pinned** — `evidence/audit442-target-gate-x86_64.json` (SHA-256 `a1c00db7eff5b4d5c7a4d6fc210b517e03339499dc0a2ea35e3eaf6645ad2716`); all 10 steps exit 0 on `Michaels-iMac.local` (native Intel x86_64; no simulation), artifact SHA matches the filed ZIP, `cryptography==48.0.1` installed. Its lock file (`3bee6a9c…`) is byte-identical to an independently pinned cross-arch rebuild of the same wheelhouse on the arm64 host — the two target sets provably agree.
+- Merged wheelhouse: **REBUILT for this cut** — `wheelhouse/merged/` (28 distributions; MERGED_WHEELHOUSE_MANIFEST.json `f3394499…`; locks `6f7df649…` arm64 / `3bee6a9c…` x86_64), deterministically merged from the two reviewed per-target wheelhouses. §3 below.
+- MCP release-install surface: **RE-PROVEN on both architectures** — the A10-series `mcp_lifecycle.py`/`mcp_server.py` paths ran end-to-end inside both native gates (install, staged self-test, atomic enable, protocol roundtrip, real mcp 2.0.0 SDK stdio roundtrip, disable/re-enable/status cycle), 10/10 steps exit 0 on each.
+
+No gate of the Audit 9 set remains open. The decision before the Founder is approval of the artifacts in §2 and the record as a whole.
 
 ---
 
@@ -46,6 +48,7 @@ Release inventory checksums for all files under this root (except `SHA256SUMS.tx
 - **Source tree commit (build input):** `4e79443ea2c31f3c771fe186c4665f62e1a14023`
 - **Base:** `main` @ `f7588048308cd0fd556bde06e69d56e6de6428c9` (post-#7/#8/#9) plus the release-prep commit
 - **Note:** this commit supersedes at merge; the merged `main` commit will become the canonical source identity once the release PR lands. Artifacts were built from the tree of `4e79443`; the artifact-internal `MANIFEST.json` was verified byte-identical to the working tree at build time.
+- **Gate evidence branch:** `release/4.4.2-gates` (tip at evidence time: `22d23de33e132859ea30ab247b51764ae1216e67`; evidence committed from both machines: arm64 on the MacBook Pro, x86_64 from the iMac; merge + record finalization on the MacBook Pro; subsequent record commits advance the branch tip).
 
 Superseded by this release: the Aug 13 candidate build archived on disk as `Audit10-v4.4.1-20260813` (v4.4.1-era hardening, no record, not in this repository).
 
@@ -70,7 +73,7 @@ Environment note (found during this cut, fixed before the build): the release sh
 
 Known host quirk (not a package defect): when a shell carries `ANTHROPIC_AUTH_TOKEN` / `ANTHROPIC_BASE_URL` injected by `~/.claude/settings.json`, the fail-closed preflight correctly refuses subscription mode and 15 installed-suite cases error. This is the designed fail-closed behavior; the release build and CI's clean runner do not carry those variables.
 
-**Not re-run for this cut (see §1 open gates):** native x86_64 target gate; merged wheelhouse build; two-architecture evidence.
+**Not re-run for this cut (see §1 open gates):** — none. All Audit 9 gate classes (native arm64 + x86_64 target gates, merged wheelhouse, MCP re-proof) were re-run and passed for this cut; see the two gate tables and §3.
 
 ### Native target gate — arm64 (RE-RUN, PASSED)
 
@@ -85,6 +88,34 @@ Known host quirk (not a package defect): when a shell carries `ANTHROPIC_AUTH_TO
 | Steps | all **10/10 exit 0** — local-harness, wheelhouse-lock-generation, offline-release-install, staged-launcher-self-test, atomic-enable, protocol-roundtrip, fastmcp-stdio-roundtrip, verb-cycle-disable, verb-cycle-re-enable, verb-cycle-status |
 | Installed inventory | 28 distributions incl. `mcp==2.0.0`, `cryptography==48.0.1` |
 | Pins | `evidence/wheelhouse-constraints-cp314-macos.txt` (both target runs) |
+
+### Native target gate — x86_64 (RE-RUN, PASSED)
+
+| Field | Value |
+|---|---|
+| Evidence file | `evidence/audit442-target-gate-x86_64.json` |
+| Evidence SHA-256 | `a1c00db7eff5b4d5c7a4d6fc210b517e03339499dc0a2ea35e3eaf6645ad2716` |
+| Machine / arch | `Michaels-iMac.local` / `x86_64` (native Intel, from the running interpreter) |
+| Python | CPython `3.14.7` |
+| Artifact SHA recorded | `121723bd2b9ae4bd3e20a79666e4504980a42ec6861df1541ce2d241f8526f55` (matches the filed ZIP) |
+| Evidence class | `release-target` / `releaseEvidence: true` |
+| Steps | all **10/10 exit 0** (same gate sequence as arm64) |
+| Installed inventory | 28 distributions incl. `mcp==2.0.0`, `cryptography==48.0.1` |
+| Recorded lock SHA | `3bee6a9c3db40eb7bbc34826497859111473775215ddd7618a8df2588bdba706` |
+| Cross-target agreement | the same pinned constraint set was independently resolved and finalized cross-arch on the arm64 host, producing a **byte-identical lock** (`3bee6a9c…`) — the two target sets provably agree |
+
+### Merged wheelhouse (REBUILT for this cut)
+
+Deterministic merge of the two reviewed per-target wheelhouses (`scripts/mcp-wheelhouse.py merge`), mirroring the Audit 9 layout:
+
+| Item | Path | SHA-256 |
+|---|---|---|
+| Merged directory | `wheelhouse/merged/` | 28 distributions (shared pure wheels + per-arch wheels) |
+| Merged manifest | `wheelhouse/merged/MERGED_WHEELHOUSE_MANIFEST.json` | `f339449958ea021a348e656a73d0464022db48a3efb83af11b9b186482c0ace9` |
+| arm64 lock | `wheelhouse/merged/requirements-cp314-macos-arm64.lock` | `6f7df649ca77d034800617546998c4ea84846c305c3b86978d85b7ec09bd960e` |
+| x86_64 lock | `wheelhouse/merged/requirements-cp314-macos-x86_64.lock` | `3bee6a9c3db40eb7bbc34826497859111473775215ddd7618a8df2588bdba706` |
+
+Per-arch source manifests preserved: `wheelhouse/arm64/WHEELHOUSE_MANIFEST.json` (`5a9bdf2383ca6f4a719f4f2cf7fe3fc8a2391c8967ad7e0c5637684e1df5ee01`) and `wheelhouse/x86_64/WHEELHOUSE_MANIFEST.json` (`c2f02c96f12ffe3922ba7fe80469e01469bde42ea8bf4425fb6ce20d580dd8e6`).
 
 ---
 
@@ -124,10 +155,9 @@ This cut did **not**:
 - install or activate the release into any project or global environment;
 - delete previous environments, prior Audit 8b baselines, or the Aug 13 candidate artifacts;
 - remove ambient system or Hermes MCP installations;
-- run the native target gates or rebuild the wheelhouse (§1 open gates);
 - modify any release artifact after hashing (copy-only from the verified build output).
 
-Those require separate Founder authorization.
+Those require separate Founder authorization. (The native target gates and wheelhouse rebuild — previously listed as open in an earlier revision of this record — are **complete** for this cut; see §1 and §4.)
 
 ---
 
