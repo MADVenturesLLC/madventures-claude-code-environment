@@ -1,7 +1,7 @@
 {
   "package": "MADVentures-Claude-Code-Environment-v4.4.2",
   "version": "4.4.2",
-  "generatedAt": "2026-10-03T13:15:55+00:00",
+  "generatedAt": "2026-10-03T13:21:25+00:00",
   "algorithm": "SHA-256",
   "fileCount": 363,
   "files": [
@@ -48,7 +48,7 @@
     {
       "path": "PACKAGE_CONTENTS.txt",
       "bytes": 23392,
-      "sha256": "d060506f2e942d45ad9ffc4805cdd43fe7a5345014368e033722d317927547ef"
+      "sha256": "dcbe6ffce64d2447dd9bc01a93917f7991abdcb4c6ce7434a17e914cac8e2983"
     },
     {
       "path": "README.md",
@@ -557,8 +557,8 @@
     },
     {
       "path": "docs/VALIDATION_REPORT.md",
-      "bytes": 5626,
-      "sha256": "69890c400ea7ea782a85d6c4b68b5afe1e707b0119b535b469f2083c1230d049"
+      "bytes": 5628,
+      "sha256": "3371a719f2ba45fdbee2f0f3c9c7d88cf4bfac59c4997e6372057ed8df341e35"
     },
     {
       "path": "docs/audit10-a10a-tool-surface-inventory.md",

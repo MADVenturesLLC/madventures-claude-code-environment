@@ -126,7 +126,7 @@ FILE INDEX
       7145  docs/SESSION_CONTEXT_CHECKPOINTS.md
       7051  docs/SUBAGENT_REGISTRY.md
       7343  docs/UPGRADE_FROM_V4.md
-      5626  docs/VALIDATION_REPORT.md
+      5628  docs/VALIDATION_REPORT.md
       4295  docs/audit10-a10a-tool-surface-inventory.md
       1093  examples/CLOUD_TASKS.md
        715  examples/FOUNDER_APPROVAL.example.json
