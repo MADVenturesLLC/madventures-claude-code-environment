@@ -1,7 +1,7 @@
 {
   "package": "MADVentures-Claude-Code-Environment-v4.4.2",
   "version": "4.4.2",
-  "generatedAt": "2026-10-03T13:55:53+00:00",
+  "generatedAt": "2026-10-03T13:57:07+00:00",
   "algorithm": "SHA-256",
   "fileCount": 363,
   "files": [
@@ -17,8 +17,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 7394,
-      "sha256": "1b9f9c3376fba971ad93695bcc6eec7e7d36c67f7ae8a4a77ac8587169f20d10"
+      "bytes": 7764,
+      "sha256": "92aa6d6574d2d83ba3e9ce2b1fc12955c79b3294377397a9583b8d9ef11133dc"
     },
     {
       "path": "DELIVERY_FIX.md",
@@ -48,12 +48,12 @@
     {
       "path": "PACKAGE_CONTENTS.txt",
       "bytes": 23392,
-      "sha256": "dcbe6ffce64d2447dd9bc01a93917f7991abdcb4c6ce7434a17e914cac8e2983"
+      "sha256": "657e5f8aabc36b6ef51e5166a127696520618d2ff11f56a11f06f6b427ab0da0"
     },
     {
       "path": "README.md",
-      "bytes": 1979,
-      "sha256": "eeaa5de4db9a0d3c96be3518c47f0ee49829ba2c9f331aea0764f512a9d527ef"
+      "bytes": 2245,
+      "sha256": "c963f406f2d6a2ae95b4457f1b5c3b01c08888400b9da6205fb54cd1fc74fc2e"
     },
     {
       "path": "README_FIRST.txt",

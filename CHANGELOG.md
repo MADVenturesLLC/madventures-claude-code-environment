@@ -1,11 +1,17 @@
 # Changelog
 
-## 4.4.2 — PENDING FOUNDER APPROVAL (release record not yet issued)
+## 4.4.2 — PENDING FOUNDER APPROVAL (record filed; approval not yet issued)
 
 Everything merged on `main` after the Founder-approved Audit 9 artifacts
-(`4352dd2`), packaged as the next release candidate. Release contents are
-frozen at build time; the release record will list the exact tree and
-artifact SHA-256 values.
+(`4352dd2`), packaged as the next release candidate. The release record
+**is filed** at `releases/v4.4.2-20261003/RELEASE_RECORD.md` with the frozen
+tree identity, artifact SHA-256 values, and the open gates; it is **prepared
+and pending Founder approval**, not an approved release.
+
+Approval procedure note: the Founder edits this record's Status line at
+approval time; that edit changes the record's hash, so
+`releases/v4.4.2-20261003/SHA256SUMS.txt` must be regenerated after approval
+(it currently hashes the record as filed).
 
 ### Runtime and governance hardening (A10 series)
 - A10-A: secret-pattern registry, supported-tool matrix, baseline

@@ -135,6 +135,7 @@ Those require separate Founder authorization.
 **Prepared, not approved.** After Founder approval of the exact artifacts above and completion of any required open gates (§1):
 
 - this record's Status line is updated by the Founder (and the date-of-approval recorded);
+- because that edit changes this file's SHA-256, `SHA256SUMS.txt` in this root must be regenerated after approval (it currently hashes the record as filed);
 - the release is ready for a separately authorized installation.
 
 **Proposed baseline SHAs (repeat, pending approval):**

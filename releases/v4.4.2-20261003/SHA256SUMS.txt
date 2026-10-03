@@ -1,4 +1,4 @@
-1f35b8243ec9230dc7e80288e2c4b0a5b476a5319ff666a53b14b433e3f9195d  RELEASE_RECORD.md
+bd1ab814430f37d3fd08bad482f04c8d27360e7c0f16b4865ae021d99384c2b0  RELEASE_RECORD.md
 af8bfd665046d4626fe0c534c81e594906d24326e2d9defa2c713aa63a3f8dd3  artifacts/MADVentures-Claude-Code-Environment-v4.4.2.tar.gz
 c5edcad6f9dd6b32078a4adda389bb94fe91629914f9bb92fdc4ea6f3767ed59  artifacts/MADVentures-Claude-Code-Environment-v4.4.2.tar.gz.sha256
 121723bd2b9ae4bd3e20a79666e4504980a42ec6861df1541ce2d241f8526f55  artifacts/MADVentures-Claude-Code-Environment-v4.4.2.zip
