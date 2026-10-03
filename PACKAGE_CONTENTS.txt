@@ -372,7 +372,7 @@ FILE INDEX
       2050  scripts/sync-visible-template.py
       1656  scripts/test-cloud-session.sh
       5597  scripts/test-hooks.mjs
-      9328  scripts/test-python-control-plane.sh
+      9417  scripts/test-python-control-plane.sh
      10602  scripts/test-release-archives.py
       2426  scripts/test-route-launcher.sh
      58769  scripts/validate-config.py

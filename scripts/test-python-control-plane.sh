@@ -74,6 +74,9 @@ cat > "$fake" <<'EOF_FAKE'
 #!/usr/bin/env python3
 import json, os, pathlib, sys
 args=sys.argv[1:]
+if args[:1] == ['--version']:
+    print('2.1.228 (Claude Code)')
+    raise SystemExit(0)
 if args[:2] == ['auth', 'status']:
     print(json.dumps({
         'loggedIn': True,

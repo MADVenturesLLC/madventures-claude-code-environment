@@ -1,7 +1,7 @@
 {
   "package": "MADVentures-Claude-Code-Environment-v4.4.2",
   "version": "4.4.2",
-  "generatedAt": "2026-10-03T12:59:34+00:00",
+  "generatedAt": "2026-10-03T13:15:55+00:00",
   "algorithm": "SHA-256",
   "fileCount": 363,
   "files": [
@@ -48,7 +48,7 @@
     {
       "path": "PACKAGE_CONTENTS.txt",
       "bytes": 23392,
-      "sha256": "22f1ad8fea2416d8d78a56dc367ab3676e4f229e08431a36669fb69e15d74a2a"
+      "sha256": "d060506f2e942d45ad9ffc4805cdd43fe7a5345014368e033722d317927547ef"
     },
     {
       "path": "README.md",
@@ -1787,8 +1787,8 @@
     },
     {
       "path": "scripts/test-python-control-plane.sh",
-      "bytes": 9328,
-      "sha256": "c2b4e10518463e3e9ab8fea8ec1091be6c3f4a22f7aed14fbc34a580bee6b71c"
+      "bytes": 9417,
+      "sha256": "57e44ab1da88e6a262ebee6890e06988d9c52a0b7d4cf098a13c363973a35239"
     },
     {
       "path": "scripts/test-release-archives.py",
