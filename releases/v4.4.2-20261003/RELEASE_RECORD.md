@@ -18,9 +18,10 @@
 Approval is external to this package (governance boundary 6: no self-granted approval). The exact tree, artifact identities, validation results, and open gates below are the inputs to the Founder's decision.
 
 **Open gates a Founder decision should address (see §4):**
-- Native target gates (arm64 + x86_64) were run for Audit 9 and have **not** been re-run for this cut.
-- The merged wheelhouse was built for Audit 9 and has **not** been rebuilt for this cut.
-- The MCP release-install surface changed in the A10 series (new `mcp_lifecycle.py`, `mcp_server.py`); whether those gates must be re-proven for closure is a Founder call.
+- Native arm64 target gate: **RE-RUN AND PASSED for this cut** — `evidence/audit442-target-gate-arm64.json` (SHA-256 `c14e1a5ec9062f9d4c953ccc641e61ceedf5a54aae98ee1627f58c871e42db53`); all 10 steps exit 0; artifact SHA matches the filed ZIP.
+- Native x86_64 target gate: **NOT YET RE-RUN** — the harness records `platform.machine()` of the running interpreter and the Audit 9 standard forbids architecture simulation; the Audit 9 x86_64 evidence was produced natively on `Michaels-iMac.local`. The `RUN-X86_64-GATE-ON-IMAC.sh` script in this root reproduces it on that machine.
+- The merged wheelhouse was built for Audit 9 and has **not** been rebuilt for this cut (pending the x86_64 gate, which produces its own per-target wheelhouse; the deterministic merge then runs on the arm64 host).
+- The MCP release-install surface changed in the A10 series (new `mcp_lifecycle.py`, `mcp_server.py`); the arm64 gate re-proves it end-to-end above; x86_64 proof pending with its gate.
 
 ---
 
@@ -69,7 +70,20 @@ Environment note (found during this cut, fixed before the build): the release sh
 
 Known host quirk (not a package defect): when a shell carries `ANTHROPIC_AUTH_TOKEN` / `ANTHROPIC_BASE_URL` injected by `~/.claude/settings.json`, the fail-closed preflight correctly refuses subscription mode and 15 installed-suite cases error. This is the designed fail-closed behavior; the release build and CI's clean runner do not carry those variables.
 
-**Not re-run for this cut (see §1 open gates):** native arm64/x86_64 target gates; merged wheelhouse build; two-architecture evidence.
+**Not re-run for this cut (see §1 open gates):** native x86_64 target gate; merged wheelhouse build; two-architecture evidence.
+
+### Native target gate — arm64 (RE-RUN, PASSED)
+
+| Field | Value |
+|---|---|
+| Evidence file | `evidence/audit442-target-gate-arm64.json` |
+| Evidence SHA-256 | `c14e1a5ec9062f9d4c953ccc641e61ceedf5a54aae98ee1627f58c871e42db53` |
+| Machine / arch | `MikeMacBook.local` / `arm64` (native, from the running interpreter) |
+| Python | CPython `3.14.6` |
+| Artifact SHA recorded | `121723bd2b9ae4bd3e20a79666e4504980a42ec6861df1541ce2d241f8526f55` (matches the filed ZIP) |
+| Evidence class | `release-target` / `releaseEvidence: true` |
+| Steps | all **10/10 exit 0** — local-harness, wheelhouse-lock-generation, offline-release-install, staged-launcher-self-test, atomic-enable, protocol-roundtrip, fastmcp-stdio-roundtrip, verb-cycle-disable, verb-cycle-re-enable, verb-cycle-status |
+| Installed inventory | 28 distributions incl. `mcp==2.0.0` |
 
 ---
 
