@@ -7,13 +7,13 @@
 **Permanent release root (on-disk target):**
 `/Users/michaeldaley/MADVenturesOPs/releases/v4.4.2-20261003`
 
-> **Approved 2026-10-03.** The Founder approved this record by editing the Status line above to `Approved`. The §2 artifact SHA-256 values are now the approved baseline. A byte-exact copy of the record as approved is preserved at `evidence/founder-approval/RELEASE_RECORD.as-approved-20261003.md` (SHA-256 `f44bfbbe23372fe36ad9d80a8e187537fc6f03a36c81ef9527b87bf2c61d7452`). Approval remains external to the package (governance boundary 6).
+> On approval, the Founder replaces the Status line above and records the approval; only then do the artifact SHA-256 values below become the approved baseline. This record, as filed, does not approve anything.
 
 ---
 
 ## 1. Founder approval
 
-**APPROVED — 2026-10-03.** Founder approval was issued by editing this record's Status line to `Approved`; the byte-exact custody copy is preserved at `evidence/founder-approval/RELEASE_RECORD.as-approved-20261003.md`. The exact tree, artifact identities, validation results, and gates recorded below are the approved basis.
+**NOT YET ISSUED.**
 
 Approval is external to this package (governance boundary 6: no self-granted approval). The exact tree, artifact identities, validation results, and open gates below are the inputs to the Founder's decision.
 
@@ -23,11 +23,11 @@ Approval is external to this package (governance boundary 6: no self-granted app
 - Merged wheelhouse: **REBUILT for this cut** — `wheelhouse/merged/` (28 distributions; MERGED_WHEELHOUSE_MANIFEST.json `f3394499…`; locks `6f7df649…` arm64 / `3bee6a9c…` x86_64), deterministically merged from the two reviewed per-target wheelhouses. §3 below.
 - MCP release-install surface: **RE-PROVEN on both architectures** — the A10-series `mcp_lifecycle.py`/`mcp_server.py` paths ran end-to-end inside both native gates (install, staged self-test, atomic enable, protocol roundtrip, real mcp 2.0.0 SDK stdio roundtrip, disable/re-enable/status cycle), 10/10 steps exit 0 on each.
 
-No gate of the Audit 9 set remains open. The Founder approved the artifacts in §2 and this record on 2026-10-03.
+No gate of the Audit 9 set remains open. The decision before the Founder is approval of the artifacts in §2 and the record as a whole.
 
 ---
 
-## 2. Approved artifact identities
+## 2. Proposed artifact identities
 
 | Artifact | Path (under release root) | Size (bytes) | SHA-256 |
 |---|---|---|---|
@@ -47,7 +47,7 @@ Release inventory checksums for all files under this root (except `SHA256SUMS.tx
 - **Branch:** `release/4.4.2-prep`
 - **Source tree commit (build input):** `4e79443ea2c31f3c771fe186c4665f62e1a14023`
 - **Base:** `main` @ `f7588048308cd0fd556bde06e69d56e6de6428c9` (post-#7/#8/#9) plus the release-prep commit
-- **Note:** the release PR landed; the canonical source identity is the merged `main` commit `632e3636a5f4396b199c9a9f41f9724311cfcfe4` (PR #11, merging `0838ef639e556f0c538d3849c9ff30106292d47a`). Artifacts were built from the tree of `4e79443`; the artifact-internal `MANIFEST.json` was verified byte-identical to the working tree at build time.
+- **Note:** this commit supersedes at merge; the merged `main` commit will become the canonical source identity once the release PR lands. Artifacts were built from the tree of `4e79443`; the artifact-internal `MANIFEST.json` was verified byte-identical to the working tree at build time.
 - **Gate evidence branch:** `release/4.4.2-gates` (tip at evidence time: `22d23de33e132859ea30ab247b51764ae1216e67`; evidence committed from both machines: arm64 on the MacBook Pro, x86_64 from the iMac; merge + record finalization on the MacBook Pro; subsequent record commits advance the branch tip).
 
 Superseded by this release: the Aug 13 candidate build archived on disk as `Audit10-v4.4.1-20260813` (v4.4.1-era hardening, no record, not in this repository).
@@ -163,13 +163,13 @@ Those require separate Founder authorization. (The native target gates and wheel
 
 ## 8. Ready state
 
-**APPROVED — 2026-10-03.** The Founder approval recorded above authorizes this record and its §2 artifacts.
+**Prepared, not approved.** After Founder approval of the exact artifacts above and completion of any required open gates (§1):
 
-- the Status line was updated by the Founder and the approval date recorded;
-- because that edit changed this file's SHA-256, the release-root `SHA256SUMS.txt` was regenerated for this approved revision;
-- installation of this release was authorized by the Founder on 2026-10-03 (macOS arm64 host: the FounderOS-Claude-V5 seat on the MacBook Pro).
+- this record's Status line is updated by the Founder (and the date-of-approval recorded);
+- because that edit changes this file's SHA-256, `SHA256SUMS.txt` in this root must be regenerated after approval (it currently hashes the record as filed);
+- the release is ready for a separately authorized installation.
 
-**Approved baseline SHAs (repeat):**
+**Proposed baseline SHAs (repeat, pending approval):**
 
 - Full ZIP: `121723bd2b9ae4bd3e20a79666e4504980a42ec6861df1541ce2d241f8526f55`
 - Full TAR.GZ: `af8bfd665046d4626fe0c534c81e594906d24326e2d9defa2c713aa63a3f8dd3`
