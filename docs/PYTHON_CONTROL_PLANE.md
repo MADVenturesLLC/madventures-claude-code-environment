@@ -173,18 +173,23 @@ See [Authentication and billing controls](AUTHENTICATION_AND_BILLING.md).
 ### Running on the clean lane when the shell already carries credentials
 
 The fail-closed preflight reads the process environment and settings files, not just stored
-credentials: an interactive shell that exports `ANTHROPIC_AUTH_TOKEN` or any watched route
-variable makes every subscription route refuse — the gate working as designed, not a broken
-install. Run governed routes on a dedicated clean config dir instead:
+credentials: an interactive shell that exports any of the watched credentials or routing
+variables (`ANTHROPIC_API_KEY`, `ANTHROPIC_AUTH_TOKEN`, the `CLAUDE_CODE_USE_*` cloud routes,
+the `ANTHROPIC_*` base-URL/header variables, or the OAuth variables) makes every
+subscription route refuse — the gate working as designed, not a broken install. Run governed
+routes on a dedicated clean config dir instead, stripping the full watched set:
 
 ```bash
-env -u ANTHROPIC_AUTH_TOKEN -u ANTHROPIC_BASE_URL \
+env -u ANTHROPIC_API_KEY -u ANTHROPIC_AUTH_TOKEN \
+    -u CLAUDE_CODE_OAUTH_TOKEN -u CLAUDE_CODE_OAUTH_REFRESH_TOKEN -u CLAUDE_CODE_OAUTH_SCOPES \
+    -u CLAUDE_CODE_USE_BEDROCK -u CLAUDE_CODE_USE_VERTEX -u CLAUDE_CODE_USE_FOUNDRY -u CLAUDE_CODE_USE_ANTHROPIC_AWS \
+    -u ANTHROPIC_BASE_URL -u ANTHROPIC_BEDROCK_BASE_URL -u ANTHROPIC_VERTEX_BASE_URL -u ANTHROPIC_FOUNDRY_BASE_URL -u ANTHROPIC_CUSTOM_HEADERS \
   CLAUDE_CONFIG_DIR="$HOME/.claude-control-plane" madclaude auth-check --repo .
 ```
 
 The config dir must complete its own one-time `claude auth login` (credentials are per config
 dir and do not transfer by copying). A small wrapper that exports the config dir and unsets the
-watched variables before exec'ing `madclaude` is the recommended shape on hosts whose normal
+full watched set before exec'ing `madclaude` is the recommended shape on hosts whose normal
 shell carries a proxy lane.
 
 ## Route registry

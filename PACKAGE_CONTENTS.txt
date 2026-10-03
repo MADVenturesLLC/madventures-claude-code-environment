@@ -28,7 +28,7 @@ FILE INDEX
        596  OPEN_ME_FIRST.md
       2638  README.md
        479  README_FIRST.txt
-     13009  START_HERE.md
+     13433  START_HERE.md
        307  VERIFY_PACKAGE.command
          6  VERSION
       4551  VISIBLE_PROJECT_TEMPLATE/CLAUDE_FOLDER_CONTENTS/FOUNDEROS.md
@@ -121,9 +121,9 @@ FILE INDEX
       9078  docs/PARALLELISM_AND_AUTONOMY.md
       7259  docs/PERFORMANCE_AND_TROUBLESHOOTING.md
       4016  docs/PLUGIN_DEPLOYMENT.md
-     11880  docs/PYTHON_CONTROL_PLANE.md
+     12422  docs/PYTHON_CONTROL_PLANE.md
       2657  docs/README.md
-      9169  docs/RELEASE_RUNBOOK.md
+     10664  docs/RELEASE_RUNBOOK.md
      11803  docs/SECURITY_GOVERNANCE.md
       7145  docs/SESSION_CONTEXT_CHECKPOINTS.md
       7051  docs/SUBAGENT_REGISTRY.md
@@ -369,7 +369,7 @@ FILE INDEX
        513  scripts/install.sh
      17050  scripts/mcp-wheelhouse.py
       6427  scripts/quick-validate.py
-      7576  scripts/run-native-target-gate.sh
+     11823  scripts/run-native-target-gate.sh
       8813  scripts/smoke-test-install.sh
       2200  scripts/start-claude-route.ps1
       2693  scripts/start-claude-route.sh

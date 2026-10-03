@@ -17,12 +17,22 @@ exists because the naive version of it failed at least once.
 3. **The final build comes from an unchanged tree.** No edits while the build
    runs; commit the frozen outputs deliberately afterwards.
 4. **Builds, suites, and gates run on the clean auth lane.** Without it the
-   subscription-first suites fail closed on the host's global proxy lane:
+   subscription-first suites fail closed on the host's global proxy lane.
+   Strip the full watched set (API, subscription, cloud-route, and routing
+   variables — the fail-closed list in `docs/AUTHENTICATION_AND_BILLING.md`),
+   not just a couple of names:
 
    ```bash
-   env -u ANTHROPIC_AUTH_TOKEN -u ANTHROPIC_BASE_URL \
+   env -u ANTHROPIC_API_KEY -u ANTHROPIC_AUTH_TOKEN \
+       -u CLAUDE_CODE_OAUTH_TOKEN -u CLAUDE_CODE_OAUTH_REFRESH_TOKEN -u CLAUDE_CODE_OAUTH_SCOPES \
+       -u CLAUDE_CODE_USE_BEDROCK -u CLAUDE_CODE_USE_VERTEX -u CLAUDE_CODE_USE_FOUNDRY -u CLAUDE_CODE_USE_ANTHROPIC_AWS \
+       -u ANTHROPIC_BASE_URL -u ANTHROPIC_BEDROCK_BASE_URL -u ANTHROPIC_VERTEX_BASE_URL -u ANTHROPIC_FOUNDRY_BASE_URL -u ANTHROPIC_CUSTOM_HEADERS \
      CLAUDE_CONFIG_DIR=$HOME/.claude-control-plane <command>
    ```
+
+   On hosts whose normal shell carries a proxy lane, a small wrapper that
+   exports the config dir and unsets this set before exec'ing the command is
+   the durable shape.
 
 5. **One canonical runner per job.** When a paste-ready command is superseded,
    say so and delete the stale copy — a stale paste once hard-reset a clone to a
@@ -58,7 +68,10 @@ regenerated, not edited.
 Build from the frozen tree, on the clean lane, editing nothing while it runs:
 
 ```bash
-env -u ANTHROPIC_AUTH_TOKEN -u ANTHROPIC_BASE_URL \
+env -u ANTHROPIC_API_KEY -u ANTHROPIC_AUTH_TOKEN \
+    -u CLAUDE_CODE_OAUTH_TOKEN -u CLAUDE_CODE_OAUTH_REFRESH_TOKEN -u CLAUDE_CODE_OAUTH_SCOPES \
+    -u CLAUDE_CODE_USE_BEDROCK -u CLAUDE_CODE_USE_VERTEX -u CLAUDE_CODE_USE_FOUNDRY -u CLAUDE_CODE_USE_ANTHROPIC_AWS \
+    -u ANTHROPIC_BASE_URL -u ANTHROPIC_BEDROCK_BASE_URL -u ANTHROPIC_VERTEX_BASE_URL -u ANTHROPIC_FOUNDRY_BASE_URL -u ANTHROPIC_CUSTOM_HEADERS \
   CLAUDE_CONFIG_DIR=$HOME/.claude-control-plane \
   bash scripts/build-release.sh <zip> <plugin-zip> <tar.gz>
 ```
@@ -99,10 +112,16 @@ bash scripts/run-native-target-gate.sh --arch x86_64 \
   --release-dir releases/<version>-<date> --branch <gate-branch> --commit-and-push
 ```
 
-The runner refuses (exit 2) on the wrong hardware or under Rosetta, refuses
-(exit 3) to touch a clone with uncommitted changes, self-fetches the gate branch
-(never a hard reset), wires the constraints file, and prints/commits the
-evidence JSON. Use `--dry-run` to see the resolved plan without running.
+The runner refuses (exit 2) on the wrong hardware, under Rosetta, or on a
+non-macOS host (the contract is macOS `cp314` wheels); refuses (exit 3) a clone
+with uncommitted changes or a local gate branch carrying unpushed commits;
+refuses (exit 6) a non-CPython-3.14 interpreter or an unsafe `--home`/`--output`
+target (`--home` must stay under `$HOME/.hermes/cache/scratch`; `--output` must
+be a `.json` path inside the repository). It fetches the gate branch BEFORE
+resolving prerequisites — so `--branch` can bootstrap a branch that does not
+exist locally yet; never a hard reset — wires the constraints file, and
+prints/commits the evidence JSON. Use `--dry-run` to see the resolved plan
+without running.
 
 **Constraint pinning.** The constraints file
 (`releases/<version>-<date>/evidence/wheelhouse-constraints-cp314-macos.txt`)

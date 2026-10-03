@@ -1,7 +1,7 @@
 {
   "package": "MADVentures-Claude-Code-Environment-v4.4.2",
   "version": "4.4.2",
-  "generatedAt": "2026-10-03T20:37:46+00:00",
+  "generatedAt": "2026-10-03T21:49:25+00:00",
   "algorithm": "SHA-256",
   "fileCount": 367,
   "files": [
@@ -53,7 +53,7 @@
     {
       "path": "PACKAGE_CONTENTS.txt",
       "bytes": 23560,
-      "sha256": "0aaae6095b2ba4b8ec7cc76310d79c89a2e8bdfb2aecae03913665bfe3299223"
+      "sha256": "4ee94d6950f0683dfc8b3e54ba23b3965e264f6aa8f30d110e73af0dfc43f1df"
     },
     {
       "path": "README.md",
@@ -67,8 +67,8 @@
     },
     {
       "path": "START_HERE.md",
-      "bytes": 13009,
-      "sha256": "892eca35c683d24e4159e0c3fa02bf469f5bc91df02eb14e4b1442216a3f9b46"
+      "bytes": 13433,
+      "sha256": "7cb1155eee81cb96246ad0831008c2ed21295c4bf51bb4a58e8c563ba44af9f9"
     },
     {
       "path": "VERIFY_PACKAGE.command",
@@ -532,8 +532,8 @@
     },
     {
       "path": "docs/PYTHON_CONTROL_PLANE.md",
-      "bytes": 11880,
-      "sha256": "bbc3a0f5313b513f17d92d5051d26f0bfc435da538b827db11d78b21cdcbd1ee"
+      "bytes": 12422,
+      "sha256": "22f432395ada39f157d6b6548cf2d6a97d447a8e599cbcc09bc7dce7d86acc4b"
     },
     {
       "path": "docs/README.md",
@@ -542,8 +542,8 @@
     },
     {
       "path": "docs/RELEASE_RUNBOOK.md",
-      "bytes": 9169,
-      "sha256": "7c74794c38ccee8d642dd03b243d361016b25ea108404730088c7b0e9290adc4"
+      "bytes": 10664,
+      "sha256": "47e3848590e9b6979117acfe61cd94ff382d33da98d5ec2e50f25b521993dd1b"
     },
     {
       "path": "docs/SECURITY_GOVERNANCE.md",
@@ -1772,8 +1772,8 @@
     },
     {
       "path": "scripts/run-native-target-gate.sh",
-      "bytes": 7576,
-      "sha256": "736a18c5a9811d71872f5d6b9c9240810b744ecba6bcccf4bfca9e15715da3ff"
+      "bytes": 11823,
+      "sha256": "e3645005a49903af8fa8058ff6e8dfcba25c9545e5508e44d961a287cce9fb9d"
     },
     {
       "path": "scripts/smoke-test-install.sh",
